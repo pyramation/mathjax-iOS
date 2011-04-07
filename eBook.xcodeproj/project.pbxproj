@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAE1E243134E112900C7D8C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E242134E112900C7D8C5 /* UIKit.framework */; };
+		AAE1E245134E112900C7D8C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E244134E112900C7D8C5 /* Foundation.framework */; };
+		AAE1E247134E112900C7D8C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E246134E112900C7D8C5 /* CoreGraphics.framework */; };
+		AAE1E249134E112900C7D8C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E248134E112900C7D8C5 /* CoreData.framework */; };
+		AAE1E24F134E112900C7D8C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE1E24D134E112900C7D8C5 /* InfoPlist.strings */; };
+		AAE1E252134E112900C7D8C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE1E251134E112900C7D8C5 /* main.m */; };
+		AAE1E255134E112900C7D8C5 /* eBookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE1E254134E112900C7D8C5 /* eBookAppDelegate.m */; };
+		AAE1E258134E112900C7D8C5 /* eBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAE1E256134E112900C7D8C5 /* eBook.xcdatamodeld */; };
+		AAE1E25C134E112A00C7D8C5 /* eBookAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE1E25B134E112A00C7D8C5 /* eBookAppDelegate_iPhone.m */; };
+		AAE1E25F134E112A00C7D8C5 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE1E25D134E112A00C7D8C5 /* MainWindow_iPhone.xib */; };
+		AAE1E263134E112A00C7D8C5 /* eBookAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE1E262134E112A00C7D8C5 /* eBookAppDelegate_iPad.m */; };
+		AAE1E266134E112A00C7D8C5 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE1E264134E112A00C7D8C5 /* MainWindow_iPad.xib */; };
+		AAE1E26D134E112A00C7D8C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E242134E112900C7D8C5 /* UIKit.framework */; };
+		AAE1E26E134E112A00C7D8C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E244134E112900C7D8C5 /* Foundation.framework */; };
+		AAE1E26F134E112A00C7D8C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E246134E112900C7D8C5 /* CoreGraphics.framework */; };
+		AAE1E270134E112A00C7D8C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E248134E112900C7D8C5 /* CoreData.framework */; };
+		AAE1E278134E112A00C7D8C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAE1E276134E112A00C7D8C5 /* InfoPlist.strings */; };
+		AAE1E27B134E112A00C7D8C5 /* eBookTests.h in Resources */ = {isa = PBXBuildFile; fileRef = AAE1E27A134E112A00C7D8C5 /* eBookTests.h */; };
+		AAE1E27D134E112A00C7D8C5 /* eBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE1E27C134E112A00C7D8C5 /* eBookTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAE1E271134E112A00C7D8C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAE1E235134E112900C7D8C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAE1E23D134E112900C7D8C5;
+			remoteInfo = eBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AAE1E23E134E112900C7D8C5 /* eBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAE1E242134E112900C7D8C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AAE1E244134E112900C7D8C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AAE1E246134E112900C7D8C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AAE1E248134E112900C7D8C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AAE1E24C134E112900C7D8C5 /* eBook-Info.plist */ = {isa = PBXFileReference; path = "eBook-Info.plist"; sourceTree = "<group>"; };
+		AAE1E24E134E112900C7D8C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AAE1E250134E112900C7D8C5 /* eBook-Prefix.pch */ = {isa = PBXFileReference; path = "eBook-Prefix.pch"; sourceTree = "<group>"; };
+		AAE1E251134E112900C7D8C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AAE1E253134E112900C7D8C5 /* eBookAppDelegate.h */ = {isa = PBXFileReference; path = eBookAppDelegate.h; sourceTree = "<group>"; };
+		AAE1E254134E112900C7D8C5 /* eBookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eBookAppDelegate.m; sourceTree = "<group>"; };
+		AAE1E257134E112900C7D8C5 /* eBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eBook.xcdatamodel; sourceTree = "<group>"; };
+		AAE1E25A134E112A00C7D8C5 /* eBookAppDelegate_iPhone.h */ = {isa = PBXFileReference; name = eBookAppDelegate_iPhone.h; path = iPhone/eBookAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		AAE1E25B134E112A00C7D8C5 /* eBookAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = eBookAppDelegate_iPhone.m; path = iPhone/eBookAppDelegate_iPhone.m; sourceTree = "<group>"; };
+		AAE1E25E134E112A00C7D8C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		AAE1E261134E112A00C7D8C5 /* eBookAppDelegate_iPad.h */ = {isa = PBXFileReference; name = eBookAppDelegate_iPad.h; path = iPad/eBookAppDelegate_iPad.h; sourceTree = "<group>"; };
+		AAE1E262134E112A00C7D8C5 /* eBookAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = eBookAppDelegate_iPad.m; path = iPad/eBookAppDelegate_iPad.m; sourceTree = "<group>"; };
+		AAE1E265134E112A00C7D8C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+		AAE1E26C134E112A00C7D8C5 /* eBookTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eBookTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAE1E275134E112A00C7D8C5 /* eBookTests-Info.plist */ = {isa = PBXFileReference; path = "eBookTests-Info.plist"; sourceTree = "<group>"; };
+		AAE1E277134E112A00C7D8C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AAE1E279134E112A00C7D8C5 /* eBookTests-Prefix.pch */ = {isa = PBXFileReference; path = "eBookTests-Prefix.pch"; sourceTree = "<group>"; };
+		AAE1E27A134E112A00C7D8C5 /* eBookTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eBookTests.h; sourceTree = "<group>"; };
+		AAE1E27C134E112A00C7D8C5 /* eBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eBookTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAE1E23B134E112900C7D8C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE1E243134E112900C7D8C5 /* UIKit.framework in Frameworks */,
+				AAE1E245134E112900C7D8C5 /* Foundation.framework in Frameworks */,
+				AAE1E247134E112900C7D8C5 /* CoreGraphics.framework in Frameworks */,
+				AAE1E249134E112900C7D8C5 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE1E268134E112A00C7D8C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE1E26D134E112A00C7D8C5 /* UIKit.framework in Frameworks */,
+				AAE1E26E134E112A00C7D8C5 /* Foundation.framework in Frameworks */,
+				AAE1E26F134E112A00C7D8C5 /* CoreGraphics.framework in Frameworks */,
+				AAE1E270134E112A00C7D8C5 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAE1E233134E112900C7D8C5 = {
+			isa = PBXGroup;
+			children = (
+				AAE1E24A134E112900C7D8C5 /* eBook */,
+				AAE1E273134E112A00C7D8C5 /* eBookTests */,
+				AAE1E241134E112900C7D8C5 /* Frameworks */,
+				AAE1E23F134E112900C7D8C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAE1E23F134E112900C7D8C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAE1E23E134E112900C7D8C5 /* eBook.app */,
+				AAE1E26C134E112A00C7D8C5 /* eBookTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAE1E241134E112900C7D8C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAE1E242134E112900C7D8C5 /* UIKit.framework */,
+				AAE1E244134E112900C7D8C5 /* Foundation.framework */,
+				AAE1E246134E112900C7D8C5 /* CoreGraphics.framework */,
+				AAE1E248134E112900C7D8C5 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAE1E24A134E112900C7D8C5 /* eBook */ = {
+			isa = PBXGroup;
+			children = (
+				AAE1E253134E112900C7D8C5 /* eBookAppDelegate.h */,
+				AAE1E254134E112900C7D8C5 /* eBookAppDelegate.m */,
+				AAE1E256134E112900C7D8C5 /* eBook.xcdatamodeld */,
+				AAE1E259134E112A00C7D8C5 /* iPhone */,
+				AAE1E260134E112A00C7D8C5 /* iPad */,
+				AAE1E24B134E112900C7D8C5 /* Supporting Files */,
+			);
+			path = eBook;
+			sourceTree = "<group>";
+		};
+		AAE1E24B134E112900C7D8C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAE1E24C134E112900C7D8C5 /* eBook-Info.plist */,
+				AAE1E24D134E112900C7D8C5 /* InfoPlist.strings */,
+				AAE1E250134E112900C7D8C5 /* eBook-Prefix.pch */,
+				AAE1E251134E112900C7D8C5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAE1E259134E112A00C7D8C5 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				AAE1E25A134E112A00C7D8C5 /* eBookAppDelegate_iPhone.h */,
+				AAE1E25B134E112A00C7D8C5 /* eBookAppDelegate_iPhone.m */,
+				AAE1E25D134E112A00C7D8C5 /* MainWindow_iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		AAE1E260134E112A00C7D8C5 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				AAE1E261134E112A00C7D8C5 /* eBookAppDelegate_iPad.h */,
+				AAE1E262134E112A00C7D8C5 /* eBookAppDelegate_iPad.m */,
+				AAE1E264134E112A00C7D8C5 /* MainWindow_iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		AAE1E273134E112A00C7D8C5 /* eBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAE1E27A134E112A00C7D8C5 /* eBookTests.h */,
+				AAE1E27C134E112A00C7D8C5 /* eBookTests.m */,
+				AAE1E274134E112A00C7D8C5 /* Supporting Files */,
+			);
+			path = eBookTests;
+			sourceTree = "<group>";
+		};
+		AAE1E274134E112A00C7D8C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAE1E275134E112A00C7D8C5 /* eBookTests-Info.plist */,
+				AAE1E276134E112A00C7D8C5 /* InfoPlist.strings */,
+				AAE1E279134E112A00C7D8C5 /* eBookTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAE1E23D134E112900C7D8C5 /* eBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAE1E280134E112A00C7D8C5 /* Build configuration list for PBXNativeTarget "eBook" */;
+			buildPhases = (
+				AAE1E23A134E112900C7D8C5 /* Sources */,
+				AAE1E23B134E112900C7D8C5 /* Frameworks */,
+				AAE1E23C134E112900C7D8C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eBook;
+			productName = eBook;
+			productReference = AAE1E23E134E112900C7D8C5 /* eBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AAE1E26B134E112A00C7D8C5 /* eBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAE1E283134E112A00C7D8C5 /* Build configuration list for PBXNativeTarget "eBookTests" */;
+			buildPhases = (
+				AAE1E267134E112A00C7D8C5 /* Sources */,
+				AAE1E268134E112A00C7D8C5 /* Frameworks */,
+				AAE1E269134E112A00C7D8C5 /* Resources */,
+				AAE1E26A134E112A00C7D8C5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAE1E272134E112A00C7D8C5 /* PBXTargetDependency */,
+			);
+			name = eBookTests;
+			productName = eBookTests;
+			productReference = AAE1E26C134E112A00C7D8C5 /* eBookTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAE1E235134E112900C7D8C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Pyramation Media";
+			};
+			buildConfigurationList = AAE1E238134E112900C7D8C5 /* Build configuration list for PBXProject "eBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AAE1E233134E112900C7D8C5;
+			productRefGroup = AAE1E23F134E112900C7D8C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAE1E23D134E112900C7D8C5 /* eBook */,
+				AAE1E26B134E112A00C7D8C5 /* eBookTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAE1E23C134E112900C7D8C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE1E24F134E112900C7D8C5 /* InfoPlist.strings in Resources */,
+				AAE1E25F134E112A00C7D8C5 /* MainWindow_iPhone.xib in Resources */,
+				AAE1E266134E112A00C7D8C5 /* MainWindow_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE1E269134E112A00C7D8C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE1E278134E112A00C7D8C5 /* InfoPlist.strings in Resources */,
+				AAE1E27B134E112A00C7D8C5 /* eBookTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AAE1E26A134E112A00C7D8C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAE1E23A134E112900C7D8C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE1E252134E112900C7D8C5 /* main.m in Sources */,
+				AAE1E255134E112900C7D8C5 /* eBookAppDelegate.m in Sources */,
+				AAE1E258134E112900C7D8C5 /* eBook.xcdatamodeld in Sources */,
+				AAE1E25C134E112A00C7D8C5 /* eBookAppDelegate_iPhone.m in Sources */,
+				AAE1E263134E112A00C7D8C5 /* eBookAppDelegate_iPad.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE1E267134E112A00C7D8C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE1E27D134E112A00C7D8C5 /* eBookTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAE1E272134E112A00C7D8C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAE1E23D134E112900C7D8C5 /* eBook */;
+			targetProxy = AAE1E271134E112A00C7D8C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AAE1E24D134E112900C7D8C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAE1E24E134E112900C7D8C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AAE1E25D134E112A00C7D8C5 /* MainWindow_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAE1E25E134E112A00C7D8C5 /* en */,
+			);
+			name = MainWindow_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		AAE1E264134E112A00C7D8C5 /* MainWindow_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAE1E265134E112A00C7D8C5 /* en */,
+			);
+			name = MainWindow_iPad.xib;
+			sourceTree = "<group>";
+		};
+		AAE1E276134E112A00C7D8C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAE1E277134E112A00C7D8C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAE1E27E134E112A00C7D8C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AAE1E27F134E112A00C7D8C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AAE1E281134E112A00C7D8C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eBook/eBook-Prefix.pch";
+				INFOPLIST_FILE = "eBook/eBook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AAE1E282134E112A00C7D8C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eBook/eBook-Prefix.pch";
+				INFOPLIST_FILE = "eBook/eBook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AAE1E284134E112A00C7D8C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/eBook.app/eBook";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eBookTests/eBookTests-Prefix.pch";
+				INFOPLIST_FILE = "eBookTests/eBookTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AAE1E285134E112A00C7D8C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/eBook.app/eBook";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eBookTests/eBookTests-Prefix.pch";
+				INFOPLIST_FILE = "eBookTests/eBookTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAE1E238134E112900C7D8C5 /* Build configuration list for PBXProject "eBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAE1E27E134E112A00C7D8C5 /* Debug */,
+				AAE1E27F134E112A00C7D8C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAE1E280134E112A00C7D8C5 /* Build configuration list for PBXNativeTarget "eBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAE1E281134E112A00C7D8C5 /* Debug */,
+				AAE1E282134E112A00C7D8C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AAE1E283134E112A00C7D8C5 /* Build configuration list for PBXNativeTarget "eBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAE1E284134E112A00C7D8C5 /* Debug */,
+				AAE1E285134E112A00C7D8C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AAE1E256134E112900C7D8C5 /* eBook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AAE1E257134E112900C7D8C5 /* eBook.xcdatamodel */,
+			);
+			currentVersion = AAE1E257134E112900C7D8C5 /* eBook.xcdatamodel */;
+			path = eBook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AAE1E235134E112900C7D8C5 /* Project object */;
+}
