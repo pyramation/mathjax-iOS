@@ -19,8 +19,35 @@
 
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
+#define addMe(view, nav, title, icon) UIViewController * view = [[UIViewController alloc] init]; \
+UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:view]; \
+nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
+[view.tabBarItem initWithTitle:title image:[UIImage imageNamed:icon] tag:0];\
+[controllers addObject:nav]
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+
+    /* set-up tabs */
+    NSMutableArray * controllers = [[NSMutableArray alloc] init];
+    
+    addMe(poleView, poleNav, @"Poles and Zeros", @"73-radar.png");
+    addMe(plotView, plotNav, @"Plotter", @"04-squiggle.png");
+    addMe(blockView, blockNav, @"Block Diagrams", @"55-network.png");
+    
+    UITabBarController * tbarController = [[UITabBarController alloc] init];
+    tbarController.viewControllers = controllers;
+    tbarController.customizableViewControllers = controllers;
+    tbarController.delegate = self;
+    
+    /* end tabs set-up */
+    
+    [_window addSubview:tbarController.view];
+    [_window makeKeyAndVisible];
+    
+    
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;

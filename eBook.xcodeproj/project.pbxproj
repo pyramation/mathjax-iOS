@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AAA09942134E1FDE003A452F /* 04-squiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA0993E134E1FDE003A452F /* 04-squiggle.png */; };
+		AAA09943134E1FDE003A452F /* 55-network.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA0993F134E1FDE003A452F /* 55-network.png */; };
+		AAA09944134E1FDE003A452F /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA09940134E1FDE003A452F /* 73-radar.png */; };
+		AAA09945134E1FDE003A452F /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AAA09941134E1FDE003A452F /* LICENSE.txt */; };
 		AAE1E243134E112900C7D8C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E242134E112900C7D8C5 /* UIKit.framework */; };
 		AAE1E245134E112900C7D8C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E244134E112900C7D8C5 /* Foundation.framework */; };
 		AAE1E247134E112900C7D8C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E246134E112900C7D8C5 /* CoreGraphics.framework */; };
@@ -39,28 +43,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AAA0993E134E1FDE003A452F /* 04-squiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04-squiggle.png"; sourceTree = "<group>"; };
+		AAA0993F134E1FDE003A452F /* 55-network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "55-network.png"; sourceTree = "<group>"; };
+		AAA09940134E1FDE003A452F /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
+		AAA09941134E1FDE003A452F /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		AAE1E23E134E112900C7D8C5 /* eBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE1E242134E112900C7D8C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAE1E244134E112900C7D8C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AAE1E246134E112900C7D8C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AAE1E248134E112900C7D8C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		AAE1E24C134E112900C7D8C5 /* eBook-Info.plist */ = {isa = PBXFileReference; path = "eBook-Info.plist"; sourceTree = "<group>"; };
+		AAE1E24C134E112900C7D8C5 /* eBook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "eBook-Info.plist"; sourceTree = "<group>"; };
 		AAE1E24E134E112900C7D8C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AAE1E250134E112900C7D8C5 /* eBook-Prefix.pch */ = {isa = PBXFileReference; path = "eBook-Prefix.pch"; sourceTree = "<group>"; };
+		AAE1E250134E112900C7D8C5 /* eBook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eBook-Prefix.pch"; sourceTree = "<group>"; };
 		AAE1E251134E112900C7D8C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AAE1E253134E112900C7D8C5 /* eBookAppDelegate.h */ = {isa = PBXFileReference; path = eBookAppDelegate.h; sourceTree = "<group>"; };
+		AAE1E253134E112900C7D8C5 /* eBookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eBookAppDelegate.h; sourceTree = "<group>"; };
 		AAE1E254134E112900C7D8C5 /* eBookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eBookAppDelegate.m; sourceTree = "<group>"; };
 		AAE1E257134E112900C7D8C5 /* eBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eBook.xcdatamodel; sourceTree = "<group>"; };
-		AAE1E25A134E112A00C7D8C5 /* eBookAppDelegate_iPhone.h */ = {isa = PBXFileReference; name = eBookAppDelegate_iPhone.h; path = iPhone/eBookAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		AAE1E25A134E112A00C7D8C5 /* eBookAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = eBookAppDelegate_iPhone.h; path = iPhone/eBookAppDelegate_iPhone.h; sourceTree = "<group>"; };
 		AAE1E25B134E112A00C7D8C5 /* eBookAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = eBookAppDelegate_iPhone.m; path = iPhone/eBookAppDelegate_iPhone.m; sourceTree = "<group>"; };
 		AAE1E25E134E112A00C7D8C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
-		AAE1E261134E112A00C7D8C5 /* eBookAppDelegate_iPad.h */ = {isa = PBXFileReference; name = eBookAppDelegate_iPad.h; path = iPad/eBookAppDelegate_iPad.h; sourceTree = "<group>"; };
+		AAE1E261134E112A00C7D8C5 /* eBookAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = eBookAppDelegate_iPad.h; path = iPad/eBookAppDelegate_iPad.h; sourceTree = "<group>"; };
 		AAE1E262134E112A00C7D8C5 /* eBookAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = eBookAppDelegate_iPad.m; path = iPad/eBookAppDelegate_iPad.m; sourceTree = "<group>"; };
 		AAE1E265134E112A00C7D8C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
 		AAE1E26C134E112A00C7D8C5 /* eBookTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eBookTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAE1E275134E112A00C7D8C5 /* eBookTests-Info.plist */ = {isa = PBXFileReference; path = "eBookTests-Info.plist"; sourceTree = "<group>"; };
+		AAE1E275134E112A00C7D8C5 /* eBookTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "eBookTests-Info.plist"; sourceTree = "<group>"; };
 		AAE1E277134E112A00C7D8C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AAE1E279134E112A00C7D8C5 /* eBookTests-Prefix.pch */ = {isa = PBXFileReference; path = "eBookTests-Prefix.pch"; sourceTree = "<group>"; };
+		AAE1E279134E112A00C7D8C5 /* eBookTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eBookTests-Prefix.pch"; sourceTree = "<group>"; };
 		AAE1E27A134E112A00C7D8C5 /* eBookTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eBookTests.h; sourceTree = "<group>"; };
 		AAE1E27C134E112A00C7D8C5 /* eBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eBookTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAA0993D134E1FDE003A452F /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				AAA0993E134E1FDE003A452F /* 04-squiggle.png */,
+				AAA0993F134E1FDE003A452F /* 55-network.png */,
+				AAA09940134E1FDE003A452F /* 73-radar.png */,
+				AAA09941134E1FDE003A452F /* LICENSE.txt */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 		AAE1E233134E112900C7D8C5 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +117,7 @@
 				AAE1E273134E112A00C7D8C5 /* eBookTests */,
 				AAE1E241134E112900C7D8C5 /* Frameworks */,
 				AAE1E23F134E112900C7D8C5 /* Products */,
+				AAA0993D134E1FDE003A452F /* icons */,
 			);
 			sourceTree = "<group>";
 		};
@@ -258,6 +278,10 @@
 				AAE1E24F134E112900C7D8C5 /* InfoPlist.strings in Resources */,
 				AAE1E25F134E112A00C7D8C5 /* MainWindow_iPhone.xib in Resources */,
 				AAE1E266134E112A00C7D8C5 /* MainWindow_iPad.xib in Resources */,
+				AAA09942134E1FDE003A452F /* 04-squiggle.png in Resources */,
+				AAA09943134E1FDE003A452F /* 55-network.png in Resources */,
+				AAA09944134E1FDE003A452F /* 73-radar.png in Resources */,
+				AAA09945134E1FDE003A452F /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +504,7 @@
 				AAE1E282134E112A00C7D8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAE1E283134E112A00C7D8C5 /* Build configuration list for PBXNativeTarget "eBookTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +513,7 @@
 				AAE1E285134E112A00C7D8C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

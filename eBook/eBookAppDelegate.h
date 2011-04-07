@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface eBookAppDelegate : NSObject <UIApplicationDelegate> {
+@interface eBookAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
 
 }
 

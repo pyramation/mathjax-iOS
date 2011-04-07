@@ -10,9 +10,18 @@
 
 @implementation eBookAppDelegate_iPad
 
-- (void)dealloc
-{
-	[super dealloc];
+- (void)dealloc{[super dealloc];}
+
+- (IBAction)loadDemo:(UIButton *)sender {
+    
+    
+    UIWebView *htmlView = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
+    [htmlView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mathapedia.com"]]];
+    [htmlView setScalesPageToFit:YES];
+	[self.window addSubview:htmlView];
+	[htmlView release];
+    
 }
+
 
 @end
