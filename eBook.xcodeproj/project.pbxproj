@@ -11,6 +11,8 @@
 		AAA09943134E1FDE003A452F /* 55-network.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA0993F134E1FDE003A452F /* 55-network.png */; };
 		AAA09944134E1FDE003A452F /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA09940134E1FDE003A452F /* 73-radar.png */; };
 		AAA09945134E1FDE003A452F /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AAA09941134E1FDE003A452F /* LICENSE.txt */; };
+		AAA0994A134E24A7003A452F /* PolesZerosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA09949134E24A7003A452F /* PolesZerosViewController.m */; };
+		AAA0994D134E25AB003A452F /* PolesZerosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA0994C134E25AB003A452F /* PolesZerosView.m */; };
 		AAE1E243134E112900C7D8C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E242134E112900C7D8C5 /* UIKit.framework */; };
 		AAE1E245134E112900C7D8C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E244134E112900C7D8C5 /* Foundation.framework */; };
 		AAE1E247134E112900C7D8C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E246134E112900C7D8C5 /* CoreGraphics.framework */; };
@@ -47,6 +49,10 @@
 		AAA0993F134E1FDE003A452F /* 55-network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "55-network.png"; sourceTree = "<group>"; };
 		AAA09940134E1FDE003A452F /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
 		AAA09941134E1FDE003A452F /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		AAA09948134E24A7003A452F /* PolesZerosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolesZerosViewController.h; sourceTree = "<group>"; };
+		AAA09949134E24A7003A452F /* PolesZerosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolesZerosViewController.m; sourceTree = "<group>"; };
+		AAA0994B134E25AB003A452F /* PolesZerosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolesZerosView.h; sourceTree = "<group>"; };
+		AAA0994C134E25AB003A452F /* PolesZerosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolesZerosView.m; sourceTree = "<group>"; };
 		AAE1E23E134E112900C7D8C5 /* eBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE1E242134E112900C7D8C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAE1E244134E112900C7D8C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +116,17 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
+		AAA09947134E2451003A452F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAA09948134E24A7003A452F /* PolesZerosViewController.h */,
+				AAA09949134E24A7003A452F /* PolesZerosViewController.m */,
+				AAA0994B134E25AB003A452F /* PolesZerosView.h */,
+				AAA0994C134E25AB003A452F /* PolesZerosView.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		AAE1E233134E112900C7D8C5 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +161,7 @@
 		AAE1E24A134E112900C7D8C5 /* eBook */ = {
 			isa = PBXGroup;
 			children = (
+				AAA09947134E2451003A452F /* ViewControllers */,
 				AAE1E253134E112900C7D8C5 /* eBookAppDelegate.h */,
 				AAE1E254134E112900C7D8C5 /* eBookAppDelegate.m */,
 				AAE1E256134E112900C7D8C5 /* eBook.xcdatamodeld */,
@@ -322,6 +340,8 @@
 				AAE1E258134E112900C7D8C5 /* eBook.xcdatamodeld in Sources */,
 				AAE1E25C134E112A00C7D8C5 /* eBookAppDelegate_iPhone.m in Sources */,
 				AAE1E263134E112A00C7D8C5 /* eBookAppDelegate_iPad.m in Sources */,
+				AAA0994A134E24A7003A452F /* PolesZerosViewController.m in Sources */,
+				AAA0994D134E25AB003A452F /* PolesZerosView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
