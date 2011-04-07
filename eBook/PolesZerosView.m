@@ -15,21 +15,20 @@
                 
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, rect);
-    CGContextSetRGBStrokeColor(context, 0, 0, 255, 1);
+    CGContextSetRGBStrokeColor(context, 255, 255, 255, 1);
     CGContextSetRGBFillColor(context, 0,0,255,0.1);
     CGContextSetLineWidth(context, 3);
+    
     CGContextBeginPath(context);
-    
-    
-    
     CGContextMoveToPoint(context, 0, 0);
-    for (int i=0; i<1000; i++) {
+    for (int i=0; i<300; i++) {
 		CGContextAddLineToPoint(context, i, i);
 	}
-
-    CGContextAddArc(context, 0, 0, 50, 30, 60, 1);
+	CGContextStrokePath(context);
     
     
+    CGContextBeginPath(context);
+    CGContextAddArc(context, 200, 200, 5, 0, 360, 1);
 	CGContextStrokePath(context);
     
     
