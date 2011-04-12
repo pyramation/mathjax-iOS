@@ -23,7 +23,7 @@
 
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
-#define addMe(view, nav, title, icon) PolesZerosViewController * view = [[PolesZerosViewController alloc] init]; \
+#define addMe(view, nav, title, icon, class) class * view = [[class alloc] init]; \
 UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:view]; \
 nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 [view.tabBarItem initWithTitle:title image:[UIImage imageNamed:icon] tag:0];\
@@ -36,9 +36,20 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
-    addMe(poleView, poleNav, @"Poles and Zeros", @"73-radar.png");
-    addMe(plotView, plotNav, @"Plotter", @"04-squiggle.png");
-    addMe(blockView, blockNav, @"Block Diagrams", @"55-network.png");
+    addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
+    addMe(plotViewC, plotNav, @"Plotter", @"04-squiggle.png", PolesZerosViewController);
+    addMe(blockViewC, blockNav, @"Block Diagrams", @"55-network.png", PolesZerosViewController);
+    addMe(webViewC, webNav, @"Web View", @"55-network.png", UIViewController);
+    UIWebView * webView = [[UIWebView alloc] init];
+
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mathapedia.com"]]];
+    webView.backgroundColor = [UIColor whiteColor];
+    webView.scalesPageToFit = YES;
+    webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    webView.delegate = self;
+    webViewC.view = webView;
+    
+    
     UITabBarController * tbarController = [[UITabBarController alloc] init];
     tbarController.viewControllers = controllers;
     tbarController.customizableViewControllers = controllers;
@@ -50,6 +61,40 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     [_window makeKeyAndVisible];
     return YES;
 }
+
+
+- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    //CAPTURE USER LINK-CLICK.
+    
+    NSLog(@"%@ %d", request, navigationType);
+    
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        NSURL *URL = [request URL]; 
+        if ([[URL scheme] isEqualToString:@"app"]) {
+            
+            
+            UIWebView * myWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
+            [myWebView loadHTMLString:@"<b>this is math</b><br><br><br><br> <a href=\"http://mathapedia.com\">CLICK HERE</a>" baseURL:[NSURL URLWithString:@"http://www.google.com"]];
+            
+            [self.window addSubview:myWebView];
+            
+            
+            NSLog(@"app");
+            
+        } else if ([[URL scheme] isEqualToString:@"http"]) {
+            
+            NSLog(@"http link");
+            [webView loadRequest:request];
+            
+        } else {
+            NSLog(@"other");
+            
+        }
+        return NO;
+    }   
+    return YES;   
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
