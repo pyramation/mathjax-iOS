@@ -13,6 +13,10 @@
 		AAA09945134E1FDE003A452F /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AAA09941134E1FDE003A452F /* LICENSE.txt */; };
 		AAA0994A134E24A7003A452F /* PolesZerosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA09949134E24A7003A452F /* PolesZerosViewController.m */; };
 		AAA0994D134E25AB003A452F /* PolesZerosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA0994C134E25AB003A452F /* PolesZerosView.m */; };
+		AACE32B11354ED6200028649 /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B01354ED6200028649 /* Vector.m */; };
+		AACE32B41354ED7800028649 /* Axis.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B31354ED7800028649 /* Axis.m */; };
+		AACE32B71354EDB000028649 /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B61354EDB000028649 /* Graph.m */; };
+		AACE32BA1354EDC000028649 /* UnitCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B91354EDC000028649 /* UnitCircle.m */; };
 		AAE1E243134E112900C7D8C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E242134E112900C7D8C5 /* UIKit.framework */; };
 		AAE1E245134E112900C7D8C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E244134E112900C7D8C5 /* Foundation.framework */; };
 		AAE1E247134E112900C7D8C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E246134E112900C7D8C5 /* CoreGraphics.framework */; };
@@ -53,6 +57,14 @@
 		AAA09949134E24A7003A452F /* PolesZerosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolesZerosViewController.m; sourceTree = "<group>"; };
 		AAA0994B134E25AB003A452F /* PolesZerosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolesZerosView.h; sourceTree = "<group>"; };
 		AAA0994C134E25AB003A452F /* PolesZerosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolesZerosView.m; sourceTree = "<group>"; };
+		AACE32AF1354ED6200028649 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		AACE32B01354ED6200028649 /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
+		AACE32B21354ED7800028649 /* Axis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Axis.h; sourceTree = "<group>"; };
+		AACE32B31354ED7800028649 /* Axis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Axis.m; sourceTree = "<group>"; };
+		AACE32B51354EDB000028649 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		AACE32B61354EDB000028649 /* Graph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph.m; sourceTree = "<group>"; };
+		AACE32B81354EDC000028649 /* UnitCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitCircle.h; sourceTree = "<group>"; };
+		AACE32B91354EDC000028649 /* UnitCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitCircle.m; sourceTree = "<group>"; };
 		AAE1E23E134E112900C7D8C5 /* eBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE1E242134E112900C7D8C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAE1E244134E112900C7D8C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +139,21 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		AACE32AD1354ED3800028649 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AACE32AF1354ED6200028649 /* Vector.h */,
+				AACE32B01354ED6200028649 /* Vector.m */,
+				AACE32B21354ED7800028649 /* Axis.h */,
+				AACE32B31354ED7800028649 /* Axis.m */,
+				AACE32B51354EDB000028649 /* Graph.h */,
+				AACE32B61354EDB000028649 /* Graph.m */,
+				AACE32B81354EDC000028649 /* UnitCircle.h */,
+				AACE32B91354EDC000028649 /* UnitCircle.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		AAE1E233134E112900C7D8C5 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +188,7 @@
 		AAE1E24A134E112900C7D8C5 /* eBook */ = {
 			isa = PBXGroup;
 			children = (
+				AACE32AD1354ED3800028649 /* Classes */,
 				AAA09947134E2451003A452F /* ViewControllers */,
 				AAE1E253134E112900C7D8C5 /* eBookAppDelegate.h */,
 				AAE1E254134E112900C7D8C5 /* eBookAppDelegate.m */,
@@ -342,6 +370,10 @@
 				AAE1E263134E112A00C7D8C5 /* eBookAppDelegate_iPad.m in Sources */,
 				AAA0994A134E24A7003A452F /* PolesZerosViewController.m in Sources */,
 				AAA0994D134E25AB003A452F /* PolesZerosView.m in Sources */,
+				AACE32B11354ED6200028649 /* Vector.m in Sources */,
+				AACE32B41354ED7800028649 /* Axis.m in Sources */,
+				AACE32B71354EDB000028649 /* Graph.m in Sources */,
+				AACE32BA1354EDC000028649 /* UnitCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
