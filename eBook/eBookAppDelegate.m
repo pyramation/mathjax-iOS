@@ -10,6 +10,8 @@
 
 
 #import "PolesZerosViewController.h"
+#import "FilterDesignViewController.h"
+#import "FilterDesign.h"
 
 
 @implementation eBookAppDelegate
@@ -23,11 +25,15 @@
 
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
+@synthesize navigationController;
+
 #define addMe(view, nav, title, icon, class) class * view = [[class alloc] init]; \
 UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:view]; \
 nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 [view.tabBarItem initWithTitle:title image:[UIImage imageNamed:icon] tag:0];\
 [controllers addObject:nav]
+
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -40,8 +46,17 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     addMe(plotViewC, plotNav, @"Plotter", @"04-squiggle.png", PolesZerosViewController);
     addMe(blockViewC, blockNav, @"Block Diagrams", @"55-network.png", PolesZerosViewController);
     addMe(webViewC, webNav, @"Web View", @"55-network.png", UIViewController);
+    addMe(filterViewC, filterNav, @"Filter Design", @"55-network.png", FilterDesignViewController);
+ 
     UIWebView * webView = [[UIWebView alloc] init];
 
+    
+
+    
+    
+    
+    
+    
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mathapedia.com"]]];
     webView.backgroundColor = [UIColor whiteColor];
     webView.scalesPageToFit = YES;
@@ -54,7 +69,14 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     tbarController.viewControllers = controllers;
     tbarController.customizableViewControllers = controllers;
     tbarController.delegate = self;
-    [_window addSubview:tbarController.view];
+    //[_window addSubview:tbarController.view];
+    
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:tbarController];
+    navigationController.navigationBar.barStyle = UIBarStyleBlack;
+
+    [_window addSubview:[navigationController view]]; 
+
     
     
     // Override point for customization after application launch.
@@ -73,11 +95,9 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
         if ([[URL scheme] isEqualToString:@"app"]) {
             
             
-            UIWebView * myWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
-            [myWebView loadHTMLString:@"<b>this is math</b><br><br><br><br> <a href=\"http://mathapedia.com\">CLICK HERE</a>" baseURL:[NSURL URLWithString:@"http://www.google.com"]];
-            
-            [self.window addSubview:myWebView];
-            
+            FilterDesignViewController * temp = [[FilterDesignViewController alloc] init];
+            [self.navigationController pushViewController:temp animated:TRUE];
+            [temp release];
             
             NSLog(@"app");
             

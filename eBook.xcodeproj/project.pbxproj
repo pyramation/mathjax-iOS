@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */; };
+		AA39AD021357B6570075D8D9 /* FilterDesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD011357B6570075D8D9 /* FilterDesignViewController.m */; };
+		AA39AD061357C2FD0075D8D9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA39AD051357C2FC0075D8D9 /* icon.png */; };
 		AAA09942134E1FDE003A452F /* 04-squiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA0993E134E1FDE003A452F /* 04-squiggle.png */; };
 		AAA09943134E1FDE003A452F /* 55-network.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA0993F134E1FDE003A452F /* 55-network.png */; };
 		AAA09944134E1FDE003A452F /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA09940134E1FDE003A452F /* 73-radar.png */; };
 		AAA09945134E1FDE003A452F /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AAA09941134E1FDE003A452F /* LICENSE.txt */; };
 		AAA0994A134E24A7003A452F /* PolesZerosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA09949134E24A7003A452F /* PolesZerosViewController.m */; };
 		AAA0994D134E25AB003A452F /* PolesZerosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA0994C134E25AB003A452F /* PolesZerosView.m */; };
-		AACE32B11354ED6200028649 /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B01354ED6200028649 /* Vector.m */; };
+		AACE32B11354ED6200028649 /* Vec2.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B01354ED6200028649 /* Vec2.m */; };
 		AACE32B41354ED7800028649 /* Axis.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B31354ED7800028649 /* Axis.m */; };
 		AACE32B71354EDB000028649 /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B61354EDB000028649 /* Graph.m */; };
 		AACE32BA1354EDC000028649 /* UnitCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B91354EDC000028649 /* UnitCircle.m */; };
@@ -49,6 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA39ACFD1357B54C0075D8D9 /* FilterDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesign.h; sourceTree = "<group>"; };
+		AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDesign.m; sourceTree = "<group>"; };
+		AA39AD001357B6570075D8D9 /* FilterDesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesignViewController.h; sourceTree = "<group>"; };
+		AA39AD011357B6570075D8D9 /* FilterDesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDesignViewController.m; sourceTree = "<group>"; };
+		AA39AD051357C2FC0075D8D9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		AAA0993E134E1FDE003A452F /* 04-squiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04-squiggle.png"; sourceTree = "<group>"; };
 		AAA0993F134E1FDE003A452F /* 55-network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "55-network.png"; sourceTree = "<group>"; };
 		AAA09940134E1FDE003A452F /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
@@ -57,8 +65,8 @@
 		AAA09949134E24A7003A452F /* PolesZerosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolesZerosViewController.m; sourceTree = "<group>"; };
 		AAA0994B134E25AB003A452F /* PolesZerosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolesZerosView.h; sourceTree = "<group>"; };
 		AAA0994C134E25AB003A452F /* PolesZerosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolesZerosView.m; sourceTree = "<group>"; };
-		AACE32AF1354ED6200028649 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
-		AACE32B01354ED6200028649 /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
+		AACE32AF1354ED6200028649 /* Vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec2.h; sourceTree = "<group>"; };
+		AACE32B01354ED6200028649 /* Vec2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vec2.m; sourceTree = "<group>"; };
 		AACE32B21354ED7800028649 /* Axis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Axis.h; sourceTree = "<group>"; };
 		AACE32B31354ED7800028649 /* Axis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Axis.m; sourceTree = "<group>"; };
 		AACE32B51354EDB000028649 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
@@ -117,6 +125,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA39ACDC13579AF00075D8D9 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				AACE32AF1354ED6200028649 /* Vec2.h */,
+				AACE32B01354ED6200028649 /* Vec2.m */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
+		AA39ACDD13579B440075D8D9 /* Plot */ = {
+			isa = PBXGroup;
+			children = (
+				AACE32B21354ED7800028649 /* Axis.h */,
+				AACE32B31354ED7800028649 /* Axis.m */,
+			);
+			name = Plot;
+			sourceTree = "<group>";
+		};
+		AA39ACE61357B1C40075D8D9 /* PolesZeros */ = {
+			isa = PBXGroup;
+			children = (
+				AAA09948134E24A7003A452F /* PolesZerosViewController.h */,
+				AAA09949134E24A7003A452F /* PolesZerosViewController.m */,
+				AAA0994B134E25AB003A452F /* PolesZerosView.h */,
+				AAA0994C134E25AB003A452F /* PolesZerosView.m */,
+			);
+			name = PolesZeros;
+			sourceTree = "<group>";
+		};
+		AA39ACE71357B1D60075D8D9 /* FilterDesign */ = {
+			isa = PBXGroup;
+			children = (
+				AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */,
+				AA39ACFD1357B54C0075D8D9 /* FilterDesign.h */,
+				AA39AD001357B6570075D8D9 /* FilterDesignViewController.h */,
+				AA39AD011357B6570075D8D9 /* FilterDesignViewController.m */,
+			);
+			name = FilterDesign;
+			sourceTree = "<group>";
+		};
 		AAA0993D134E1FDE003A452F /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,24 +176,20 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
-		AAA09947134E2451003A452F /* ViewControllers */ = {
+		AAA09947134E2451003A452F /* miniapps */ = {
 			isa = PBXGroup;
 			children = (
-				AAA09948134E24A7003A452F /* PolesZerosViewController.h */,
-				AAA09949134E24A7003A452F /* PolesZerosViewController.m */,
-				AAA0994B134E25AB003A452F /* PolesZerosView.h */,
-				AAA0994C134E25AB003A452F /* PolesZerosView.m */,
+				AA39ACE71357B1D60075D8D9 /* FilterDesign */,
+				AA39ACE61357B1C40075D8D9 /* PolesZeros */,
 			);
-			name = ViewControllers;
+			name = miniapps;
 			sourceTree = "<group>";
 		};
 		AACE32AD1354ED3800028649 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AACE32AF1354ED6200028649 /* Vector.h */,
-				AACE32B01354ED6200028649 /* Vector.m */,
-				AACE32B21354ED7800028649 /* Axis.h */,
-				AACE32B31354ED7800028649 /* Axis.m */,
+				AA39ACDD13579B440075D8D9 /* Plot */,
+				AA39ACDC13579AF00075D8D9 /* Math */,
 				AACE32B51354EDB000028649 /* Graph.h */,
 				AACE32B61354EDB000028649 /* Graph.m */,
 				AACE32B81354EDC000028649 /* UnitCircle.h */,
@@ -157,6 +201,7 @@
 		AAE1E233134E112900C7D8C5 = {
 			isa = PBXGroup;
 			children = (
+				AA39AD051357C2FC0075D8D9 /* icon.png */,
 				AAE1E24A134E112900C7D8C5 /* eBook */,
 				AAE1E273134E112A00C7D8C5 /* eBookTests */,
 				AAE1E241134E112900C7D8C5 /* Frameworks */,
@@ -189,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				AACE32AD1354ED3800028649 /* Classes */,
-				AAA09947134E2451003A452F /* ViewControllers */,
+				AAA09947134E2451003A452F /* miniapps */,
 				AAE1E253134E112900C7D8C5 /* eBookAppDelegate.h */,
 				AAE1E254134E112900C7D8C5 /* eBookAppDelegate.m */,
 				AAE1E256134E112900C7D8C5 /* eBook.xcdatamodeld */,
@@ -328,6 +373,7 @@
 				AAA09943134E1FDE003A452F /* 55-network.png in Resources */,
 				AAA09944134E1FDE003A452F /* 73-radar.png in Resources */,
 				AAA09945134E1FDE003A452F /* LICENSE.txt in Resources */,
+				AA39AD061357C2FD0075D8D9 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,10 +416,12 @@
 				AAE1E263134E112A00C7D8C5 /* eBookAppDelegate_iPad.m in Sources */,
 				AAA0994A134E24A7003A452F /* PolesZerosViewController.m in Sources */,
 				AAA0994D134E25AB003A452F /* PolesZerosView.m in Sources */,
-				AACE32B11354ED6200028649 /* Vector.m in Sources */,
+				AACE32B11354ED6200028649 /* Vec2.m in Sources */,
 				AACE32B41354ED7800028649 /* Axis.m in Sources */,
 				AACE32B71354EDB000028649 /* Graph.m in Sources */,
 				AACE32BA1354EDC000028649 /* UnitCircle.m in Sources */,
+				AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */,
+				AA39AD021357B6570075D8D9 /* FilterDesignViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

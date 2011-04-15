@@ -6,11 +6,12 @@
 //  Copyright 2011 Pyramation Media. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-
-@interface Axis : UIView {
+@interface Axis : NSObject {
     
 }
+
+- (void) drawGrid;
 
 @end

@@ -8,30 +8,35 @@
 
 #import "Axis.h"
 
-
 @implementation Axis
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+
+- (void) drawGrid {
+
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 0.125);
+    CGContextSetLineWidth(context, 1);
+    
+    for (int i=0; i<[UIScreen mainScreen].bounds.size.height; i+=10) {
+        CGContextBeginPath(context);
+        CGContextMoveToPoint(context, i, [UIScreen mainScreen].bounds.size.height);
+        CGContextAddLineToPoint(context, i, [UIScreen mainScreen].bounds.size.height);
+        CGContextAddLineToPoint(context, i, 0);    
+        CGContextStrokePath(context);
+        
     }
-    return self;
-}
+    
+    
+    for (int i=0; i<[UIScreen mainScreen].bounds.size.width; i+=10) {
+        CGContextBeginPath(context);
+        CGContextMoveToPoint(context, [UIScreen mainScreen].bounds.size.width, i);
+        CGContextAddLineToPoint(context, [UIScreen mainScreen].bounds.size.width, i);
+        CGContextAddLineToPoint(context, 0, i);    
+        CGContextStrokePath(context);
+    }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
-- (void)dealloc
-{
-    [super dealloc];
+    
 }
 
 @end

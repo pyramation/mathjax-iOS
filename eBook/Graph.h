@@ -6,10 +6,10 @@
 //  Copyright 2011 Pyramation Media. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 
-@interface Graph : UIView {
+@interface Graph : NSObject {
     
 }
 
