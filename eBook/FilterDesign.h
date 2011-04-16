@@ -26,7 +26,6 @@
 - (CGPoint) lerp : (CGPoint) a p2 : (CGPoint) b time: (float) u; 
 - (CGPoint) deCasteljau : (NSMutableArray *) array time: (float) u;
 - (float) pDist : (CGPoint) a point2: (CGPoint) b;
-- (float) xDist : (CGPoint) a point2: (CGPoint) b;
 
 
 - (void) drawRect : (CGRect) rect;

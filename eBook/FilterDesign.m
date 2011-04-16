@@ -180,11 +180,6 @@
     return sqrt(x*x + y*y);
 }
 
-- (float) xDist : (CGPoint) a point2: (CGPoint) b {
-    float x = a.x - b.x;
-    return sqrt(x*x);
-}
-
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
     for(UITouch *t in touches) {
@@ -224,43 +219,43 @@
         points = [[NSMutableArray alloc] init];
     }
     
-//    BOOL found = FALSE;
-//    for (int i=0; i<[points count]; i++) {
-//        NSValue *value = [points objectAtIndex:i];
-//        CGPoint p = [value CGPointValue];
-//        CGFloat dist = [self pDist : p point2: point];
-//        if (dist <= FILTER_TOUCH_RADIUS) {
-////            [points insertObject:[NSValue valueWithCGPoint:point atIndex:i]];
-//            //[points replaceObjectAtIndex:i withObject:[NSValue valueWithCGPoint:a]]; 
-//            found = TRUE;
-//            break;
-//        }
-//        
-//    }
+    //    BOOL found = FALSE;
+    //    for (int i=0; i<[points count]; i++) {
+    //        NSValue *value = [points objectAtIndex:i];
+    //        CGPoint p = [value CGPointValue];
+    //        CGFloat dist = [self pDist : p point2: point];
+    //        if (dist <= FILTER_TOUCH_RADIUS) {
+    ////            [points insertObject:[NSValue valueWithCGPoint:point atIndex:i]];
+    //            //[points replaceObjectAtIndex:i withObject:[NSValue valueWithCGPoint:a]]; 
+    //            found = TRUE;
+    //            break;
+    //        }
+    //        
+    //    }
     
     if ([points count] > 2) {
-  
+        
         float lastDist = FLT_MAX;
+        bool foundit = false;
         int myIndex = 0;
         for (int i=0; i<[points count]; i++) {
-            CGFloat dist = [self xDist : point point2: [[points objectAtIndex:i] CGPointValue]];
+            //CGFloat dist = [self xDist : point point2: [[points objectAtIndex:i] CGPointValue]];
+            
+            float dist = [[points objectAtIndex:i] CGPointValue].x - point.x;
+            if (dist < 0) continue;
             if (dist <= lastDist) {
+                foundit = true;
                 lastDist = dist;
                 myIndex = i;
             }
             
         }
-        
-        [points insertObject:[NSValue valueWithCGPoint:point] atIndex:myIndex];
-        NSLog(@"my index = %d size: %d", myIndex, [points count]);
-
+        if (foundit) [points insertObject:[NSValue valueWithCGPoint:point] atIndex:myIndex];
+        else [points addObject: [NSValue valueWithCGPoint: point]];
     } else {
-        
         [points addObject: [NSValue valueWithCGPoint: point]];
-    
     }
 }
-
 - (void) clearStrokes : (id) sender {
     [self clearAllStrokes];	
 }
