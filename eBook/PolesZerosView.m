@@ -42,25 +42,39 @@
 
     // draw unit circle
     CGContextSetRGBStrokeColor(context, 255, 255, 255, 1);
-    CGContextSetLineWidth(context, 6  );
+    CGContextSetLineWidth(context, 4);
 
     
     CGFloat x = self.frame.size.width/2.0 + self.frame.origin.x;
-    CGFloat y = self.frame.size.height/2.0 + self.frame.origin.y;    
+    CGFloat y = self.frame.size.height/2.0 + self.frame.origin.y;  
+    
+   // CGFloat x = (self.frame.size.width - self.frame.origin.x)/2.0;
+   // CGFloat y = (self.frame.size.height - self.frame.origin.y)/2.0;  
+    
+    
     CGContextBeginPath(context);
-    CGContextMoveToPoint(context, [UIScreen mainScreen].bounds.size.width, y);
-    CGContextAddLineToPoint(context, [UIScreen mainScreen].bounds.size.width, y);
+    CGContextMoveToPoint(context, self.frame.size.width, y);
+    CGContextAddLineToPoint(context, self.frame.size.width, y);
     CGContextAddLineToPoint(context, 0, y);    
     CGContextStrokePath(context);
     
     CGContextBeginPath(context);
-    CGContextMoveToPoint(context, x, [UIScreen mainScreen].bounds.size.height);
-    CGContextAddLineToPoint(context, x, [UIScreen mainScreen].bounds.size.height);
+    CGContextMoveToPoint(context, x, self.frame.size.height);
+    CGContextAddLineToPoint(context, x, self.frame.size.height);
     CGContextAddLineToPoint(context, x, 0);    
     CGContextStrokePath(context);
 
     CGContextSetRGBStrokeColor(context, 255, 255, 255, 1);
-    CGContextSetLineWidth(context, 10);
+    CGContextSetLineWidth(context, 6);
+    
+    
+//    if (self.frame.size.width > self.frame.size.height) {
+//        CGRect fr = CGRectMake(self.frame.origin.x + self.frame.size.width/2.0 - self.frame.size.height/2.0, self.frame.origin.y, self.frame.size.height, self.frame.size.height);
+//        CGContextStrokeEllipseInRect(context, fr);
+//    } else {
+//        CGRect fr = CGRectMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height/2.0 - self.frame.size.width/2.0, self.frame.size.width, self.frame.size.width);
+//        CGContextStrokeEllipseInRect(context, fr);        
+//    }
     
     CGFloat s = (self.frame.size.width < self.frame.size.height) ? self.frame.size.width : self.frame.size.height;
     s *= 0.95;
@@ -70,10 +84,11 @@
     CGRect f = CGRectMake(x, y, s,s);
     CGContextStrokeEllipseInRect(context, f);
 
-    //dots
-    
-   
+// why doesn't this work for split views?  
+//    CGContextStrokeEllipseInRect(context, self.frame);
 
+    
+    //dots
     x = self.frame.size.width/2.0;
     y = self.frame.size.height/2.0;
     

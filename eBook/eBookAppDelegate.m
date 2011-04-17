@@ -11,6 +11,7 @@
 
 #import "PolesZerosViewController.h"
 #import "FilterDesignViewController.h"
+#import "GraphViewController.h"
 #import "FilterDesign.h"
 
 
@@ -43,7 +44,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
     addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
-    addMe(plotViewC, plotNav, @"Plotter", @"04-squiggle.png", PolesZerosViewController);
+    addMe(plotViewC, plotNav, @"Plotter", @"04-squiggle.png", GraphViewController);
     addMe(blockViewC, blockNav, @"Block Diagrams", @"55-network.png", PolesZerosViewController);
     addMe(webViewC, webNav, @"Web View", @"55-network.png", UIViewController);
     addMe(filterViewC, filterNav, @"Filter Design", @"55-network.png", FilterDesignViewController);

@@ -10,6 +10,8 @@
 		AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */; };
 		AA39AD021357B6570075D8D9 /* FilterDesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD011357B6570075D8D9 /* FilterDesignViewController.m */; };
 		AA39AD061357C2FD0075D8D9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA39AD051357C2FC0075D8D9 /* icon.png */; };
+		AA39AD22135A37AE0075D8D9 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD21135A37A90075D8D9 /* GraphViewController.m */; };
+		AA39AD26135A37C60075D8D9 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD25135A37C60075D8D9 /* GraphView.m */; };
 		AAA09942134E1FDE003A452F /* 04-squiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA0993E134E1FDE003A452F /* 04-squiggle.png */; };
 		AAA09943134E1FDE003A452F /* 55-network.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA0993F134E1FDE003A452F /* 55-network.png */; };
 		AAA09944134E1FDE003A452F /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA09940134E1FDE003A452F /* 73-radar.png */; };
@@ -57,6 +59,10 @@
 		AA39AD001357B6570075D8D9 /* FilterDesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesignViewController.h; sourceTree = "<group>"; };
 		AA39AD011357B6570075D8D9 /* FilterDesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDesignViewController.m; sourceTree = "<group>"; };
 		AA39AD051357C2FC0075D8D9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		AA39AD20135A37A80075D8D9 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
+		AA39AD21135A37A90075D8D9 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
+		AA39AD24135A37C60075D8D9 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		AA39AD25135A37C60075D8D9 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 		AAA0993E134E1FDE003A452F /* 04-squiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04-squiggle.png"; sourceTree = "<group>"; };
 		AAA0993F134E1FDE003A452F /* 55-network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "55-network.png"; sourceTree = "<group>"; };
 		AAA09940134E1FDE003A452F /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
@@ -165,6 +171,17 @@
 			name = FilterDesign;
 			sourceTree = "<group>";
 		};
+		AA39AD23135A37B40075D8D9 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				AA39AD20135A37A80075D8D9 /* GraphViewController.h */,
+				AA39AD21135A37A90075D8D9 /* GraphViewController.m */,
+				AA39AD24135A37C60075D8D9 /* GraphView.h */,
+				AA39AD25135A37C60075D8D9 /* GraphView.m */,
+			);
+			name = Graph;
+			sourceTree = "<group>";
+		};
 		AAA0993D134E1FDE003A452F /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +196,7 @@
 		AAA09947134E2451003A452F /* miniapps */ = {
 			isa = PBXGroup;
 			children = (
+				AA39AD23135A37B40075D8D9 /* Graph */,
 				AA39ACE71357B1D60075D8D9 /* FilterDesign */,
 				AA39ACE61357B1C40075D8D9 /* PolesZeros */,
 			);
@@ -422,6 +440,8 @@
 				AACE32BA1354EDC000028649 /* UnitCircle.m in Sources */,
 				AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */,
 				AA39AD021357B6570075D8D9 /* FilterDesignViewController.m in Sources */,
+				AA39AD22135A37AE0075D8D9 /* GraphViewController.m in Sources */,
+				AA39AD26135A37C60075D8D9 /* GraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
