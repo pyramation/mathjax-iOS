@@ -12,7 +12,8 @@
 #import "PolesZerosViewController.h"
 #import "FilterDesignViewController.h"
 #import "GraphViewController.h"
-#import "FilterDesign.h"
+#import "DiracDeltasViewController.h"
+#import "SplitViewController.h"
 
 
 @implementation eBookAppDelegate
@@ -44,20 +45,15 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
     addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
-    addMe(plotViewC, plotNav, @"Plotter", @"04-squiggle.png", GraphViewController);
-    addMe(blockViewC, blockNav, @"Block Diagrams", @"55-network.png", PolesZerosViewController);
+    addMe(plotViewC, plotNav, @"Graphs", @"04-squiggle.png", GraphViewController);
+    addMe(blockViewC, blockNav, @"Dirac Deltas", @"55-network.png", DiracDeltasViewController);
+    addMe(splitViewC, splitNav, @"Split View", @"55-network.png", SplitViewController);
     addMe(webViewC, webNav, @"Web View", @"55-network.png", UIViewController);
     addMe(filterViewC, filterNav, @"Filter Design", @"55-network.png", FilterDesignViewController);
  
+//    blockViewC.view = [[GraphView alloc] init];
+    
     UIWebView * webView = [[UIWebView alloc] init];
-
-    
-
-    
-    
-    
-    
-    
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mathapedia.com"]]];
     webView.backgroundColor = [UIColor whiteColor];
     webView.scalesPageToFit = YES;

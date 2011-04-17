@@ -1,31 +1,43 @@
-
-
 //
-//  GraphViewController.m
+//  SplitViewController.m
 //  eBook
 //
 //  Created by Dan Lynch on 4/16/11.
 //  Copyright 2011 Pyramation Media. All rights reserved.
 //
 
-#import "GraphViewController.h"
-#import "GraphView.h"
+#import "SplitViewController.h"
+#import "PolesZerosView.h"
+#import "FilterDesign.h"
 
-
-@implementation GraphViewController
+@implementation SplitViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [self setView:[[GraphView alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
-
-
+        
+        CGRect rect = [[UIScreen mainScreen] bounds];
+        
+        CGRect rect1 = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height/2.0);
+        CGRect rect2 = CGRectMake(rect.origin.x, rect.size.height/2.0, rect.size.width, rect.size.height/2.0);
+        
+        UIView * container = [[UIView alloc] initWithFrame:rect];
+        
+        [self setView:container];
+        //        [container addSubview:[[GraphView alloc] initWithFrame:rect1]];
+        [container addSubview:[[PolesZerosView alloc] initWithFrame:rect1]];
+        [container addSubview:[[FilterDesign alloc] initWithFrame:rect2]];
+        
+        [container release];
+        
+        //        [self setView:[[PolesZerosView alloc] initWithFrame:rect1]];
+        //        [self setView:[[PolesZerosView alloc] initWithFrame:rect2]];
+        
     }
     return self;
 }
-
 - (void)dealloc
 {
     [super dealloc];

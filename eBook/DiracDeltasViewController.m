@@ -1,26 +1,22 @@
-
-
 //
-//  GraphViewController.m
+//  DiracDeltasViewController.m
 //  eBook
 //
 //  Created by Dan Lynch on 4/16/11.
 //  Copyright 2011 Pyramation Media. All rights reserved.
 //
 
-#import "GraphViewController.h"
-#import "GraphView.h"
+#import "DiracDeltasViewController.h"
+#import "DiracDeltasView.h"
 
-
-@implementation GraphViewController
+@implementation DiracDeltasViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [self setView:[[GraphView alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
-
+        [self setView:[[DiracDeltasView alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
 
     }
     return self;
