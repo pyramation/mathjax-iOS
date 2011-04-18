@@ -10,15 +10,13 @@
 
 @implementation Axis
 
-
-- (void) drawGrid {
-
-    CGContextRef context = UIGraphicsGetCurrentContext();
+- (void) draw: (CGContextRef) context {
     
-    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 0.125);
+    // draw grid lines
+    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 0.225);
     CGContextSetLineWidth(context, 1);
     
-    for (int i=0; i<[UIScreen mainScreen].bounds.size.height; i+=10) {
+    for (int i=0; i<[UIScreen mainScreen].bounds.size.width; i+=30) {
         CGContextBeginPath(context);
         CGContextMoveToPoint(context, i, [UIScreen mainScreen].bounds.size.height);
         CGContextAddLineToPoint(context, i, [UIScreen mainScreen].bounds.size.height);
@@ -26,9 +24,7 @@
         CGContextStrokePath(context);
         
     }
-    
-    
-    for (int i=0; i<[UIScreen mainScreen].bounds.size.width; i+=10) {
+    for (int i=0; i<[UIScreen mainScreen].bounds.size.height; i+=30) {
         CGContextBeginPath(context);
         CGContextMoveToPoint(context, [UIScreen mainScreen].bounds.size.width, i);
         CGContextAddLineToPoint(context, [UIScreen mainScreen].bounds.size.width, i);

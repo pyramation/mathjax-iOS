@@ -10,12 +10,19 @@
 
 
 @interface Vec2 : NSObject {
-    float x;
-    float y;
+    CGPoint a;
+    CGPoint b;
 }
 
-- (id)initiWithValuesX:(float)xx Y:(float)yy;
+- (id)initWithPointsA:(CGPoint)aa B:(CGPoint)bb;
 
-@property (nonatomic, readwrite, assign) float x;
-@property (nonatomic, readwrite, assign) float y;
+- (void) draw : (CGContextRef) context;
+- (void) drawComponents : (CGContextRef) context;
+- (void) drawArrow : (CGContextRef) context;
+- (void) drawVector : (CGContextRef) context;
+
+
+@property (nonatomic, assign) CGPoint a;
+@property (nonatomic, assign) CGPoint b;
+
 @end

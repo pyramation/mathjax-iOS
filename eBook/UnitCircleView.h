@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Axis;
 @interface UnitCircleView : UIView {
-    
 
     CGPoint lastTouch;
-
+    Axis * axis;
+    
 }
 
 
@@ -25,7 +26,7 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
-
+@property (nonatomic, retain) Axis * axis;
 
 @end
 

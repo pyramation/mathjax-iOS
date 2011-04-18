@@ -7,50 +7,26 @@
 //
 
 #import "UnitCircleView.h"
-
+#import "Vec2.h"
 
 #define FILTER_TOUCH_RADIUS 50
 
+#import "Axis.h"
 
 @implementation UnitCircleView
-
-
+@synthesize axis;
 
 - (void) drawRect : (CGRect) rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, rect);
     
-    // draw grid lines
-    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 0.225);
-    CGContextSetLineWidth(context, 1);
-    
-    for (int i=0; i<[UIScreen mainScreen].bounds.size.width; i+=30) {
-        CGContextBeginPath(context);
-        CGContextMoveToPoint(context, i, [UIScreen mainScreen].bounds.size.height);
-        CGContextAddLineToPoint(context, i, [UIScreen mainScreen].bounds.size.height);
-        CGContextAddLineToPoint(context, i, 0);    
-        CGContextStrokePath(context);
-        
-    }
-    for (int i=0; i<[UIScreen mainScreen].bounds.size.height; i+=30) {
-        CGContextBeginPath(context);
-        CGContextMoveToPoint(context, [UIScreen mainScreen].bounds.size.width, i);
-        CGContextAddLineToPoint(context, [UIScreen mainScreen].bounds.size.width, i);
-        CGContextAddLineToPoint(context, 0, i);    
-        CGContextStrokePath(context);
-    }
+    [axis draw:context];
 
     // draw unit circle
     CGContextSetRGBStrokeColor(context, 255, 255, 255, 0.4);
     CGContextSetLineWidth(context, 4);
-
-    
     CGFloat x = self.frame.size.width/2.0 + self.frame.origin.x;
     CGFloat y = self.frame.size.height/2.0 + self.frame.origin.y;  
-    
-   // CGFloat x = (self.frame.size.width - self.frame.origin.x)/2.0;
-   // CGFloat y = (self.frame.size.height - self.frame.origin.y)/2.0;  
-    
     
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, self.frame.size.width, y);
@@ -74,8 +50,6 @@
     CGRect f = CGRectMake(x, y, s,s);
     CGContextStrokeEllipseInRect(context, f);
 
-
-
     
     //dots
     x = self.frame.size.width/2.0;
@@ -85,65 +59,14 @@
     float xx = lastTouch.x;
     float yy = lastTouch.y;
             
+    // draw the vector 
+    Vec2 * vec = [[Vec2 alloc] initWithPointsA:CGPointMake(x, y) B:CGPointMake(xx, yy)];
     CGContextSetRGBStrokeColor(context, 0.0, 1.0, 1.0, 1);
-    CGContextSetLineWidth(context, 2);
-    
-    CGContextBeginPath(context);
-    CGContextMoveToPoint(context, x, y);
-    CGContextAddLineToPoint(context, x, y);
-    CGContextAddLineToPoint(context, xx, yy);  
-    CGContextStrokePath(context);
-    
-    
-    
-    CGContextSetRGBStrokeColor(context, 1.0, 0.0, 1.0, 1);    
-    CGContextBeginPath(context);
-    CGContextMoveToPoint(context, x, y);
-    CGContextAddLineToPoint(context, x, y);
-    CGContextAddLineToPoint(context, xx, y);    
-
-    CGContextMoveToPoint(context, x, y);
-    CGContextAddLineToPoint(context, x, y);
-    CGContextAddLineToPoint(context, x, yy);    
-    CGContextStrokePath(context);
-
-
-    
-    
-    
-    
-    // draw arrow http://stackoverflow.com/questions/2500197/drawing-triangle-arrow-on-a-line-with-cgcontext
-    CGFloat r, ax, ay, bx, by, cx, cy, dy, dx;
-    
-    // length and width are 
-    CGFloat length, width;
-    width = 10;
-    length = 10; 
-    CGPoint m = CGPointMake(x, y);
-    CGPoint n = CGPointMake(xx, yy);
-    
-    r = atan2( n.y - m.y , n.x - m.x );
-    r += M_PI;
-    bx = n.x;
-    by = n.y;
-    dx = bx + cos( r ) * length;
-    dy = by + sin( r ) * length;
-    r += M_PI_2; // perpendicular to path
-    ax = dx + cos( r ) * width;
-    ay = dy + sin( r ) * width;
-    cx = dx - cos( r ) * width;
-    cy = dy - sin( r ) * width;
-    
     CGContextSetRGBFillColor(context, 0.0,1.0,1.0,1);
-    CGContextSetLineWidth(context, 3);
-    
-    CGContextBeginPath(context);
-    CGContextMoveToPoint( context , ax , ay );
-    CGContextAddLineToPoint( context , bx , by );
-    CGContextAddLineToPoint( context , cx , cy );
-    CGContextFillPath(context);
-    
-      
+    [vec draw:context];
+    CGContextSetRGBStrokeColor(context, 1.0, 0.0, 1.0, 1);    
+    [vec drawComponents:context];
+    [vec release];      
      
 }
 
@@ -174,28 +97,7 @@
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
-//        
-//        UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-155, [[UIScreen mainScreen] bounds].size.width, 100)];
-//        [toolbar sizeToFit];
-//        toolbar.barStyle = UIBarStyleBlackTranslucent;
-//        
-//        
-//        UIBarButtonItem* buttonItem1 = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonSystemItemAction target:self action:@selector(clearAll)];
-//        UIBarButtonItem* buttonItem2 = [[UIBarButtonItem alloc] initWithTitle:@"Poles" style:UIBarButtonSystemItemAction target:self action:@selector(addPoles)];
-//        UIBarButtonItem* buttonItem3 = [[UIBarButtonItem alloc] initWithTitle:@"Zeros" style:UIBarButtonSystemItemAction target:self action:@selector(addZeros)];
-//        UIBarButtonItem* buttonItem4 = [[UIBarButtonItem alloc] initWithTitle:@"Toggle Vectors" style:UIBarButtonSystemItemAction target:self action:@selector(vectorDisplay)];
-//
-//        [toolbar setItems:[NSArray arrayWithObjects:buttonItem1, buttonItem2, buttonItem3, buttonItem4, nil]];
-//        
-//        [buttonItem1 release];
-//        [buttonItem2 release];
-//        [buttonItem3 release];
-//        [buttonItem4 release];
-//
-//        
-//        [self addSubview:toolbar];
-//        [toolbar release];
-
+        axis = [[Axis alloc] init];
     }
     return self;
 }

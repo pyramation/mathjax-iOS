@@ -12,6 +12,6 @@
     
 }
 
-- (void) drawGrid;
+- (void) draw: (CGContextRef) context;
 
 @end
