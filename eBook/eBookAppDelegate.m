@@ -17,6 +17,10 @@
 #import "UnitCircleViewController.h"
 
 
+#import "DataFetcher.h"
+
+
+
 @implementation eBookAppDelegate
 
 
@@ -70,6 +74,11 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     tbarController.delegate = self;
         
     //[_window addSubview:tbarController.view];
+    
+    
+    // ASITEST
+//    DataFetcher * fetcher = [[DataFetcher alloc] initWithBase:@"http://da.nlynch.com/categories/26.json" andQueries:nil andDelegate:self];
+//    [fetcher fetch];
     
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:tbarController];
@@ -295,5 +304,23 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+
+// DATAFETCHER
+
+-(void) dataFetcher: (DataFetcher*) fetcher hasResponse: (id) response {
+    
+    NSDictionary * dic = (NSDictionary*) response;
+    NSLog(@"dictionary: ? => %@", [dic description]);
+    
+    if (dic) {
+        NSLog(@"success: ? %@", [dic description]);
+        NSDictionary * d2 = [dic valueForKey:@"category"];
+        NSLog(@" %@", [[d2 valueForKey:@"name"] description]);
+    } 
+    [fetcher release];
+    
+}
+
 
 @end

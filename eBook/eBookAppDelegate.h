@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface eBookAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, UIWebViewDelegate> {
+#import "DataFetcher.h"
+
+@interface eBookAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, UIWebViewDelegate, DataFetcherDelegate> {
 
     UINavigationController *navigationController;
 
@@ -23,6 +25,7 @@
 
 
 @property (nonatomic, retain) UINavigationController *navigationController;
+
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
