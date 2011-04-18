@@ -45,13 +45,13 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
+    addMe(unitViewC, unitNav, @"Unit Circle", @"73-radar.png", UnitCircleViewController);
     addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
     addMe(plotViewC, plotNav, @"Graphs", @"04-squiggle.png", GraphViewController);
     addMe(blockViewC, blockNav, @"Dirac Deltas", @"55-network.png", DiracDeltasViewController);
     addMe(splitViewC, splitNav, @"Split View", @"55-network.png", SplitViewController);
     addMe(webViewC, webNav, @"Web View", @"55-network.png", UIViewController);
     addMe(filterViewC, filterNav, @"Filter Design", @"55-network.png", FilterDesignViewController);
-    addMe(unitViewC, unitNav, @"Unit Circle", @"55-network.png", UnitCircleViewController);
  
 //    blockViewC.view = [[GraphView alloc] init];
     

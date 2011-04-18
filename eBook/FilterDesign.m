@@ -215,9 +215,6 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {}
 
 - (void) addPoint : (CGPoint) point {
-    if (!points) {
-        points = [[NSMutableArray alloc] init];
-    }
     
     //    BOOL found = FALSE;
     //    for (int i=0; i<[points count]; i++) {
@@ -267,26 +264,21 @@
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
-//        [self isFirstResponder];
+//       [self isFirstResponder];
+         points = [[NSMutableArray alloc] init];
+        CGPoint a = CGPointMake(0.0, self.frame.size.height/2.0);
+        CGPoint c = CGPointMake(self.frame.size.width/4.0, self.frame.size.height/4.0);
+        CGPoint b = CGPointMake(self.frame.size.width/2.0, self.frame.size.height/2.0);
+        CGPoint d = CGPointMake(3*self.frame.size.width/4.0, self.frame.size.height/4.0);
+        CGPoint e = CGPointMake(self.frame.size.width, self.frame.size.height/2.0);
+        
+        [points addObject:[NSValue valueWithCGPoint:a]];
+        [points addObject:[NSValue valueWithCGPoint:b]];
+        [points addObject:[NSValue valueWithCGPoint:c]];
+        [points addObject:[NSValue valueWithCGPoint:d]];
+        [points addObject:[NSValue valueWithCGPoint:e]];
     }
     return self;
-}
-
-- (void) viewDidLoad {
-
-    UIToolbar* toolbar = [[UIToolbar alloc] init];
-    [toolbar sizeToFit];
-    toolbar.barStyle = UIBarStyleBlackTranslucent;
-
-    
-    UIBarButtonItem* buttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonSystemItemAction target:self action:@selector(clearAllStrokes)];
-    [toolbar setItems:[NSArray arrayWithObjects:buttonItem, nil]];
-    [buttonItem release];
-    
-    [self addSubview:toolbar];
-    [toolbar release];
-
-    
 }
 
 
