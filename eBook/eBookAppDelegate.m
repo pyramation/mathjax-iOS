@@ -92,18 +92,32 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         NSURL *URL = [request URL]; 
-        if ([[URL scheme] isEqualToString:@"app"]) {
-            
-            
+        if ([[URL scheme] isEqualToString:@"FilterDesign"]) {
             FilterDesignViewController * temp = [[FilterDesignViewController alloc] init];
             [self.navigationController pushViewController:temp animated:TRUE];
             [temp release];
+        } else if ([[URL scheme] isEqualToString:@"DiracDeltas"]) {
+            FilterDesignViewController * temp = [[DiracDeltasViewController alloc] init];
+            [self.navigationController pushViewController:temp animated:TRUE];
+            [temp release];
             
-            NSLog(@"app");
+        } else if ([[URL scheme] isEqualToString:@"UnitCircle"]) {
+            FilterDesignViewController * temp = [[UnitCircleViewController alloc] init];
+            [self.navigationController pushViewController:temp animated:TRUE];
+            [temp release];
+            
+        } else if ([[URL scheme] isEqualToString:@"PolesZeros"]) {
+            FilterDesignViewController * temp = [[PolesZerosViewController alloc] init];
+            [self.navigationController pushViewController:temp animated:TRUE];
+            [temp release];
+            
+        } else if ([[URL scheme] isEqualToString:@"Graph"]) {
+            FilterDesignViewController * temp = [[GraphViewController alloc] init];
+            [self.navigationController pushViewController:temp animated:TRUE];
+            [temp release];
             
         } else if ([[URL scheme] isEqualToString:@"http"]) {
             
-            NSLog(@"http link");
             [webView loadRequest:request];
             
         } else {

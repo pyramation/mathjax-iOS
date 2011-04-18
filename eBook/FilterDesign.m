@@ -259,6 +259,19 @@
 
 - (void) clearAllStrokes {
     [points removeAllObjects];
+    
+    CGPoint a = CGPointMake(0.0, self.frame.size.height/2.0);
+    CGPoint b = CGPointMake(self.frame.size.width/2.0, self.frame.size.height/2.0);
+    CGPoint c = CGPointMake(self.frame.size.width/4.0, self.frame.size.height/4.0);
+    CGPoint d = CGPointMake(3*self.frame.size.width/4.0, self.frame.size.height/4.0);
+    CGPoint e = CGPointMake(self.frame.size.width, self.frame.size.height/2.0);
+    
+    [points addObject:[NSValue valueWithCGPoint:a]];
+    [points addObject:[NSValue valueWithCGPoint:b]];
+    [points addObject:[NSValue valueWithCGPoint:c]];
+    [points addObject:[NSValue valueWithCGPoint:d]];
+    [points addObject:[NSValue valueWithCGPoint:e]];
+    
     [self setNeedsDisplay];
 }
 
