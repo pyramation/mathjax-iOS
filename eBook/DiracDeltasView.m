@@ -41,7 +41,7 @@
     }
 
     // draw axes
-    CGContextSetRGBStrokeColor(context, 255, 255, 255, 1);
+    CGContextSetRGBStrokeColor(context, 1, 1, 1, 0.5);
     CGContextSetLineWidth(context, 4);
 
     
@@ -76,7 +76,7 @@
 
         
         CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1);
-        CGContextSetLineWidth(context, 2);
+        CGContextSetLineWidth(context, 3);
         CGContextBeginPath(context);
         CGContextMoveToPoint(context, x, y);
         CGContextAddLineToPoint(context, x, y);
@@ -222,8 +222,30 @@
     }
 }
 
+- (void) clearAll {
+    [points removeAllObjects];
+    [self setNeedsDisplay];
+}
+
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
+        
+        UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-155, [[UIScreen mainScreen] bounds].size.width, 100)];
+        [toolbar sizeToFit];
+        toolbar.barStyle = UIBarStyleBlackTranslucent;
+        
+        
+        UIBarButtonItem* buttonItem1 = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonSystemItemAction target:self action:@selector(clearAll)];
+        
+        [toolbar setItems:[NSArray arrayWithObjects:buttonItem1, nil]];
+        
+        [buttonItem1 release];
+        
+        
+        [self addSubview:toolbar];
+        [toolbar release];
+
+        
     }
     return self;
 }

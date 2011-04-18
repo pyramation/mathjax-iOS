@@ -23,7 +23,7 @@
 
 - (float) pDist : (CGPoint) a point2: (CGPoint) b;
 
-
+- (void) clearAll;
 - (void) drawRect : (CGRect) rect;
 - (void) addPoint : (CGPoint) point;
 
