@@ -225,6 +225,7 @@
 - (void) clearAll {
     [points removeAllObjects];
     [self setNeedsDisplay];
+    
 }
 
 - (id)initWithFrame:(CGRect)frame {

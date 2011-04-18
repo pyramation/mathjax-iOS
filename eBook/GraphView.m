@@ -55,7 +55,7 @@
     CGContextMoveToPoint(context, lLimit.x-self.frame.size.width/2.0,0);
     float i;
     for(i=lLimit.x-self.frame.size.width/2.0; i<rLimit.x-self.frame.size.width/2.0; i+=0.1) {
-        CGContextAddLineToPoint(context, i, -100*sin(i/freq)/(i/freq));
+        CGContextAddLineToPoint(context, i, -300*sin(i/freq)/(i/freq));
     }
     CGContextAddLineToPoint(context, i, 0);
     CGContextFillPath(context);
@@ -74,7 +74,7 @@
     CGContextTranslateCTM(context, self.frame.size.width/2.0, self.frame.size.height/2.0);
     CGContextMoveToPoint(context, -self.frame.size.width/2.0,0);
     for(float i=-self.frame.size.width/2.0; i<self.frame.size.width/2.0; i+=0.1) {
-        CGContextAddLineToPoint(context, i, -100*sin(i/freq)/(i/freq));
+        CGContextAddLineToPoint(context, i, -300*sin(i/freq)/(i/freq));
     }
     CGContextStrokePath(context);
     CGContextTranslateCTM(context, -self.frame.size.width/2.0, -self.frame.size.height/2.0);
@@ -89,7 +89,7 @@
     if ((self = [super initWithFrame:frame])) {
         freq = 100.0;
         
-        CGRect frame = CGRectMake(0.0, 500, 200.0, 10.0);
+        CGRect frame = CGRectMake(0.0, 700, 200.0, 10.0);
         UISlider *slider = [[UISlider alloc] initWithFrame:frame];
         [slider addTarget:self action:@selector(changeFreq:) forControlEvents:UIControlEventValueChanged];
         [slider setBackgroundColor:[UIColor clearColor]];

@@ -66,6 +66,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     tbarController.viewControllers = controllers;
     tbarController.customizableViewControllers = controllers;
     tbarController.delegate = self;
+        
     //[_window addSubview:tbarController.view];
     
     
