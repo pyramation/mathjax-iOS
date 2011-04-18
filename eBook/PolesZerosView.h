@@ -8,20 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface PolesZerosView : UIView {
     
 
-	NSMutableArray *points;
-
+    NSMutableArray *zeros;
+    NSMutableArray *poles;
+    
     CGPoint imagePoint;
 
+    bool _poles;
+    bool _vectors;
     
 }
 
 
 - (float) pDist : (CGPoint) a point2: (CGPoint) b;
 
+- (void) clearAll;
+- (void) vectorDisplay;
+- (void) addPoles;
+- (void) addZeros;
+- (bool) onTouch: (NSMutableArray*) array touch:(UITouch*) t;
+- (void) drawPolesZeros:(NSMutableArray*) array context: (CGContextRef) context x:(float) x y: (float) y poleOrZero:(bool)poleOrZero;
 
 - (void) drawRect : (CGRect) rect;
 - (void) addPoint : (CGPoint) point;
