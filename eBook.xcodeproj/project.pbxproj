@@ -15,6 +15,7 @@
 		AA39AD2A135AA3C30075D8D9 /* DiracDeltasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD29135AA3C30075D8D9 /* DiracDeltasViewController.m */; };
 		AA39AD2D135AA3D00075D8D9 /* DiracDeltasView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD2C135AA3CF0075D8D9 /* DiracDeltasView.m */; };
 		AA39AD30135AA5030075D8D9 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD2F135AA5020075D8D9 /* SplitViewController.m */; };
+		AA913D30135C19B9006DE2CB /* UnitCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA913D2F135C19B9006DE2CB /* UnitCircleViewController.m */; };
 		AAA09942134E1FDE003A452F /* 04-squiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA0993E134E1FDE003A452F /* 04-squiggle.png */; };
 		AAA09943134E1FDE003A452F /* 55-network.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA0993F134E1FDE003A452F /* 55-network.png */; };
 		AAA09944134E1FDE003A452F /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA09940134E1FDE003A452F /* 73-radar.png */; };
@@ -24,7 +25,7 @@
 		AACE32B11354ED6200028649 /* Vec2.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B01354ED6200028649 /* Vec2.m */; };
 		AACE32B41354ED7800028649 /* Axis.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B31354ED7800028649 /* Axis.m */; };
 		AACE32B71354EDB000028649 /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B61354EDB000028649 /* Graph.m */; };
-		AACE32BA1354EDC000028649 /* UnitCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B91354EDC000028649 /* UnitCircle.m */; };
+		AACE32BA1354EDC000028649 /* UnitCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AACE32B91354EDC000028649 /* UnitCircleView.m */; };
 		AAE1E243134E112900C7D8C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E242134E112900C7D8C5 /* UIKit.framework */; };
 		AAE1E245134E112900C7D8C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E244134E112900C7D8C5 /* Foundation.framework */; };
 		AAE1E247134E112900C7D8C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1E246134E112900C7D8C5 /* CoreGraphics.framework */; };
@@ -72,6 +73,8 @@
 		AA39AD2C135AA3CF0075D8D9 /* DiracDeltasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiracDeltasView.m; sourceTree = "<group>"; };
 		AA39AD2E135AA5010075D8D9 /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
 		AA39AD2F135AA5020075D8D9 /* SplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
+		AA913D2E135C19B9006DE2CB /* UnitCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitCircleViewController.h; sourceTree = "<group>"; };
+		AA913D2F135C19B9006DE2CB /* UnitCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitCircleViewController.m; sourceTree = "<group>"; };
 		AAA0993E134E1FDE003A452F /* 04-squiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04-squiggle.png"; sourceTree = "<group>"; };
 		AAA0993F134E1FDE003A452F /* 55-network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "55-network.png"; sourceTree = "<group>"; };
 		AAA09940134E1FDE003A452F /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
@@ -86,8 +89,8 @@
 		AACE32B31354ED7800028649 /* Axis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Axis.m; sourceTree = "<group>"; };
 		AACE32B51354EDB000028649 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
 		AACE32B61354EDB000028649 /* Graph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph.m; sourceTree = "<group>"; };
-		AACE32B81354EDC000028649 /* UnitCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitCircle.h; sourceTree = "<group>"; };
-		AACE32B91354EDC000028649 /* UnitCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitCircle.m; sourceTree = "<group>"; };
+		AACE32B81354EDC000028649 /* UnitCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = UnitCircleView.h; sourceTree = "<group>"; };
+		AACE32B91354EDC000028649 /* UnitCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitCircleView.m; sourceTree = "<group>"; };
 		AAE1E23E134E112900C7D8C5 /* eBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE1E242134E112900C7D8C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAE1E244134E112900C7D8C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -204,6 +207,17 @@
 			name = Deltas;
 			sourceTree = "<group>";
 		};
+		AA913D2C135C1991006DE2CB /* UnitCircle */ = {
+			isa = PBXGroup;
+			children = (
+				AACE32B81354EDC000028649 /* UnitCircleView.h */,
+				AACE32B91354EDC000028649 /* UnitCircleView.m */,
+				AA913D2E135C19B9006DE2CB /* UnitCircleViewController.h */,
+				AA913D2F135C19B9006DE2CB /* UnitCircleViewController.m */,
+			);
+			name = UnitCircle;
+			sourceTree = "<group>";
+		};
 		AAA0993D134E1FDE003A452F /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +232,7 @@
 		AAA09947134E2451003A452F /* miniapps */ = {
 			isa = PBXGroup;
 			children = (
+				AA913D2C135C1991006DE2CB /* UnitCircle */,
 				AA39AD27135AA3A70075D8D9 /* Deltas */,
 				AA39AD23135A37B40075D8D9 /* Graph */,
 				AA39ACE71357B1D60075D8D9 /* FilterDesign */,
@@ -233,8 +248,6 @@
 				AA39ACDC13579AF00075D8D9 /* Math */,
 				AACE32B51354EDB000028649 /* Graph.h */,
 				AACE32B61354EDB000028649 /* Graph.m */,
-				AACE32B81354EDC000028649 /* UnitCircle.h */,
-				AACE32B91354EDC000028649 /* UnitCircle.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -460,7 +473,7 @@
 				AACE32B11354ED6200028649 /* Vec2.m in Sources */,
 				AACE32B41354ED7800028649 /* Axis.m in Sources */,
 				AACE32B71354EDB000028649 /* Graph.m in Sources */,
-				AACE32BA1354EDC000028649 /* UnitCircle.m in Sources */,
+				AACE32BA1354EDC000028649 /* UnitCircleView.m in Sources */,
 				AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */,
 				AA39AD021357B6570075D8D9 /* FilterDesignViewController.m in Sources */,
 				AA39AD22135A37AE0075D8D9 /* GraphViewController.m in Sources */,
@@ -468,6 +481,7 @@
 				AA39AD2A135AA3C30075D8D9 /* DiracDeltasViewController.m in Sources */,
 				AA39AD2D135AA3D00075D8D9 /* DiracDeltasView.m in Sources */,
 				AA39AD30135AA5030075D8D9 /* SplitViewController.m in Sources */,
+				AA913D30135C19B9006DE2CB /* UnitCircleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

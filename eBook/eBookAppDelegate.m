@@ -14,6 +14,7 @@
 #import "GraphViewController.h"
 #import "DiracDeltasViewController.h"
 #import "SplitViewController.h"
+#import "UnitCircleViewController.h"
 
 
 @implementation eBookAppDelegate
@@ -50,6 +51,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     addMe(splitViewC, splitNav, @"Split View", @"55-network.png", SplitViewController);
     addMe(webViewC, webNav, @"Web View", @"55-network.png", UIViewController);
     addMe(filterViewC, filterNav, @"Filter Design", @"55-network.png", FilterDesignViewController);
+    addMe(unitViewC, unitNav, @"Unit Circle", @"55-network.png", UnitCircleViewController);
  
 //    blockViewC.view = [[GraphView alloc] init];
     
