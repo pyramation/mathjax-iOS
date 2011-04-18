@@ -13,6 +13,9 @@
     
     CGPoint lastTouch;
     float freq;
+
+    CGPoint lLimit;
+    CGPoint rLimit;
     
 }
 
@@ -21,9 +24,12 @@
 
 - (void) changeFreq:(id) sender;
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @property (nonatomic, readwrite, assign) float freq;
-
 
 @end
 

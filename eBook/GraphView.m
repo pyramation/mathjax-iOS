@@ -46,14 +46,30 @@
 
     
     CGFloat y = self.frame.size.height/2.0 + self.frame.origin.y;  
-        
+
+    // limits of int
+    CGContextSetRGBFillColor(context, 0,1,0, 0.5);
+    CGContextBeginPath(context);
+    CGContextMoveToPoint(context, lLimit.x, y);
+    CGContextTranslateCTM(context, self.frame.size.width/2.0, self.frame.size.height/2.0);
+    CGContextMoveToPoint(context, lLimit.x-self.frame.size.width/2.0,0);
+    float i;
+    for(i=lLimit.x-self.frame.size.width/2.0; i<rLimit.x-self.frame.size.width/2.0; i+=0.1) {
+        CGContextAddLineToPoint(context, i, -100*sin(i/freq)/(i/freq));
+    }
+    CGContextAddLineToPoint(context, i, 0);
+    CGContextFillPath(context);
+    CGContextTranslateCTM(context, -self.frame.size.width/2.0, -self.frame.size.height/2.0);
+
+    
+    //  stroke graph    
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, self.frame.size.width, y);
     CGContextAddLineToPoint(context, self.frame.size.width, y);
     CGContextAddLineToPoint(context, 0, y);    
     CGContextStrokePath(context);
 
-    CGContextSetRGBStrokeColor(context, 0,1,0, 1);
+    CGContextSetRGBStrokeColor(context, 1,1,1, 1);
     CGContextBeginPath(context);
     CGContextTranslateCTM(context, self.frame.size.width/2.0, self.frame.size.height/2.0);
     CGContextMoveToPoint(context, -self.frame.size.width/2.0,0);
@@ -61,16 +77,11 @@
         CGContextAddLineToPoint(context, i, -100*sin(i/freq)/(i/freq));
     }
     CGContextStrokePath(context);
+    CGContextTranslateCTM(context, -self.frame.size.width/2.0, -self.frame.size.height/2.0);
+    
+    
     
    
-}
-
-
-- (id)init {
-    if ((self = [super init])) {
-        freq = 100.0;
-    }
-    return self;
 }
 
 
@@ -88,6 +99,11 @@
         slider.value = 25.0;
         
         [self addSubview:slider];
+        
+        
+        // limits
+        lLimit.x = self.frame.origin.x;
+        rLimit.x = self.frame.size.width;
        
     }
     return self;
@@ -95,6 +111,56 @@
 
 
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    for(UITouch *t in touches) {
+        CGPoint theTouch = [t locationInView:self];
+        
+        float distR = (theTouch.x - rLimit.x)*(theTouch.x - rLimit.x);
+        float distL = (theTouch.x - lLimit.x)*(theTouch.x - lLimit.x);
+      
+        if (distL < distR) lLimit.x = theTouch.x;
+        else rLimit.x = theTouch.x;
+
+        if (rLimit.x < lLimit.x) {
+            int a = rLimit.x;
+            rLimit.x = lLimit.x;
+            lLimit.x = a;
+        }
+
+    
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    for(UITouch *t in touches) {
+        CGPoint theTouch = [t locationInView:self];
+        
+        float distR = (theTouch.x - rLimit.x)*(theTouch.x - rLimit.x);
+        float distL = (theTouch.x - lLimit.x)*(theTouch.x - lLimit.x);
+        
+        if (distL < distR) lLimit.x = theTouch.x;
+        else rLimit.x = theTouch.x;
+        
+        if (rLimit.x < lLimit.x) {
+            int a = rLimit.x;
+            rLimit.x = lLimit.x;
+            lLimit.x = a;
+        }
+        
+    }
+    
+    [self setNeedsDisplay];
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self setNeedsDisplay];
+    
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {}
 
 - (void) changeFreq:(id) sender {
     
