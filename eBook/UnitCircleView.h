@@ -14,19 +14,18 @@
     CGPoint lastTouch;
     Axis * axis;
     
+    UILabel * angleLabel;    
 }
 
 
 - (void) drawRect : (CGRect) rect;
-
-
-// touches
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @property (nonatomic, retain) Axis * axis;
+@property (nonatomic, retain) UILabel * angleLabel;
 
 @end
 

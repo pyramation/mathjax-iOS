@@ -15,7 +15,7 @@
 }
 
 - (id)initWithPointsA:(CGPoint)aa B:(CGPoint)bb;
-
+- (float) angle;
 - (void) draw : (CGContextRef) context;
 - (void) drawComponents : (CGContextRef) context;
 - (void) drawArrow : (CGContextRef) context;

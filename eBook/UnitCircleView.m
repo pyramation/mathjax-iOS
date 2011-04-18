@@ -14,7 +14,7 @@
 #import "Axis.h"
 
 @implementation UnitCircleView
-@synthesize axis;
+@synthesize axis, angleLabel;
 
 - (void) drawRect : (CGRect) rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -66,6 +66,9 @@
     [vec draw:context];
     CGContextSetRGBStrokeColor(context, 1.0, 0.0, 1.0, 1);    
     [vec drawComponents:context];
+    NSString * str = [[NSString alloc] initWithFormat:@"%f", [vec angle]];
+    angleLabel.text = str;
+    [str release];
     [vec release];      
      
 }
@@ -98,12 +101,19 @@
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
         axis = [[Axis alloc] init];
+        angleLabel = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x+50, frame.origin.y+60, 100, 50)];
+        angleLabel.text = @"0";
+        angleLabel.textColor = [UIColor redColor];
+        angleLabel.backgroundColor = [UIColor clearColor];
+        [self addSubview:angleLabel];
     }
     return self;
 }
 
 - (void)dealloc {
     [super dealloc];
+    [axis release];
+    [angleLabel release];
 }
 
 
