@@ -260,16 +260,6 @@
     [self clearAllStrokes];	
 }
 
-- (void) toggleBezier : (id) sender {
-    bezierPoints = !bezierPoints;
-    [self setNeedsDisplay];
-}
- 
-- (void) toggleFollower : (id) sender {
-    follower = !follower;
-    [self setNeedsDisplay];
-}
-
 - (void) clearAllStrokes {
     [points removeAllObjects];
     [self setNeedsDisplay];
@@ -277,13 +267,48 @@
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
+//        [self isFirstResponder];
     }
     return self;
 }
 
+- (void) viewDidLoad {
+
+    UIToolbar* toolbar = [[UIToolbar alloc] init];
+    [toolbar sizeToFit];
+    toolbar.barStyle = UIBarStyleBlackTranslucent;
+
+    
+    UIBarButtonItem* buttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonSystemItemAction target:self action:@selector(clearAllStrokes)];
+    [toolbar setItems:[NSArray arrayWithObjects:buttonItem, nil]];
+    [buttonItem release];
+    
+    [self addSubview:toolbar];
+    [toolbar release];
+
+    
+}
+
+
+//- (BOOL)canBecomeFirstResponder {
+//    return YES;
+//}
+//
+//- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {}
+//
+//- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+//    
+//    if (event.subtype == UIEventSubtypeMotionShake) {
+//        
+//        NSLog(@"shakened acknowledged\n");
+//        [self clearAllStrokes];
+//        [self setNeedsDisplay];
+//    }
+//    
+//}
 
 - (void)dealloc {
-    [points dealloc];
+    [points release];
     [super dealloc];
 }
 

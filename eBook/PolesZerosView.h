@@ -11,12 +11,11 @@
 
 @interface PolesZerosView : UIView {
     
-    NSMutableArray *bezierPoints0, *bezierPoints1;
+
 	NSMutableArray *points;
-	BOOL useStroke, bezierPoints, follower;
+
     CGPoint imagePoint;
-    UIImageView *myImage;
-    CGRect myImageRect;
+
     
 }
 

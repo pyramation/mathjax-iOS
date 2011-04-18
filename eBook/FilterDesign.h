@@ -13,12 +13,8 @@
 @interface FilterDesign : UIView {
     
     Axis * axis;
-    NSMutableArray *bezierPoints0, *bezierPoints1;
 	NSMutableArray *points;
-	BOOL useStroke, bezierPoints, follower;
     CGPoint imagePoint;
-    UIImageView *myImage;
-    CGRect myImageRect;
     
 }
 
@@ -40,8 +36,7 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
 - (void) clearStrokes : (id) sender;
-- (void) toggleBezier : (id) sender;
-- (void) toggleFollower : (id) sender;
+
 
 @property (nonatomic, retain) Axis * axis;
 

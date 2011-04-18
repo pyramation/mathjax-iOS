@@ -17,6 +17,23 @@
     if (self) {
         // Custom initialization
         [self setView:[[FilterDesign alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
+        
+//        UIToolbar* toolbar = [[UIToolbar alloc] init];
+        
+        UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-155, [[UIScreen mainScreen] bounds].size.width, 100)];
+        [toolbar sizeToFit];
+        toolbar.barStyle = UIBarStyleBlackTranslucent;
+        
+        
+        UIBarButtonItem* buttonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonSystemItemAction target:self.view action:@selector(clearAllStrokes)];
+        [toolbar setItems:[NSArray arrayWithObjects:buttonItem, nil]];
+        [buttonItem release];
+        
+        [self.view addSubview:toolbar];
+        [toolbar release];
+        
+        
+        
     }
     return self;
 }
