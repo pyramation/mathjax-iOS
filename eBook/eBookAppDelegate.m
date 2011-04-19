@@ -182,6 +182,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
+    [navigationController release];
     [super dealloc];
 }
 
