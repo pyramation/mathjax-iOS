@@ -50,6 +50,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
+    
     addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
 //    addMe(webView2C, web2Nav, @"Web View", @"96-book.png", UIViewController);
     addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
@@ -72,7 +73,6 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     
     
     UIWebView *htmlView = [[UIWebView alloc] init];
-    htmlView.backgroundColor = [UIColor clearColor];
     [htmlView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"sample-tex" ofType:@"html" inDirectory:@"MathJax/test"]isDirectory:NO]]];
     [htmlView setScalesPageToFit:YES];
     webViewC.view = htmlView;
@@ -84,21 +84,17 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     tbarController.viewControllers = controllers;
     tbarController.customizableViewControllers = controllers;
     tbarController.delegate = self;
-        
-    //[_window addSubview:tbarController.view];
-    
-    
-    // ASITEST
-//    DataFetcher * fetcher = [[DataFetcher alloc] initWithBase:@"http://da.nlynch.com/categories/26.json" andQueries:nil andDelegate:self];
-//    [fetcher fetch];
-    
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:tbarController];
-    navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
 
     
-//    [_window addSubview:[navigationController view]]; 
     _window.rootViewController = self.navigationController;
+    
+    // ASITEST
+    //    DataFetcher * fetcher = [[DataFetcher alloc] initWithBase:@"http://da.nlynch.com/categories/26.json" andQueries:nil andDelegate:self];
+    //    [fetcher fetch];
+
     
     
     // Override point for customization after application launch.
