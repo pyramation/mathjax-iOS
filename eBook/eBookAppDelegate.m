@@ -84,8 +84,9 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:tbarController];
     navigationController.navigationBar.barStyle = UIBarStyleBlack;
 
-    [_window addSubview:[navigationController view]]; 
-
+    
+//    [_window addSubview:[navigationController view]]; 
+    _window.rootViewController = self.navigationController;
     
     
     // Override point for customization after application launch.
