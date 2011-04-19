@@ -38,7 +38,8 @@
 UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:view]; \
 nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 [view.tabBarItem initWithTitle:title image:[UIImage imageNamed:icon] tag:0];\
-[controllers addObject:nav]
+[controllers addObject:nav]; \
+[view release];
 
 
 
@@ -50,6 +51,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
     addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
+//    addMe(webView2C, web2Nav, @"Web View", @"96-book.png", UIViewController);
     addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
     addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
     addMe(plotViewC, plotNav, @"Graphs", @"77-ekg.png", GraphViewController);
@@ -59,13 +61,23 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
  
 //    blockViewC.view = [[GraphView alloc] init];
     
-    UIWebView * webView = [[UIWebView alloc] init];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.mathapedia.com/sections/21"]]];
-    webView.backgroundColor = [UIColor whiteColor];
-    webView.scalesPageToFit = YES;
-    webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-    webView.delegate = self;
-    webViewC.view = webView;
+//    UIWebView * webView = [[UIWebView alloc] init];
+//    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.mathapedia.com/sections/21"]]];
+//    webView.backgroundColor = [UIColor whiteColor];
+//    webView.scalesPageToFit = YES;
+//    webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+//    webView.delegate = self;
+//    webView2C.view = webView;
+//    [webView release];    
+    
+    
+    UIWebView *htmlView = [[UIWebView alloc] init];
+    htmlView.backgroundColor = [UIColor clearColor];
+    [htmlView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"sample-tex" ofType:@"html" inDirectory:@"MathJax/test"]isDirectory:NO]]];
+    [htmlView setScalesPageToFit:YES];
+    webViewC.view = htmlView;
+    htmlView.delegate = self;
+    [htmlView release];
     
     
     UITabBarController * tbarController = [[UITabBarController alloc] init];
