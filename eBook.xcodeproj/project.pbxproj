@@ -254,6 +254,9 @@
 		AA913F99135CB736006DE2CB /* 198-card-spades.png in Resources */ = {isa = PBXBuildFile; fileRef = AA913ED1135CB736006DE2CB /* 198-card-spades.png */; };
 		AA913F9A135CB736006DE2CB /* 199-card-hearts.png in Resources */ = {isa = PBXBuildFile; fileRef = AA913ED2135CB736006DE2CB /* 199-card-hearts.png */; };
 		AA913F9B135CB736006DE2CB /* 200-card-clubs.png in Resources */ = {isa = PBXBuildFile; fileRef = AA913ED3135CB736006DE2CB /* 200-card-clubs.png */; };
+		AA9A0ACC135F362B00A7DC60 /* ViewLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A0ACB135F362B00A7DC60 /* ViewLoaderViewController.m */; };
+		AA9A0AD5135F36E300A7DC60 /* equationEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A0AD3135F36E300A7DC60 /* equationEditorViewController.m */; };
+		AA9A0AD6135F36E300A7DC60 /* equationEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9A0AD4135F36E300A7DC60 /* equationEditorViewController.xib */; };
 		AAA0994A134E24A7003A452F /* PolesZerosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA09949134E24A7003A452F /* PolesZerosViewController.m */; };
 		AAA0994D134E25AB003A452F /* PolesZerosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA0994C134E25AB003A452F /* PolesZerosView.m */; };
 		AAB00BAD135E491100304853 /* MathJax in Resources */ = {isa = PBXBuildFile; fileRef = AAB00BAC135E491100304853 /* MathJax */; };
@@ -593,6 +596,11 @@
 		AA913ED1135CB736006DE2CB /* 198-card-spades.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "198-card-spades.png"; sourceTree = "<group>"; };
 		AA913ED2135CB736006DE2CB /* 199-card-hearts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "199-card-hearts.png"; sourceTree = "<group>"; };
 		AA913ED3135CB736006DE2CB /* 200-card-clubs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "200-card-clubs.png"; sourceTree = "<group>"; };
+		AA9A0ACA135F362B00A7DC60 /* ViewLoaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewLoaderViewController.h; sourceTree = "<group>"; };
+		AA9A0ACB135F362B00A7DC60 /* ViewLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewLoaderViewController.m; sourceTree = "<group>"; };
+		AA9A0AD2135F36E300A7DC60 /* equationEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = equationEditorViewController.h; sourceTree = "<group>"; };
+		AA9A0AD3135F36E300A7DC60 /* equationEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = equationEditorViewController.m; sourceTree = "<group>"; };
+		AA9A0AD4135F36E300A7DC60 /* equationEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = equationEditorViewController.xib; sourceTree = "<group>"; };
 		AAA09941134E1FDE003A452F /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		AAA09948134E24A7003A452F /* PolesZerosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolesZerosViewController.h; sourceTree = "<group>"; };
 		AAA09949134E24A7003A452F /* PolesZerosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolesZerosViewController.m; sourceTree = "<group>"; };
@@ -938,6 +946,18 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		AA9A0AC9135F361A00A7DC60 /* ViewLoader */ = {
+			isa = PBXGroup;
+			children = (
+				AA9A0ACA135F362B00A7DC60 /* ViewLoaderViewController.h */,
+				AA9A0ACB135F362B00A7DC60 /* ViewLoaderViewController.m */,
+				AA9A0AD2135F36E300A7DC60 /* equationEditorViewController.h */,
+				AA9A0AD3135F36E300A7DC60 /* equationEditorViewController.m */,
+				AA9A0AD4135F36E300A7DC60 /* equationEditorViewController.xib */,
+			);
+			name = ViewLoader;
+			sourceTree = "<group>";
+		};
 		AAA0993D134E1FDE003A452F /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -1146,16 +1166,17 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
-		AAA09947134E2451003A452F /* miniapps */ = {
+		AAA09947134E2451003A452F /* apps */ = {
 			isa = PBXGroup;
 			children = (
+				AA9A0AC9135F361A00A7DC60 /* ViewLoader */,
 				AA913D2C135C1991006DE2CB /* UnitCircle */,
 				AA39AD27135AA3A70075D8D9 /* Deltas */,
 				AA39AD23135A37B40075D8D9 /* Graph */,
 				AA39ACE71357B1D60075D8D9 /* FilterDesign */,
 				AA39ACE61357B1C40075D8D9 /* PolesZeros */,
 			);
-			name = miniapps;
+			name = apps;
 			sourceTree = "<group>";
 		};
 		AACE32AD1354ED3800028649 /* Classes */ = {
@@ -1212,7 +1233,7 @@
 				AA913DD9135CA286006DE2CB /* Network */,
 				AA913DD8135CA268006DE2CB /* Main */,
 				AACE32AD1354ED3800028649 /* Classes */,
-				AAA09947134E2451003A452F /* miniapps */,
+				AAA09947134E2451003A452F /* apps */,
 				AAE1E259134E112A00C7D8C5 /* iPhone */,
 				AAE1E260134E112A00C7D8C5 /* iPad */,
 				AAE1E24B134E112900C7D8C5 /* Supporting Files */,
@@ -1546,6 +1567,7 @@
 				AA913F9A135CB736006DE2CB /* 199-card-hearts.png in Resources */,
 				AA913F9B135CB736006DE2CB /* 200-card-clubs.png in Resources */,
 				AAB00BAD135E491100304853 /* MathJax in Resources */,
+				AA9A0AD6135F36E300A7DC60 /* equationEditorViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1634,6 +1656,8 @@
 				AA913DFF135CA684006DE2CB /* CJSONSerializer.m in Sources */,
 				AA913E02135CAEEC006DE2CB /* JSONFetcher.m in Sources */,
 				AA913E05135CAF91006DE2CB /* DataFetcher.m in Sources */,
+				AA9A0ACC135F362B00A7DC60 /* ViewLoaderViewController.m in Sources */,
+				AA9A0AD5135F36E300A7DC60 /* equationEditorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

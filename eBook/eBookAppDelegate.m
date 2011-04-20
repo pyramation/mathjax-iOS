@@ -15,9 +15,11 @@
 #import "DiracDeltasViewController.h"
 #import "SplitViewController.h"
 #import "UnitCircleViewController.h"
+#import "equationEditorViewController.h"
 
 
-#import "DataFetcher.h"
+
+// #import "DataFetcher.h"
 
 
 
@@ -50,7 +52,6 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
-    
     addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
 //    addMe(webView2C, web2Nav, @"Web View", @"96-book.png", UIViewController);
     addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
@@ -59,7 +60,9 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     addMe(blockViewC, blockNav, @"Dirac Deltas", @"55-network.png", DiracDeltasViewController);
     addMe(splitViewC, splitNav, @"Split View", @"95-equalizer.png", SplitViewController);
     addMe(filterViewC, filterNav, @"Filter Design", @"122-stats.png", FilterDesignViewController);
- 
+    addMe(eqViewC, eqNav, @"Equation Editor", @"06-magnify.png", equationEditorViewController);    
+
+    
 //    blockViewC.view = [[GraphView alloc] init];
     
 //    UIWebView * webView = [[UIWebView alloc] init];
