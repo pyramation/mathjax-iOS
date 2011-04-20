@@ -54,6 +54,8 @@
     \newcommand{\I}{\mathbb{I}}
     \newcommand{\st}{\ |\ }
     \newcommand{\Real}[1]{{\Re \mit{e}\left\{{#1}\right\}}}
+    \newcommand{\lr}[1]{\left( #1\right)}
+
     $
     
     <style>
@@ -64,6 +66,26 @@
         }
         
         </style>
+    <p>
+    As shown earlier, the <i>convolution sum</i> can be defined as
+    
+
+   $$y(n) = \sum \limits _{m \in \Z} x(m)h(n-m) = (x * h)(n)  $$
+    
+    
+    or using the commutative property of convolution we can write
+    
+    
+    $$ y(n) =  \sum \limits _{k \in \Z} h(k)x(n-k) = (h * x)(n) $$
+    
+    where $h(n)$ denotes the \emph{impulse response} of systems $H$ to the input signal $x(n)$, defined as
+    $$x(n) =\cdots + x(-1)\delta(n+1) + x(0)\delta(n) + x(1)\delta(n-1) + \cdots \mbox{,}$$
+    and the output signal of the LTI system $y(n)$ is defined as
+    $$ y(n) =\cdots + x(-1)h(n+1) + x(0)h(n) + x(1)h(n-1) + \cdots \mbox{.} $$
+    </p><p>
+    Note that $x * \delta = \delta * x = x$. In other words, $\delta(n)$ is the identity element of the convolution sum.
+    </p>
+    
     
     <a href="FilterDesign://skee/4/">
         <div class="box">
@@ -79,25 +101,28 @@
             
             <p>
             
-            A binary operation on a set $G$ is a function from $G \times G$ to $G$.
+            We have shown that convolution in the time domain is multiplication in the frequency domain:
             
-            A binary operation $\circ$ on a set $G$ is associative if
-            $$ \forall a,b,c \in G\ \ a \circ (b \circ c) = (a \circ b) \circ c $$
+            $$(f*g)(t) \ftp F(\omega)G(\omega)$$
             
-            For a binary operation $\circ$ on a set $G$ and $a,b \in G$, $a$ and $b$ are said to commute if $a \circ b = b \circ a$. If for any $a,b \in G$, $a$ and $b$ commute, then $\circ$ is said to be commutative.
+            Consider the Modulation Property of the Continuous-Time Fourier Transform:
+            
+           $$
+            f(t)g(t) \ftp \frac{1}{2\pi} (F*G)(\omega)
+           $$
             
             
-            </p>
-            
-            <p>
-            
-            A binary operation on a set $G$ is a function from $G \times G$ to $G$.
-            
-            A binary operation $\circ$ on a set $G$ is associative if
-            $$ \forall a,b,c \in G\ \ a \circ (b \circ c) = (a \circ b) \circ c $$
-            
-            For a binary operation $\circ$ on a set $G$ and $a,b \in G$, $a$ and $b$ are said to commute if $a \circ b = b \circ a$. If for any $a,b \in G$, $a$ and $b$ commute, then $\circ$ is said to be commutative.
-            
+            \begin{align*}
+            \iftrans{(F*G)(\omega)} &= \frac{1}{2\pi}\int_{-\infty}^{\infty}(F*G)(\omega)e^{i\omega t}d\omega \\
+            \iftrans{(F*G)(\omega)} &= \frac{1}{2\pi}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}F(W)G(\omega-W) dW e^{i\omega t}d\omega \\
+            \iftrans{(F*G)(\omega)} &= \frac{1}{2\pi}\int_{-\infty}^{\infty}F(W)\int_{-\infty}^{\infty}G(\omega-W) e^{i\omega t} d\omega dW \\
+            \iftrans{(F*G)(\omega)} &= \frac{1}{2\pi}\int_{-\infty}^{\infty}F(W)\int_{-\infty}^{\infty}G(\Omega) e^{i(\Omega+W) t} d\Omega dW \\
+            \iftrans{(F*G)(\omega)} &= \frac{1}{2\pi}\int_{-\infty}^{\infty}F(W)\lr{\int_{-\infty}^{\infty}G(\Omega) e^{i\Omega t} d\Omega }e^{iWt}dW \\
+            \iftrans{(F*G)(\omega)} &= \frac{1}{2\pi}\int_{-\infty}^{\infty}F(W)e^{iWt}dW \lr{\int_{-\infty}^{\infty}G(\Omega) e^{i\Omega t} d\Omega}\\
+            \iftrans{(F*G)(\omega)} &= \frac{1}{2\pi}\lr{2\pi f(t)}\lr{2\pi g(t)} \\
+            \iftrans{(F*G)(\omega)} &= 2\pi f(t)g(t) \\
+            \iftrans{\frac{1}{2\pi}(F*G)(\omega)} &= f(t)g(t) \\
+            \end{align*}
             
             </p>
             
@@ -114,14 +139,23 @@
             
             <p>
             
-            A binary operation on a set $G$ is a function from $G \times G$ to $G$.
+            When we integrate a function in time, what happens to its Laplace Transform?
             
-            A binary operation $\circ$ on a set $G$ is associative if
-            $$ \forall a,b,c \in G\ \ a \circ (b \circ c) = (a \circ b) \circ c $$
+            \begin{align*}
+            x(t) \ltp \hat{X}(s) \\
+            y(t) = \int_{-\infty}^t x(\tau) d\tau
+            \end{align*}
             
-            For a binary operation $\circ$ on a set $G$ and $a,b \in G$, $a$ and $b$ are said to commute if $a \circ b = b \circ a$. If for any $a,b \in G$, $a$ and $b$ commute, then $\circ$ is said to be commutative.
+            We can solve this by using the fact that $y(t) = x(t) * u(t) = \int^{\infty}_{-\infty} x(\tau) u(t - \tau) d\tau$
             
+            \begin{align*}
+            x(t) &\ltp \hat{X}(s) \\
+            u(t) &\ltp \frac{1}{s} \\
+            y(t) &\ltp \frac{\hat{X}(s)}{s} \\
+            \end{align*}
             
+            The $RoC(u) = \{ s \st \Real{s} > 0 \}$, and the new region of convergence is at least the intersection of $RoC(x)$ and $RoC(u)$. Hence, we have our Integration in Time property:
+
             </p>
             
             <a href="Graph://skee/4/">
@@ -138,14 +172,15 @@
             
             <p>
             
-            A binary operation on a set $G$ is a function from $G \times G$ to $G$.
+            If we view the complex exponential as a particle traveling around the unit circle, it does not have to be traveling around at a constant rate. For instance, we can represent $\theta$ as a function. If $\theta(t) = \omega_0t + \phi_0$, the particle goes around at a constant rate. We call $\theta(t)$ the <i>instantaneous angle</i>, and $\omega(t)$ the <i>instantaneous frequency</i> at time $t$:
             
-            A binary operation $\circ$ on a set $G$ is associative if
-            $$ \forall a,b,c \in G\ \ a \circ (b \circ c) = (a \circ b) \circ c $$
+            $$ \omega(t) = \dot{\theta}(t) = \frac{d\theta}{dt} $$
             
-            For a binary operation $\circ$ on a set $G$ and $a,b \in G$, $a$ and $b$ are said to commute if $a \circ b = b \circ a$. If for any $a,b \in G$, $a$ and $b$ commute, then $\circ$ is said to be commutative.
+            The prototype of a <i>pure frequency</i> is $e^{i \omega_0t}$, and represents a phasor going around the unit circle at a constant rate $\omega \frac{\mbox{rad}}{\mbox{sec}}$. If $z = e^{i \theta(t)}$ and $\theta(t) = \omega_0t + \phi_0$, then $\phi_0$ represents the <i>phase shift</i>, or initial phase offset.
             
-            
+            </p>
+            <p>
+            In Continuous Time, we use the <i>Dirac Delta</i> function. (Technically not a function, and the height is actually infinite)          
             </p>
             
             <a href="DiracDeltas://skee/4/">
@@ -194,7 +229,61 @@
             </div>
             </a>
             
+            <br>
             
+            <p>
+            Leonhard Euler demonstrated a relationship between the base of the natural logarithm, sine, cosine, and the imaginary unit, which is now coined <i>Euler's Formula</i>:
+            </p>
+            
+            <a href="UnitCircle://skee/4/">
+            <div class="box">
+            <h2>Euler's Formula</h2>
+            \begin{align*}
+            e^{i \theta} = \cos \theta + i \sin \theta
+            \end{align*}
+            $RoC = RoC(x) + \Real{s_0} $
+            </div></a>
+
+            <p>
+            
+            Euler's formula can be derived by looking at the complex exponential on the unit circle. The horizontal component of $e^{i \theta}$ is $ \cos \theta$, and the vertical component is $i\sin \theta$.
+            
+            The formula can also be derived using infinite series.
+            \begin{align*}
+            e^\theta &= \sum \limits_{n = 0}^{\infty} \frac{\theta^n}{n!} = 1 + \theta + \frac{\theta^2}{2!} + \frac{\theta^3}{3!} + \frac{\theta^4}{4!} + \cdots \\
+            \sin \theta &= \sum \limits_{n = 0}^{\infty} \frac{(-1)^n\theta^{2n+1}}{(2n+1)!} = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} + \cdots \\
+            \cos \theta &= \sum \limits_{n = 0}^{\infty} \frac{(-1)^n\theta^{2n}}{(2n)!} = 1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!} + \cdots
+            \end{align*}
+            Given the above formulae, we can derive $e^{i\theta}$ in terms of $\sin \theta$ and $\cos \theta$:
+            \begin{align*}
+            e^{i\theta} &= \sum \limits_{n = 0}^{\infty} \frac{(i\theta)^n}{n!} = 1 + i\theta + \frac{i^2\theta^2}{2!} + \frac{i^3\theta^3}{3!} + \frac{i^4\theta^4}{4!} + \cdots \\
+            e^{i\theta} &= \sum \limits_{n = 0}^{\infty} \frac{(i\theta)^n}{n!} = 1 + i\theta - \frac{\theta^2}{2!} - \frac{i\theta^3}{3!} + \frac{\theta^4}{4!} + \frac{i\theta^5}{5!} -\frac{\theta^6}{6!} - \cdots \\
+            e^{i\theta} &= \sum \limits_{n = 0}^{\infty} \frac{(i\theta)^n}{n!} = \left[ 1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \cdots \right] + \left[  i\theta - \frac{i\theta^3}{3!} + \frac{i\theta^5}{5!} - \cdots\right] \\
+            e^{i\theta} &= \sum \limits_{n = 0}^{\infty} \frac{(i\theta)^n}{n!} = \sum \limits_{n = 0}^{\infty} \frac{(-1)^n\theta^{2n}}{(2n)!} +  i\sum \limits_{n = 0}^{\infty} \frac{(-1)^n\theta^{2n+1}}{(2n+1)!} \\
+            e^{i \theta} &= \cos \theta + i \sin \theta
+            \end{align*}
+            
+            We can also use this formula to come up with useful identities:
+            
+            For $\cos \theta$:
+            \begin{align*}
+            e^{-i \theta} &= \cos (\theta) + i \sin(- \theta) \\
+            e^{-i \theta} &= \cos \theta - i \sin \theta \quad \mbox{(since cosine is even and sine is odd)} \\
+            e^{i \theta} + e^{-i \theta} &= (\cos \theta + i \sin \theta) +  (\cos \theta - i \sin \theta) \\
+            e^{i \theta} + e^{-i \theta} &= 2\cos \theta \\
+            \frac{e^{i \theta} + e^{-i \theta}}{2} &= \cos \theta
+            \end{align*}
+            
+            This demonstrates that a cosine wave defined by $\cos \omega_0t = \frac{1}{2}e^{i\omega_0t} + \frac{1}{2}e^{-i\omega_0t}$ has two frequencies, namely $\omega_0$ and $-\omega_0$. The magnitude represents how much each frequency contributes. The same goes for the sine wave:
+            
+            For $\sin \theta$:
+            \begin{align*}
+            e^{i \theta} - e^{-i \theta} &= (\cos \theta + i \sin \theta) -  (\cos \theta - i \sin \theta) \\
+            e^{i \theta} - e^{-i \theta} &= 2i\sin \theta \\
+            \frac{e^{i \theta} - e^{-i \theta}}{2i} &= \sin \theta
+            \end{align*}
+
+            </p>
 
 </body>
 </html>
