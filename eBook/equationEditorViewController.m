@@ -36,13 +36,17 @@
         [webview loadHTMLString:setHtml baseURL:[NSURL URLWithString:resourcesPath]];
     } else {
         NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script><script type=\"text/javascript\" src=\"mathjax/MathJax.js?config=TeX-AMS_HTML-full\"></script></head><body>";
-        NSString * setHtml = [[NSString alloc] initWithFormat:@"<br><br><br>%@%@</body></html>", html, equation.text];
+        NSString * setHtml = [[NSString alloc] initWithFormat:@"%@<br><br><br><br>$$%@$$</body></html>", html, equation.text];
         [webview loadHTMLString:setHtml baseURL:[NSURL URLWithString:@"http://www.mathapedia.com"]];
     }
 
     
 }
 
+- (BOOL) textFieldShouldReturn:(UITextField*)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 - (void)dealloc
 {

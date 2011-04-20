@@ -20,7 +20,7 @@
         
 //        UIToolbar* toolbar = [[UIToolbar alloc] init];
         
-        UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-155, [[UIScreen mainScreen] bounds].size.width, 100)];
+        UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-55, [[UIScreen mainScreen] bounds].size.width, 100)];
         [toolbar sizeToFit];
         toolbar.barStyle = UIBarStyleBlackTranslucent;
         
