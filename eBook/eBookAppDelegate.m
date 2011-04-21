@@ -57,14 +57,13 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
     addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
     addMe(plotViewC, plotNav, @"Graphs", @"77-ekg.png", GraphViewController);
+    addMe(dViewC, dNav, @"Convolve Deltas", @"55-network.png", DiracDeltasViewController);
     addMe(blockViewC, blockNav, @"Dirac Deltas", @"55-network.png", DiracDeltasViewController);
     addMe(splitViewC, splitNav, @"Split View", @"95-equalizer.png", SplitViewController);
     addMe(filterViewC, filterNav, @"Filter Design", @"122-stats.png", FilterDesignViewController);
     addMe(eqViewC, eqNav, @"Equation Editor", @"06-magnify.png", equationEditorViewController);    
 
-    
 //    blockViewC.view = [[GraphView alloc] init];
-    
 //    UIWebView * webView = [[UIWebView alloc] init];
 //    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.mathapedia.com/sections/21"]]];
 //    webView.backgroundColor = [UIColor whiteColor];
@@ -72,8 +71,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 //    webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 //    webView.delegate = self;
 //    webView2C.view = webView;
-//    [webView release];    
-    
+//    [webView release];        
     
     UIWebView *htmlView = [[UIWebView alloc] init];
     [htmlView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"sample-tex" ofType:@"html" inDirectory:@"MathJax/test"]isDirectory:NO]]];

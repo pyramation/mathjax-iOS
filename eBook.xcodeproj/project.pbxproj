@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA00D4BC1360E260007C7E03 /* ConvolveDeltasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA00D4BA1360E260007C7E03 /* ConvolveDeltasViewController.m */; };
+		AA00D4BD1360E260007C7E03 /* ConvolveDeltasView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */; };
 		AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */; };
 		AA39AD021357B6570075D8D9 /* FilterDesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD011357B6570075D8D9 /* FilterDesignViewController.m */; };
 		AA39AD061357C2FD0075D8D9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA39AD051357C2FC0075D8D9 /* icon.png */; };
@@ -296,6 +298,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA00D4B81360E260007C7E03 /* ConvolveDeltasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvolveDeltasView.h; sourceTree = "<group>"; };
+		AA00D4B91360E260007C7E03 /* ConvolveDeltasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvolveDeltasViewController.h; sourceTree = "<group>"; };
+		AA00D4BA1360E260007C7E03 /* ConvolveDeltasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvolveDeltasViewController.m; sourceTree = "<group>"; };
+		AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvolveDeltasView.m; sourceTree = "<group>"; };
 		AA39ACFD1357B54C0075D8D9 /* FilterDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesign.h; sourceTree = "<group>"; };
 		AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDesign.m; sourceTree = "<group>"; };
 		AA39AD001357B6570075D8D9 /* FilterDesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesignViewController.h; sourceTree = "<group>"; };
@@ -671,6 +677,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA00D4B61360E12A007C7E03 /* Convolve */ = {
+			isa = PBXGroup;
+			children = (
+				AA00D4B81360E260007C7E03 /* ConvolveDeltasView.h */,
+				AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */,
+				AA00D4B91360E260007C7E03 /* ConvolveDeltasViewController.h */,
+				AA00D4BA1360E260007C7E03 /* ConvolveDeltasViewController.m */,
+			);
+			name = Convolve;
+			sourceTree = "<group>";
+		};
 		AA39ACDC13579AF00075D8D9 /* Math */ = {
 			isa = PBXGroup;
 			children = (
@@ -1169,6 +1186,7 @@
 		AAA09947134E2451003A452F /* apps */ = {
 			isa = PBXGroup;
 			children = (
+				AA00D4B61360E12A007C7E03 /* Convolve */,
 				AA9A0AC9135F361A00A7DC60 /* ViewLoader */,
 				AA913D2C135C1991006DE2CB /* UnitCircle */,
 				AA39AD27135AA3A70075D8D9 /* Deltas */,
@@ -1658,6 +1676,8 @@
 				AA913E05135CAF91006DE2CB /* DataFetcher.m in Sources */,
 				AA9A0ACC135F362B00A7DC60 /* ViewLoaderViewController.m in Sources */,
 				AA9A0AD5135F36E300A7DC60 /* equationEditorViewController.m in Sources */,
+				AA00D4BC1360E260007C7E03 /* ConvolveDeltasViewController.m in Sources */,
+				AA00D4BD1360E260007C7E03 /* ConvolveDeltasView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
