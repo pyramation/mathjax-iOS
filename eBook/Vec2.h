@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface Vec2 : NSObject {
     CGPoint a;
     CGPoint b;
@@ -20,7 +19,7 @@
 - (void) drawComponents : (CGContextRef) context;
 - (void) drawArrow : (CGContextRef) context;
 - (void) drawVector : (CGContextRef) context;
-
+- (void) drawDot:(CGContextRef) context;
 
 @property (nonatomic, assign) CGPoint a;
 @property (nonatomic, assign) CGPoint b;

@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface Axis : NSObject {
+ 
+    int xSpacing;
+    int ySpacing;
     
 }
 
+- (id) initWithSpacingX:(int)x Y:(int) y;
 - (void) draw: (CGContextRef) context;
-
+- (void) drawAxis:(CGContextRef) context rect:(CGRect)rect;
 @end

@@ -256,6 +256,7 @@
 		AA913F99135CB736006DE2CB /* 198-card-spades.png in Resources */ = {isa = PBXBuildFile; fileRef = AA913ED1135CB736006DE2CB /* 198-card-spades.png */; };
 		AA913F9A135CB736006DE2CB /* 199-card-hearts.png in Resources */ = {isa = PBXBuildFile; fileRef = AA913ED2135CB736006DE2CB /* 199-card-hearts.png */; };
 		AA913F9B135CB736006DE2CB /* 200-card-clubs.png in Resources */ = {isa = PBXBuildFile; fileRef = AA913ED3135CB736006DE2CB /* 200-card-clubs.png */; };
+		AA96B5361360F77600BAEAED /* Delta.m in Sources */ = {isa = PBXBuildFile; fileRef = AA96B5351360F77600BAEAED /* Delta.m */; };
 		AA9A0ACC135F362B00A7DC60 /* ViewLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A0ACB135F362B00A7DC60 /* ViewLoaderViewController.m */; };
 		AA9A0AD5135F36E300A7DC60 /* equationEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A0AD3135F36E300A7DC60 /* equationEditorViewController.m */; };
 		AA9A0AD6135F36E300A7DC60 /* equationEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9A0AD4135F36E300A7DC60 /* equationEditorViewController.xib */; };
@@ -602,6 +603,8 @@
 		AA913ED1135CB736006DE2CB /* 198-card-spades.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "198-card-spades.png"; sourceTree = "<group>"; };
 		AA913ED2135CB736006DE2CB /* 199-card-hearts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "199-card-hearts.png"; sourceTree = "<group>"; };
 		AA913ED3135CB736006DE2CB /* 200-card-clubs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "200-card-clubs.png"; sourceTree = "<group>"; };
+		AA96B5341360F77600BAEAED /* Delta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delta.h; sourceTree = "<group>"; };
+		AA96B5351360F77600BAEAED /* Delta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Delta.m; sourceTree = "<group>"; };
 		AA9A0ACA135F362B00A7DC60 /* ViewLoaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewLoaderViewController.h; sourceTree = "<group>"; };
 		AA9A0ACB135F362B00A7DC60 /* ViewLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewLoaderViewController.m; sourceTree = "<group>"; };
 		AA9A0AD2135F36E300A7DC60 /* equationEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = equationEditorViewController.h; sourceTree = "<group>"; };
@@ -680,6 +683,8 @@
 		AA00D4B61360E12A007C7E03 /* Convolve */ = {
 			isa = PBXGroup;
 			children = (
+				AA39AD2E135AA5010075D8D9 /* SplitViewController.h */,
+				AA39AD2F135AA5020075D8D9 /* SplitViewController.m */,
 				AA00D4B81360E260007C7E03 /* ConvolveDeltasView.h */,
 				AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */,
 				AA00D4B91360E260007C7E03 /* ConvolveDeltasViewController.h */,
@@ -688,22 +693,17 @@
 			name = Convolve;
 			sourceTree = "<group>";
 		};
-		AA39ACDC13579AF00075D8D9 /* Math */ = {
+		AA39ACDD13579B440075D8D9 /* Math/Plot */ = {
 			isa = PBXGroup;
 			children = (
-				AACE32AF1354ED6200028649 /* Vec2.h */,
 				AACE32B01354ED6200028649 /* Vec2.m */,
-			);
-			name = Math;
-			sourceTree = "<group>";
-		};
-		AA39ACDD13579B440075D8D9 /* Plot */ = {
-			isa = PBXGroup;
-			children = (
+				AACE32AF1354ED6200028649 /* Vec2.h */,
 				AACE32B21354ED7800028649 /* Axis.h */,
 				AACE32B31354ED7800028649 /* Axis.m */,
+				AA96B5341360F77600BAEAED /* Delta.h */,
+				AA96B5351360F77600BAEAED /* Delta.m */,
 			);
-			name = Plot;
+			name = Math/Plot;
 			sourceTree = "<group>";
 		};
 		AA39ACE61357B1C40075D8D9 /* PolesZeros */ = {
@@ -735,8 +735,6 @@
 				AA39AD21135A37A90075D8D9 /* GraphViewController.m */,
 				AA39AD24135A37C60075D8D9 /* GraphView.h */,
 				AA39AD25135A37C60075D8D9 /* GraphView.m */,
-				AA39AD2E135AA5010075D8D9 /* SplitViewController.h */,
-				AA39AD2F135AA5020075D8D9 /* SplitViewController.m */,
 			);
 			name = Graph;
 			sourceTree = "<group>";
@@ -1200,8 +1198,7 @@
 		AACE32AD1354ED3800028649 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AA39ACDD13579B440075D8D9 /* Plot */,
-				AA39ACDC13579AF00075D8D9 /* Math */,
+				AA39ACDD13579B440075D8D9 /* Math/Plot */,
 				AACE32B51354EDB000028649 /* Graph.h */,
 				AACE32B61354EDB000028649 /* Graph.m */,
 			);
@@ -1678,6 +1675,7 @@
 				AA9A0AD5135F36E300A7DC60 /* equationEditorViewController.m in Sources */,
 				AA00D4BC1360E260007C7E03 /* ConvolveDeltasViewController.m in Sources */,
 				AA00D4BD1360E260007C7E03 /* ConvolveDeltasView.m in Sources */,
+				AA96B5361360F77600BAEAED /* Delta.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,14 +23,15 @@
 
 - (IBAction) equationEdited {
     
-    bool useServer = true;
+    bool useServer = false;
     
     if (!useServer) {
-        NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script><script type=\"text/javascript\" src=\"MathJax.js\"></script></head><body>$$\\int_x^y f(x) dx$$<img src=\"100-coffee.png\">";
+        NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script><script type=\"text/javascript\" src=\"MathJax.js\"></script></head><body>$$\\int_x^y f(x) dx$$<img src=\"100-coffee.png\">";       
+
         NSString * setHtml = [[NSString alloc] initWithFormat:@"<br><br><br>%@%@</body></html>", html, equation.text];
         NSString * path = [[NSBundle mainBundle] resourcePath]; 
         path = [path stringByReplacingOccurrencesOfString:@"/" withString:@"//"];
-        path = [path stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+        path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSString * resourcesPath = [[NSString alloc] initWithFormat:@"file://%@/", path];
         NSLog(@"%@", resourcesPath);
         [webview loadHTMLString:setHtml baseURL:[NSURL URLWithString:resourcesPath]];

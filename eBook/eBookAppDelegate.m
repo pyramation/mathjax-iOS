@@ -16,7 +16,7 @@
 #import "SplitViewController.h"
 #import "UnitCircleViewController.h"
 #import "equationEditorViewController.h"
-
+#import "ConvolveDeltasViewController.h"
 
 
 // #import "DataFetcher.h"
@@ -57,7 +57,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
     addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
     addMe(plotViewC, plotNav, @"Graphs", @"77-ekg.png", GraphViewController);
-    addMe(dViewC, dNav, @"Convolve Deltas", @"55-network.png", DiracDeltasViewController);
+    addMe(dViewC, dNav, @"Convolve Deltas", @"55-network.png", ConvolveDeltasViewController);
     addMe(blockViewC, blockNav, @"Dirac Deltas", @"55-network.png", DiracDeltasViewController);
     addMe(splitViewC, splitNav, @"Split View", @"95-equalizer.png", SplitViewController);
     addMe(filterViewC, filterNav, @"Filter Design", @"122-stats.png", FilterDesignViewController);

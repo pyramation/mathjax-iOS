@@ -82,6 +82,12 @@
 
 }
 
+- (void) drawDot:(CGContextRef) context {
+    
+    CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
+    CGContextFillEllipseInRect(context, CGRectMake(b.x-5, b.y-5, 10,10));    
+}
+
 - (float) angle {
     return atan2( b.y - a.y , b.x - a.x );
 }

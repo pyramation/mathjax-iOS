@@ -9,14 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
+@class Axis;
 @interface ConvolveDeltasView : UIView {
     
-    NSMutableArray *bezierPoints0, *bezierPoints1;
 	NSMutableArray *points;
-	BOOL useStroke, bezierPoints, follower;
     CGPoint imagePoint;
-    UIImageView *myImage;
-    CGRect myImageRect;
+    Axis * axis;
     
 }
 
@@ -25,7 +23,7 @@
 
 - (void) clearAll;
 - (void) drawRect : (CGRect) rect;
-- (void) addPoint : (CGPoint) point;
+
 
 // touches
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;

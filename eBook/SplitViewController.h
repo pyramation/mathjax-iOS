@@ -7,10 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConvolveDeltasView.h"
 
 
 @interface SplitViewController : UIViewController {
+ 
+    ConvolveDeltasView * view1;
+    ConvolveDeltasView * view2;
+    ConvolveDeltasView * returnView;
     
 }
+
+- (void) convolve: (id) sender;
+
+@property (nonatomic, retain) ConvolveDeltasView * view1;
+@property (nonatomic, retain) ConvolveDeltasView * view2;
+@property (nonatomic, retain) ConvolveDeltasView * returnView;
 
 @end
