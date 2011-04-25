@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA00D4BC1360E260007C7E03 /* ConvolveDeltasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA00D4BA1360E260007C7E03 /* ConvolveDeltasViewController.m */; };
 		AA00D4BD1360E260007C7E03 /* ConvolveDeltasView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */; };
+		AA0C2DCB1361F429006EDC84 /* DiscreteSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C2DCA1361F429006EDC84 /* DiscreteSignal.m */; };
 		AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */; };
 		AA39AD021357B6570075D8D9 /* FilterDesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD011357B6570075D8D9 /* FilterDesignViewController.m */; };
 		AA39AD061357C2FD0075D8D9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA39AD051357C2FC0075D8D9 /* icon.png */; };
@@ -303,6 +304,8 @@
 		AA00D4B91360E260007C7E03 /* ConvolveDeltasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvolveDeltasViewController.h; sourceTree = "<group>"; };
 		AA00D4BA1360E260007C7E03 /* ConvolveDeltasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvolveDeltasViewController.m; sourceTree = "<group>"; };
 		AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvolveDeltasView.m; sourceTree = "<group>"; };
+		AA0C2DC91361F429006EDC84 /* DiscreteSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscreteSignal.h; sourceTree = "<group>"; };
+		AA0C2DCA1361F429006EDC84 /* DiscreteSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscreteSignal.m; sourceTree = "<group>"; };
 		AA39ACFD1357B54C0075D8D9 /* FilterDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesign.h; sourceTree = "<group>"; };
 		AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDesign.m; sourceTree = "<group>"; };
 		AA39AD001357B6570075D8D9 /* FilterDesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesignViewController.h; sourceTree = "<group>"; };
@@ -702,6 +705,8 @@
 				AACE32B31354ED7800028649 /* Axis.m */,
 				AA96B5341360F77600BAEAED /* Delta.h */,
 				AA96B5351360F77600BAEAED /* Delta.m */,
+				AA0C2DC91361F429006EDC84 /* DiscreteSignal.h */,
+				AA0C2DCA1361F429006EDC84 /* DiscreteSignal.m */,
 			);
 			name = Math/Plot;
 			sourceTree = "<group>";
@@ -1676,6 +1681,7 @@
 				AA00D4BC1360E260007C7E03 /* ConvolveDeltasViewController.m in Sources */,
 				AA00D4BD1360E260007C7E03 /* ConvolveDeltasView.m in Sources */,
 				AA96B5361360F77600BAEAED /* Delta.m in Sources */,
+				AA0C2DCB1361F429006EDC84 /* DiscreteSignal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,11 +10,13 @@
 
 
 @class Axis;
+@class DiscreteSignal;
 @interface ConvolveDeltasView : UIView {
     
 	NSMutableArray *points;
     CGPoint imagePoint;
     Axis * axis;
+    DiscreteSignal * signal;
     
 }
 
@@ -31,7 +33,8 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
-
+@property (nonatomic, retain) NSMutableArray * points;
+@property (nonatomic, retain) DiscreteSignal * signal;
 
 @end
 

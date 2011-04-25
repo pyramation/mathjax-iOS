@@ -23,7 +23,7 @@
 
 - (IBAction) equationEdited {
     
-    bool useServer = false;
+    bool useServer = true;
     
     if (!useServer) {
         NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script><script type=\"text/javascript\" src=\"MathJax.js\"></script></head><body>$$\\int_x^y f(x) dx$$<img src=\"100-coffee.png\">";       

@@ -7,6 +7,7 @@
 //
 
 #import "ConvolveDeltasView.h"
+#import "DiscreteSignal.h"
 #import "Delta.h"
 #import "Axis.h"
 
@@ -18,6 +19,7 @@
 
 @implementation ConvolveDeltasView
 
+@synthesize points, signal;
 
 
 - (void) drawRect : (CGRect) rect {
@@ -106,34 +108,9 @@
     
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    for(UITouch *t in touches) {
-        CGPoint a = [t locationInView:self];
-        imagePoint = a;
-        for (int i=0; i<[points count]; i++) {
-            NSValue *value = [points objectAtIndex:i];
-            CGPoint p = [value CGPointValue];
-            //CGFloat dist = [self pDist : a point2: p];
-            CGFloat dist = [self pDist : a point2: p];
-            if (dist <= FILTER_TOUCH_RADIUS) {
-                
-                //                a = CGPointMake(((int)(((float)a.x)/((float)GRIDSTEP)))*GRIDSTEP, ((int)(((float)a.y)/((float)GRIDSTEP)))*GRIDSTEP);
-                a = CGPointMake(((int)(((float)a.x)/((float)GRIDSTEP)))*GRIDSTEP, a.y);
-                
-                [points replaceObjectAtIndex:i withObject:[NSValue valueWithCGPoint:a]];              
-                break;
-            }
-            
-        }
-    }
-    
-    
-    [self setNeedsDisplay];
-    
-}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {}
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {}
-
 
 
 - (void) clearAll {
@@ -162,6 +139,8 @@
 
         axis = [[Axis alloc] initWithSpacingX:GRIDSTEP Y:GRIDSTEP];
         
+        signal = [[DiscreteSignal alloc] init];
+        
         points = [[NSMutableArray alloc] init];
         
         for(int i=self.frame.origin.x; i<self.frame.origin.x+self.frame.size.width; i+=GRIDSTEP) {
@@ -174,8 +153,9 @@
 
 
 - (void)dealloc {
-    [points dealloc];
     [super dealloc];
+    [points release];
+    [signal release];
 }
 
 
