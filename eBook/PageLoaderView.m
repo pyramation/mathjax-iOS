@@ -11,19 +11,12 @@
 
 @implementation PageLoaderView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 - (id) initWithFrame:(CGRect)frame page:(Page*)p {
     self = [super initWithFrame:frame];
     if (self) {
-        [self loadHTMLString:p.content baseURL:[NSURL URLWithString:@"http://mathapedia.com"]]; 
+        NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script><script type=\"text/javascript\" src=\"mathjax/MathJax.js?config=TeX-AMS_HTML-full\"></script></head><body>";
+        NSString * setHtml = [[[NSString alloc] initWithFormat:@"%@%@</body></html>", html, p.content] autorelease];
+        [self loadHTMLString:setHtml baseURL:[NSURL URLWithString:@"http://mathapedia.com"]]; 
     }
     return self;
 }
