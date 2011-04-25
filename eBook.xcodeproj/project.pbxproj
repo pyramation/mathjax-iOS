@@ -18,6 +18,11 @@
 		AA39AD2A135AA3C30075D8D9 /* DiracDeltasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD29135AA3C30075D8D9 /* DiracDeltasViewController.m */; };
 		AA39AD2D135AA3D00075D8D9 /* DiracDeltasView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD2C135AA3CF0075D8D9 /* DiracDeltasView.m */; };
 		AA39AD30135AA5030075D8D9 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD2F135AA5020075D8D9 /* SplitViewController.m */; };
+		AA4849C51365D7CD00E23E03 /* PageLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4849C41365D7CD00E23E03 /* PageLoaderViewController.m */; };
+		AA4849C81365D7E500E23E03 /* PageLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4849C71365D7E400E23E03 /* PageLoaderView.m */; };
+		AA4849D71365DA3000E23E03 /* PageIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4849D51365DA2B00E23E03 /* PageIndexViewController.m */; };
+		AA4849D81365DA3000E23E03 /* PageIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */; };
+		AA4849DB1365DC4900E23E03 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4849DA1365DC4100E23E03 /* TableCell.m */; };
 		AA913D30135C19B9006DE2CB /* UnitCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA913D2F135C19B9006DE2CB /* UnitCircleViewController.m */; };
 		AA913D9B135C9F16006DE2CB /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = AA913D49135C9F16006DE2CB /* ASIAuthenticationDialog.m */; };
 		AA913D9C135C9F16006DE2CB /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AA913D4C135C9F16006DE2CB /* ASIDataCompressor.m */; };
@@ -321,6 +326,15 @@
 		AA39AD2C135AA3CF0075D8D9 /* DiracDeltasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiracDeltasView.m; sourceTree = "<group>"; };
 		AA39AD2E135AA5010075D8D9 /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
 		AA39AD2F135AA5020075D8D9 /* SplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
+		AA4849C31365D7CD00E23E03 /* PageLoaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageLoaderViewController.h; sourceTree = "<group>"; };
+		AA4849C41365D7CD00E23E03 /* PageLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageLoaderViewController.m; sourceTree = "<group>"; };
+		AA4849C61365D7E400E23E03 /* PageLoaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageLoaderView.h; sourceTree = "<group>"; };
+		AA4849C71365D7E400E23E03 /* PageLoaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageLoaderView.m; sourceTree = "<group>"; };
+		AA4849D41365DA2B00E23E03 /* PageIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndexViewController.h; sourceTree = "<group>"; };
+		AA4849D51365DA2B00E23E03 /* PageIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndexViewController.m; sourceTree = "<group>"; };
+		AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageIndexViewController.xib; sourceTree = "<group>"; };
+		AA4849D91365DC3F00E23E03 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
+		AA4849DA1365DC4100E23E03 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
 		AA913D2E135C19B9006DE2CB /* UnitCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitCircleViewController.h; sourceTree = "<group>"; };
 		AA913D2F135C19B9006DE2CB /* UnitCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitCircleViewController.m; sourceTree = "<group>"; };
 		AA913D48135C9F16006DE2CB /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -755,6 +769,22 @@
 			name = Deltas;
 			sourceTree = "<group>";
 		};
+		AA4849C11365D7A400E23E03 /* PageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				AA4849C31365D7CD00E23E03 /* PageLoaderViewController.h */,
+				AA4849C41365D7CD00E23E03 /* PageLoaderViewController.m */,
+				AA4849C61365D7E400E23E03 /* PageLoaderView.h */,
+				AA4849C71365D7E400E23E03 /* PageLoaderView.m */,
+				AA4849D41365DA2B00E23E03 /* PageIndexViewController.h */,
+				AA4849D51365DA2B00E23E03 /* PageIndexViewController.m */,
+				AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */,
+				AA4849D91365DC3F00E23E03 /* TableCell.h */,
+				AA4849DA1365DC4100E23E03 /* TableCell.m */,
+			);
+			name = PageLoader;
+			sourceTree = "<group>";
+		};
 		AA913D2C135C1991006DE2CB /* UnitCircle */ = {
 			isa = PBXGroup;
 			children = (
@@ -895,6 +925,7 @@
 		AA913DD9135CA286006DE2CB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AA4849C11365D7A400E23E03 /* PageLoader */,
 				AA913E00135CAEEC006DE2CB /* JSONFetcher.h */,
 				AA913E01135CAEEC006DE2CB /* JSONFetcher.m */,
 				AA913E09135CB189006DE2CB /* JSONFetcherDelegate.h */,
@@ -1588,6 +1619,7 @@
 				AA913F9B135CB736006DE2CB /* 200-card-clubs.png in Resources */,
 				AAB00BAD135E491100304853 /* MathJax in Resources */,
 				AA9A0AD6135F36E300A7DC60 /* equationEditorViewController.xib in Resources */,
+				AA4849D81365DA3000E23E03 /* PageIndexViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1682,6 +1714,10 @@
 				AA00D4BD1360E260007C7E03 /* ConvolveDeltasView.m in Sources */,
 				AA96B5361360F77600BAEAED /* Delta.m in Sources */,
 				AA0C2DCB1361F429006EDC84 /* DiscreteSignal.m in Sources */,
+				AA4849C51365D7CD00E23E03 /* PageLoaderViewController.m in Sources */,
+				AA4849C81365D7E500E23E03 /* PageLoaderView.m in Sources */,
+				AA4849D71365DA3000E23E03 /* PageIndexViewController.m in Sources */,
+				AA4849DB1365DC4900E23E03 /* TableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

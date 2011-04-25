@@ -17,7 +17,7 @@
 #import "UnitCircleViewController.h"
 #import "equationEditorViewController.h"
 #import "ConvolveDeltasViewController.h"
-
+#import "PageIndexViewController.h"
 
 // #import "DataFetcher.h"
 
@@ -54,6 +54,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
     addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
 //    addMe(webView2C, web2Nav, @"Web View", @"96-book.png", UIViewController);
+    addMe(aViewc, aNav, @"Network Library", @"96-book.png", PageIndexViewController)
     addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
     addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
     addMe(plotViewC, plotNav, @"Graphs", @"77-ekg.png", GraphViewController);
