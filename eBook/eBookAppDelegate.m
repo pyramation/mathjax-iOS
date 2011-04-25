@@ -53,7 +53,6 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
     addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
-//    addMe(webView2C, web2Nav, @"Web View", @"96-book.png", UIViewController);
     addMe(aViewc, aNav, @"Network Library", @"96-book.png", PageIndexViewController)
     addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
     addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
@@ -63,16 +62,6 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     addMe(splitViewC, splitNav, @"Split View", @"95-equalizer.png", SplitViewController);
     addMe(filterViewC, filterNav, @"Filter Design", @"122-stats.png", FilterDesignViewController);
     addMe(eqViewC, eqNav, @"Equation Editor", @"06-magnify.png", equationEditorViewController);    
-
-//    blockViewC.view = [[GraphView alloc] init];
-//    UIWebView * webView = [[UIWebView alloc] init];
-//    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.mathapedia.com/sections/21"]]];
-//    webView.backgroundColor = [UIColor whiteColor];
-//    webView.scalesPageToFit = YES;
-//    webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-//    webView.delegate = self;
-//    webView2C.view = webView;
-//    [webView release];        
     
     UIWebView *htmlView = [[UIWebView alloc] init];
     [htmlView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"sample-tex" ofType:@"html" inDirectory:@"MathJax/test"]isDirectory:NO]]];
@@ -88,8 +77,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     tbarController.delegate = self;
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:tbarController];
-    navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
     _window.rootViewController = self.navigationController;
     
@@ -200,7 +188,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 {
     /*
      Typically you should set up the Core Data stack here, usually by passing the managed object context to the first view controller.
-     self.<#View controller#>.managedObjectContext = self.managedObjectContext;
+     self.managedObjectContext = self.managedObjectContext;
     */
 }
 
@@ -318,7 +306,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 }
 
 
-// DATAFETCHER
+#pragma DataFetcherTest
 
 -(void) dataFetcher: (DataFetcher*) fetcher hasResponse: (id) response {
     

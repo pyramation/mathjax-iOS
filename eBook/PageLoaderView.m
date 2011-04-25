@@ -9,6 +9,14 @@
 #import "PageLoaderView.h"
 #import "Page.h"
 
+#import "FilterDesignViewController.h"
+#import "DiracDeltasViewController.h"
+#import "UnitCircleViewController.h"
+#import "PolesZerosViewController.h"
+#import "GraphViewController.h"
+
+#import "eBookAppDelegate.h"
+
 @implementation PageLoaderView
 
 - (id) initWithFrame:(CGRect)frame page:(Page*)p {
@@ -17,6 +25,7 @@
         NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script><script type=\"text/javascript\" src=\"mathjax/MathJax.js?config=TeX-AMS_HTML-full\"></script></head><body>";
         NSString * setHtml = [[[NSString alloc] initWithFormat:@"%@%@</body></html>", html, p.content] autorelease];
         [self loadHTMLString:setHtml baseURL:[NSURL URLWithString:@"http://mathapedia.com"]]; 
+        self.delegate = self;
     }
     return self;
 }
@@ -25,5 +34,56 @@
 {
     [super dealloc];
 }
+
+#pragma UIWebView stuff
+
+- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    //CAPTURE USER LINK-CLICK.
+    
+    // NSLog(@"%@ %d", request, navigationType);
+    
+    eBookAppDelegate * delegate = (eBookAppDelegate*) [[UIApplication sharedApplication] delegate];
+    UINavigationController * nav = [delegate navigationController];
+                                   
+    
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        NSURL *URL = [request URL]; 
+        if ([[URL scheme] isEqualToString:@"FilterDesign"]) {
+            FilterDesignViewController * temp = [[FilterDesignViewController alloc] init];
+            [nav pushViewController:temp animated:TRUE];
+            [temp release];
+        } else if ([[URL scheme] isEqualToString:@"DiracDeltas"]) {
+            FilterDesignViewController * temp = [[DiracDeltasViewController alloc] init];
+            [nav pushViewController:temp animated:TRUE];
+            [temp release];
+            
+        } else if ([[URL scheme] isEqualToString:@"UnitCircle"]) {
+            FilterDesignViewController * temp = [[UnitCircleViewController alloc] init];
+            [nav pushViewController:temp animated:TRUE];
+            [temp release];
+            
+        } else if ([[URL scheme] isEqualToString:@"PolesZeros"]) {
+            FilterDesignViewController * temp = [[PolesZerosViewController alloc] init];
+            [nav pushViewController:temp animated:TRUE];
+            [temp release];
+            
+        } else if ([[URL scheme] isEqualToString:@"Graph"]) {
+            FilterDesignViewController * temp = [[GraphViewController alloc] init];
+            [nav pushViewController:temp animated:TRUE];
+            [temp release];
+            
+        } else if ([[URL scheme] isEqualToString:@"http"]) {
+            
+            [webView loadRequest:request];
+            
+        } else {
+            NSLog(@"other");
+            
+        }
+        return NO;
+    }   
+    return YES;   
+}
+
 
 @end

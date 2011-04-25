@@ -127,7 +127,7 @@
 - (void) pushPageView: (id) sender {
     Page * page = (Page*)[pages objectAtIndex:((UIButton*)sender).tag];
     PageLoaderViewController * vc = [[PageLoaderViewController alloc] initWithPage:page NibName:nil bundle:nil]; 
-    [self.navigationController pushViewController:vc animated:YES];
+    [[self navigationController] pushViewController:vc animated:YES];
     [vc release];
 }
 

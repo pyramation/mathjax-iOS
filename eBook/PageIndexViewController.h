@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataFetcherDelegate.h"
 
-@interface PageIndexViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, DataFetcherDelegate> {
+@interface PageIndexViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIWebViewDelegate, DataFetcherDelegate> {
     
     NSMutableArray * pages;
     IBOutlet UITableView *tableOfPages;
