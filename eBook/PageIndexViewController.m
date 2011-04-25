@@ -8,6 +8,7 @@
 //
 
 #import "PageIndexViewController.h"
+#import "PageLoaderViewController.h"
 #import "TableCell.h"
 #import "DataFetcher.h"
 #import "Page.h"
@@ -88,7 +89,7 @@
 		cell = [[[TableCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
-    [[cell mEditButton] addTarget:self action:@selector(pushEditView:) forControlEvents:UIControlEventTouchUpInside];
+    [[cell mEditButton] addTarget:self action:@selector(pushPageView:) forControlEvents:UIControlEventTouchUpInside];
     [[cell mEditButton] setTag:indexPath.row];
     
     Page * page = (Page*)[pages objectAtIndex:indexPath.row];
@@ -108,19 +109,28 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    Page * page = (Page*)[pages objectAtIndex:indexPath.row];
+    PageLoaderViewController * vc = [[PageLoaderViewController alloc] initWithPage:page NibName:nil bundle:nil]; 
+    [[self navigationController] pushViewController:vc animated:YES];
+    [vc release];
     
-//    CDRoute * cdRoute = (CDRoute*)[routes objectAtIndex:indexPath.row];
-//    ScenicRoute * route = (ScenicRoute*) cdRoute.route;
-//    PageLoaderViewController* tripVC = [[PageLoaderViewController alloc] initWithNibName:@"ScenicTripViewController" bundle:nil route:route];
-//    
-//    [[self navigationController] pushViewController:tripVC animated:YES];
-//    [tripVC release];
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	return @"Select a Page";
 }
+
+#pragma mark - Callbacks
+
+- (void) pushPageView: (id) sender {
+    Page * page = (Page*)[pages objectAtIndex:((UIButton*)sender).tag];
+    PageLoaderViewController * vc = [[PageLoaderViewController alloc] initWithPage:page NibName:nil bundle:nil]; 
+    [self.navigationController pushViewController:vc animated:YES];
+    [vc release];
+}
+
 
 #pragma mark - DataFetcher 
 

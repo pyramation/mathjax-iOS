@@ -50,10 +50,8 @@
 	frame= CGRectMake(boundsX+70 ,30, 200, 15);
 	secondaryLabel.frame = frame;
     
-    frame= CGRectMake(boundsX+270 ,0, 50, 50);
+    frame= CGRectMake(contentRect.size.width-50,0, 50, 50);
     mEditButton.frame = frame;
-    
-    
 }
 
 

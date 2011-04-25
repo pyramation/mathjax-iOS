@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-
+@class Page;
 @interface PageLoaderViewController : UIViewController {
-
-    
-    
+    Page * page;
 }
+
+- (id)initWithPage:(Page*)p NibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+
+@property (nonatomic, retain) Page*page;
 
 @end

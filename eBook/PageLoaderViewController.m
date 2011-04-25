@@ -8,8 +8,11 @@
 
 #import "PageLoaderViewController.h"
 #import "PageLoaderView.h"
+#import "Page.h"
 
 @implementation PageLoaderViewController
+
+@synthesize page;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,8 +25,23 @@
     return self;
 }
 
+- (id)initWithPage:(Page*)p NibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        PageLoaderView * pv = [[PageLoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds] page:p];
+        self.page = p;
+        [self setView:pv];
+        
+    }
+    return self;
+}
+
+
 - (void)dealloc
 {
+    [page release];
     [super dealloc];
 }
 
