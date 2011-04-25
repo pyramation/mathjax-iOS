@@ -19,7 +19,7 @@
 
 @implementation ConvolveDeltasView
 
-@synthesize points, signal;
+@synthesize signal;
 
 
 - (void) drawRect : (CGRect) rect {
@@ -47,8 +47,8 @@
     
     //dots
     
-    for (int i=0; i<[points count]; i++) {
-        NSValue *value = [points objectAtIndex:i];
+    for (int i=0; i<[signal.points count]; i++) {
+        NSValue *value = [signal.points objectAtIndex:i];
         CGPoint p = [value CGPointValue];
  
         CGFloat y = self.frame.size.height/2.0;
@@ -73,12 +73,12 @@
     for(UITouch *t in touches) {
         CGPoint theTouch = [t locationInView:self];
         theTouch.x = ortho(theTouch.x);
-        for (int i=0; i<[points count]; i++) {
-            if (theTouch.x == [[points objectAtIndex:i] CGPointValue].x) {
+        for (int i=0; i<[signal.points count]; i++) {
+            if (theTouch.x == [[signal.points objectAtIndex:i] CGPointValue].x) {
                 if([t tapCount] == 2) {
                     theTouch.y = self.frame.size.height/2.0;
                 } 
-                [points replaceObjectAtIndex:i withObject:[NSValue valueWithCGPoint:theTouch]];     
+                [signal.points replaceObjectAtIndex:i withObject:[NSValue valueWithCGPoint:theTouch]];     
                 break;
             } 
         }        
@@ -93,11 +93,11 @@
     for(UITouch *t in touches) {
         CGPoint a = [t locationInView:self];
         a.x = ortho(a.x);
-        for (int i=0; i<[points count]; i++) {
-            NSValue *value = [points objectAtIndex:i];
+        for (int i=0; i<[signal.points count]; i++) {
+            NSValue *value = [signal.points objectAtIndex:i];
             CGPoint p = [value CGPointValue];
             if (p.x == a.x) {
-                [points replaceObjectAtIndex:i withObject:[NSValue valueWithCGPoint:a]];              
+                [signal.points replaceObjectAtIndex:i withObject:[NSValue valueWithCGPoint:a]];              
                 break;
             }
             
@@ -114,7 +114,7 @@
 
 
 - (void) clearAll {
-    [points removeAllObjects];
+    [signal.points removeAllObjects];
     [self setNeedsDisplay];
     
 }
@@ -140,11 +140,9 @@
         axis = [[Axis alloc] initWithSpacingX:GRIDSTEP Y:GRIDSTEP];
         
         signal = [[DiscreteSignal alloc] init];
-        
-        points = [[NSMutableArray alloc] init];
-        
+                
         for(int i=self.frame.origin.x; i<self.frame.origin.x+self.frame.size.width; i+=GRIDSTEP) {
-            [points addObject:[NSValue valueWithCGPoint:CGPointMake(i, self.frame.size.height/2.0)]];
+            [signal.points addObject:[NSValue valueWithCGPoint:CGPointMake(i, self.frame.size.height/2.0)]];
         }
         
     }
@@ -154,7 +152,6 @@
 
 - (void)dealloc {
     [super dealloc];
-    [points release];
     [signal release];
 }
 

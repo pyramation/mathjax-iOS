@@ -10,6 +10,8 @@
 #import "PolesZerosView.h"
 #import "FilterDesign.h"
 
+#import "DiscreteSignal.h"
+
 
 @implementation SplitViewController
 @synthesize view1, view2, returnView;
@@ -79,28 +81,9 @@
     NSLog(@"val is %f", val);
     
     [returnView clearAll];
-    
-    // perform convolution here!
-    NSMutableArray * new = [[NSMutableArray alloc] init];
-    for (int i = 0; i < [view1.points count]; i++) {
-        for (int j=0; j < [view2.points count]; j++) {
-            //a.set(i+j, a.get(i+j) + x[i] * h[j]);
-            CGPoint x = [[view1.points objectAtIndex:i] CGPointValue];
-            CGPoint h = [[view2.points objectAtIndex:j] CGPointValue];
-            CGPoint newP;
-            if ([new count] >= i+j) {
-                CGPoint cur = [[new objectAtIndex:i+j] CGPointValue];
-                newP = CGPointMake(x.x, cur.y + x.y * h.y);
-            } else newP = CGPointMake(x.x, x.y * h.y);
-            
-            [new insertObject:[NSValue valueWithCGPoint:newP] atIndex:i+j];
-        }
-    }
-    
-//    [returnView.points release];
-    returnView.points = new;
-  //  [new release];
-    
+
+    returnView.signal = [view1.signal convolve:view1.signal];
+       
 }
 
 - (void)dealloc {
