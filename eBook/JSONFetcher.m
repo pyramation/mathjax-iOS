@@ -41,9 +41,20 @@
     NSData* data = [request responseData];
     CJSONDeserializer* deserializer = [CJSONDeserializer deserializer];
     NSDictionary* dic = [deserializer deserializeAsDictionary:data error:nil];
-    [_delegate fetcherFinished:self withResult:dic];
-}
+    if (!dic) {
+        NSArray * array = [deserializer deserializeAsArray:data error:nil];
+//        NSMutableArray * store = [[[NSMutableArray alloc] init] autorelease];
+//        for (int i=0; i<[array count]; i++) {
+//            NSDictionary * d = [deserializer deserializeAsDictionary:[array objectAtIndex:i] error:nil];
+//            [store addObject:d];
+//        }
+//        NSArray * returnArray = [[[NSArray alloc] initWithArray:store] autorelease];
+//        [_delegate fetcherFinished:self withResult:returnArray];
+        [_delegate fetcherFinished:self withResult:array];
+    } else
+       [_delegate fetcherFinished:self withResult:dic];
 
+}
 - (void)requestFailed:(ASIHTTPRequest *)request {
     return;
 }

@@ -64,8 +64,11 @@
 # pragma mark - TableView methods
 
 - (void) reloadPages {
-    DataFetcher * fetcher = [[DataFetcher alloc] initWithBase:@"http://da.nlynch.com/categories/26.json" andQueries:nil andDelegate:self];
-    [fetcher fetch];
+    DataFetcher * fetcher = [[DataFetcher alloc] initWithBase:@"http://www.mathapedia.com/sections.json" andQueries:nil andDelegate:self];    
+
+    //DataFetcher * fetcher2 = [[DataFetcher alloc] initWithBase:@"http://www.mathapedia.com/sections/21.json" andQueries:nil andDelegate:self];
+   [fetcher fetch];
+    //[fetcher2 fetch];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -124,15 +127,32 @@
 
 -(void) dataFetcher: (DataFetcher*) fetcher hasResponse: (id) response {
     
-    NSDictionary * dic = (NSDictionary*) response;
-    NSLog(@"dictionary: ? => %@", [dic description]);
+    NSLog(@" type: %@", [[response class] description]);
     
-    if (dic) {
-        NSLog(@"success: ? %@", [dic description]);
-        NSDictionary * d2 = [dic valueForKey:@"category"];
-        NSLog(@" %@", [[d2 valueForKey:@"name"] description]);
-    } 
+    
+    NSArray * array = (NSArray*) response;
+    
+    for (int i=0; i<[array count]; i++) {
+//        NSLog(@"%@", [[array objectAtIndex:i] description]);
+        NSLog(@" type: %@", [[[array objectAtIndex:i] class] description]);
+        
+        NSDictionary * dic = [array objectAtIndex:i];
+        NSDictionary * section = [dic valueForKey:@"section"];
+        NSLog(@"name %@", [section valueForKey:@"name"]);
+        
+    }
+    
+    //NSDictionary * dic = (NSDictionary*) response;
+  //  NSLog(@"dictionary: ? => %@", [dic description]);
+    
+    //if (dic) {
+//        NSLog(@"success: ? %@", [dic description]);
+//        NSDictionary * d2 = [dic valueForKey:@"category"];
+  //      NSLog(@" %@", [[d2 valueForKey:@"name"] description]);
+    //} 
     [fetcher release];
+    
+    
     
 }
 
