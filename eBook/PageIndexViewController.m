@@ -10,6 +10,7 @@
 #import "PageIndexViewController.h"
 #import "TableCell.h"
 #import "DataFetcher.h"
+#import "Page.h"
 
 @implementation PageIndexViewController
 
@@ -20,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        pages = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -46,6 +48,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+   [self reloadPages];
 }
 
 - (void)viewDidUnload
@@ -66,14 +69,10 @@
 - (void) reloadPages {
     DataFetcher * fetcher = [[DataFetcher alloc] initWithBase:@"http://www.mathapedia.com/sections.json" andQueries:nil andDelegate:self];    
 
-    //DataFetcher * fetcher2 = [[DataFetcher alloc] initWithBase:@"http://www.mathapedia.com/sections/21.json" andQueries:nil andDelegate:self];
-   [fetcher fetch];
-    //[fetcher2 fetch];
-}
+    [fetcher fetch];
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self reloadPages];
-    [tableOfPages reloadData];
+    //DataFetcher * fetcher2 = [[DataFetcher alloc] initWithBase:@"http://www.mathapedia.com/sections/21.json" andQueries:nil andDelegate:self];
+    //[fetcher2 fetch];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -92,10 +91,10 @@
     [[cell mEditButton] addTarget:self action:@selector(pushEditView:) forControlEvents:UIControlEventTouchUpInside];
     [[cell mEditButton] setTag:indexPath.row];
     
-//    CDRoute * cdRoute = (CDRoute*)[routes objectAtIndex:indexPath.row];
+    Page * page = (Page*)[pages objectAtIndex:indexPath.row];
     
-    cell.primaryLabel.text = @"title";
-    cell.secondaryLabel.text = @"description";
+    cell.primaryLabel.text = page.name;
+    cell.secondaryLabel.text = page.desc;
     cell.myImageView.image = [UIImage imageNamed:@"icon.png"];
 	
 	return cell;
@@ -120,40 +119,36 @@
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return @"Select a Route";
+	return @"Select a Page";
 }
 
 #pragma mark - DataFetcher 
 
--(void) dataFetcher: (DataFetcher*) fetcher hasResponse: (id) response {
+- (void) dataFetcher: (DataFetcher*) fetcher hasResponse: (id) response {
     
-    NSLog(@" type: %@", [[response class] description]);
-    
+    //NSLog(@" type: %@", [[response class] description]);
     
     NSArray * array = (NSArray*) response;
     
     for (int i=0; i<[array count]; i++) {
-//        NSLog(@"%@", [[array objectAtIndex:i] description]);
-        NSLog(@" type: %@", [[[array objectAtIndex:i] class] description]);
+        //NSLog(@" type: %@", [[[array objectAtIndex:i] class] description]);
         
         NSDictionary * dic = [array objectAtIndex:i];
         NSDictionary * section = [dic valueForKey:@"section"];
         NSLog(@"name %@", [section valueForKey:@"name"]);
-        
+        Page * page = [[[Page alloc] init] autorelease];
+        page.name = [section valueForKey:@"name"];
+        page.desc = [section valueForKey:@"created_at"];
+        page.content = [section valueForKey:@"content"];
+        [pages addObject:page];
+  
     }
     
-    //NSDictionary * dic = (NSDictionary*) response;
-  //  NSLog(@"dictionary: ? => %@", [dic description]);
-    
-    //if (dic) {
-//        NSLog(@"success: ? %@", [dic description]);
-//        NSDictionary * d2 = [dic valueForKey:@"category"];
-  //      NSLog(@" %@", [[d2 valueForKey:@"name"] description]);
-    //} 
     [fetcher release];
     
-    
-    
+    [tableOfPages reloadData];
+
+    NSLog(@"pages: %d", [pages count]);
 }
 
 

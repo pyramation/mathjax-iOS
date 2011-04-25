@@ -10,6 +10,7 @@
 		AA00D4BC1360E260007C7E03 /* ConvolveDeltasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA00D4BA1360E260007C7E03 /* ConvolveDeltasViewController.m */; };
 		AA00D4BD1360E260007C7E03 /* ConvolveDeltasView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */; };
 		AA0C2DCB1361F429006EDC84 /* DiscreteSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C2DCA1361F429006EDC84 /* DiscreteSignal.m */; };
+		AA24E49513660C5800A66BBD /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = AA24E49413660C5500A66BBD /* Page.m */; };
 		AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */; };
 		AA39AD021357B6570075D8D9 /* FilterDesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD011357B6570075D8D9 /* FilterDesignViewController.m */; };
 		AA39AD061357C2FD0075D8D9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA39AD051357C2FC0075D8D9 /* icon.png */; };
@@ -311,6 +312,8 @@
 		AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvolveDeltasView.m; sourceTree = "<group>"; };
 		AA0C2DC91361F429006EDC84 /* DiscreteSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscreteSignal.h; sourceTree = "<group>"; };
 		AA0C2DCA1361F429006EDC84 /* DiscreteSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscreteSignal.m; sourceTree = "<group>"; };
+		AA24E49313660C5000A66BBD /* Page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page.h; sourceTree = "<group>"; };
+		AA24E49413660C5500A66BBD /* Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page.m; sourceTree = "<group>"; };
 		AA39ACFD1357B54C0075D8D9 /* FilterDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesign.h; sourceTree = "<group>"; };
 		AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDesign.m; sourceTree = "<group>"; };
 		AA39AD001357B6570075D8D9 /* FilterDesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesignViewController.h; sourceTree = "<group>"; };
@@ -710,6 +713,18 @@
 			name = Convolve;
 			sourceTree = "<group>";
 		};
+		AA24E49713660FAE00A66BBD /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				AA4849D41365DA2B00E23E03 /* PageIndexViewController.h */,
+				AA4849D51365DA2B00E23E03 /* PageIndexViewController.m */,
+				AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */,
+				AA4849D91365DC3F00E23E03 /* TableCell.h */,
+				AA4849DA1365DC4100E23E03 /* TableCell.m */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
 		AA39ACDD13579B440075D8D9 /* Math/Plot */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,15 +787,13 @@
 		AA4849C11365D7A400E23E03 /* PageLoader */ = {
 			isa = PBXGroup;
 			children = (
+				AA24E49713660FAE00A66BBD /* Table */,
 				AA4849C31365D7CD00E23E03 /* PageLoaderViewController.h */,
 				AA4849C41365D7CD00E23E03 /* PageLoaderViewController.m */,
 				AA4849C61365D7E400E23E03 /* PageLoaderView.h */,
 				AA4849C71365D7E400E23E03 /* PageLoaderView.m */,
-				AA4849D41365DA2B00E23E03 /* PageIndexViewController.h */,
-				AA4849D51365DA2B00E23E03 /* PageIndexViewController.m */,
-				AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */,
-				AA4849D91365DC3F00E23E03 /* TableCell.h */,
-				AA4849DA1365DC4100E23E03 /* TableCell.m */,
+				AA24E49313660C5000A66BBD /* Page.h */,
+				AA24E49413660C5500A66BBD /* Page.m */,
 			);
 			name = PageLoader;
 			sourceTree = "<group>";
@@ -1718,6 +1731,7 @@
 				AA4849C81365D7E500E23E03 /* PageLoaderView.m in Sources */,
 				AA4849D71365DA3000E23E03 /* PageIndexViewController.m in Sources */,
 				AA4849DB1365DC4900E23E03 /* TableCell.m in Sources */,
+				AA24E49513660C5800A66BBD /* Page.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
