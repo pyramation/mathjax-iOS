@@ -12,6 +12,7 @@
 #import "TableCell.h"
 #import "DataFetcher.h"
 #import "Page.h"
+#import "eBookAppDelegate.h"
 
 @implementation PageIndexViewController
 
@@ -111,8 +112,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     Page * page = (Page*)[pages objectAtIndex:indexPath.row];
-    PageLoaderViewController * vc = [[PageLoaderViewController alloc] initWithPage:page NibName:nil bundle:nil]; 
-    [[self navigationController] pushViewController:vc animated:YES];
+    PageLoaderViewController * vc = [[PageLoaderViewController alloc] initWithPage:page NibName:nil bundle:nil];
+    
+    eBookAppDelegate * delegate = (eBookAppDelegate*) [[UIApplication sharedApplication] delegate];
+    UINavigationController * nav = [delegate navigationController];
+    [nav pushViewController:vc animated:YES];
     [vc release];
     
 }
@@ -127,7 +131,9 @@
 - (void) pushPageView: (id) sender {
     Page * page = (Page*)[pages objectAtIndex:((UIButton*)sender).tag];
     PageLoaderViewController * vc = [[PageLoaderViewController alloc] initWithPage:page NibName:nil bundle:nil]; 
-    [[self navigationController] pushViewController:vc animated:YES];
+    eBookAppDelegate * delegate = (eBookAppDelegate*) [[UIApplication sharedApplication] delegate];
+    UINavigationController * nav = [delegate navigationController];
+    [nav pushViewController:vc animated:YES];
     [vc release];
 }
 
@@ -157,8 +163,6 @@
     [fetcher release];
     
     [tableOfPages reloadData];
-
-    NSLog(@"pages: %d", [pages count]);
 }
 
 
