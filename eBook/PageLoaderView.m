@@ -7,7 +7,7 @@
 //
 
 #import "PageLoaderView.h"
-#import "Page.h"
+#import "PageModel.h"
 
 #import "FilterDesignViewController.h"
 #import "DiracDeltasViewController.h"
@@ -19,7 +19,7 @@
 
 @implementation PageLoaderView
 
-- (id) initWithFrame:(CGRect)frame page:(Page*)p {
+- (id) initWithFrame:(CGRect)frame page:(PageModel*)p {
     self = [super initWithFrame:frame];
     if (self) {
         NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script><script type=\"text/javascript\" src=\"mathjax/MathJax.js?config=TeX-AMS_HTML-full\"></script></head><style>a,p{font-size: 18pt;}a{text-decoration:none;color:black;}</style><body>";

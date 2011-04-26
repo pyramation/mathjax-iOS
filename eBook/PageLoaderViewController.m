@@ -8,13 +8,13 @@
 
 #import "PageLoaderViewController.h"
 #import "PageLoaderView.h"
-#import "Page.h"
+#import "PageModel.h"
 
 @implementation PageLoaderViewController
 
 @synthesize page;
 
-- (id)initWithPage:(Page*)p NibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithPage:(PageModel*)p NibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {

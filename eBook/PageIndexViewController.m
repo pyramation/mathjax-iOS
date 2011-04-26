@@ -11,8 +11,10 @@
 #import "PageLoaderViewController.h"
 #import "TableCell.h"
 #import "DataFetcher.h"
-#import "Page.h"
+#import "PageModel.h"
 #import "eBookAppDelegate.h"
+#import "CDHelper.h"
+#import "CDPage.h"
 
 @implementation PageIndexViewController
 
@@ -93,7 +95,7 @@
     [[cell mEditButton] addTarget:self action:@selector(pushPageView:) forControlEvents:UIControlEventTouchUpInside];
     [[cell mEditButton] setTag:indexPath.row];
     
-    Page * page = (Page*)[pages objectAtIndex:indexPath.row];
+    PageModel * page = (PageModel*)[pages objectAtIndex:indexPath.row];
     
     cell.primaryLabel.text = page.name;
     cell.secondaryLabel.text = page.desc;
@@ -111,7 +113,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    Page * page = (Page*)[pages objectAtIndex:indexPath.row];
+    PageModel * page = (PageModel*)[pages objectAtIndex:indexPath.row];
     PageLoaderViewController * vc = [[PageLoaderViewController alloc] initWithPage:page NibName:nil bundle:nil];
     
     eBookAppDelegate * delegate = (eBookAppDelegate*) [[UIApplication sharedApplication] delegate];
@@ -129,7 +131,7 @@
 #pragma mark - Callbacks
 
 - (void) pushPageView: (id) sender {
-    Page * page = (Page*)[pages objectAtIndex:((UIButton*)sender).tag];
+    PageModel * page = (PageModel*)[pages objectAtIndex:((UIButton*)sender).tag];
     PageLoaderViewController * vc = [[PageLoaderViewController alloc] initWithPage:page NibName:nil bundle:nil]; 
     eBookAppDelegate * delegate = (eBookAppDelegate*) [[UIApplication sharedApplication] delegate];
     UINavigationController * nav = [delegate navigationController];
@@ -144,6 +146,8 @@
     
     //NSLog(@" type: %@", [[response class] description]);
     
+    
+    
     NSArray * array = (NSArray*) response;
     
     for (int i=0; i<[array count]; i++) {
@@ -152,17 +156,29 @@
         NSDictionary * dic = [array objectAtIndex:i];
         NSDictionary * section = [dic valueForKey:@"section"];
         NSLog(@"name %@", [section valueForKey:@"name"]);
-        Page * page = [[[Page alloc] init] autorelease];
+        PageModel * page = [[[PageModel alloc] init] autorelease];
         page.name = [section valueForKey:@"name"];
         page.desc = [section valueForKey:@"created_at"];
         page.content = [section valueForKey:@"content"];
         [pages addObject:page];
-  
+
+//        [[CDHelper sharedHelper] savePage:page];
+        
     }
     
     [fetcher release];
     
+    
+    NSArray * arr = [[CDHelper sharedHelper] allPages];
+    NSLog(@"pages: %u", [arr count]);
+
+    for (int i=0; i<[arr count]; i++) {
+        [pages addObject:[arr objectAtIndex:i]];
+    }
+    
     [tableOfPages reloadData];
+
+    
 }
 
 

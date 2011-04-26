@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class Page;
+@class PageModel;
 
 @interface PageLoaderView : UIWebView <UIWebViewDelegate> {
     
 }
 
-- (id) initWithFrame:(CGRect) frame page:(Page*)page;
+- (id) initWithFrame:(CGRect) frame page:(PageModel*)page;
 
 @end
