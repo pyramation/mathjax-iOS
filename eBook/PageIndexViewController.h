@@ -16,7 +16,7 @@
     
 }
 
-- (void) pushPageView: (id) sender;
+- (void) downloadPage: (id) sender;
 - (void) reloadPages;
 
 @property (nonatomic, retain) IBOutlet NSMutableArray *pages;

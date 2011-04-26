@@ -91,7 +91,7 @@
 		cell = [[[TableCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
-    [[cell mEditButton] addTarget:self action:@selector(pushPageView:) forControlEvents:UIControlEventTouchUpInside];
+    [[cell mEditButton] addTarget:self action:@selector(downloadPage:) forControlEvents:UIControlEventTouchUpInside];
     [[cell mEditButton] setTag:indexPath.row];
     
     PageModel * page = (PageModel*)[pages objectAtIndex:indexPath.row];
@@ -129,23 +129,16 @@
 
 #pragma mark - Callbacks
 
-- (void) pushPageView: (id) sender {
-    PageModel * page = (PageModel*)[pages objectAtIndex:((UIButton*)sender).tag];
-    PageLoaderViewController * vc = [[PageLoaderViewController alloc] initWithPage:page NibName:nil bundle:nil]; 
-    eBookAppDelegate * delegate = (eBookAppDelegate*) [[UIApplication sharedApplication] delegate];
-    UINavigationController * nav = [delegate navigationController];
-    [nav pushViewController:vc animated:YES];
-    [vc release];
+- (void) downloadPage: (id) sender {
+    PageModel * page = (PageModel*)[pages objectAtIndex:((UIButton*)sender).tag];    
+    [[CDHelper sharedHelper] savePage:page];
 }
-
 
 #pragma mark - DataFetcher 
 
 - (void) dataFetcher: (DataFetcher*) fetcher hasResponse: (id) response {
     
     //NSLog(@" type: %@", [[response class] description]);
-    
-    
     
     NSArray * array = (NSArray*) response;
     
@@ -159,22 +152,10 @@
         page.name = [section valueForKey:@"name"];
         page.desc = [section valueForKey:@"created_at"];
         page.content = [section valueForKey:@"content"];
-        [pages addObject:page];
-
-//        [[CDHelper sharedHelper] savePage:page];
-        
+        [pages addObject:page];        
     }
     
     [fetcher release];
-    
-    
-    NSArray * arr = [[CDHelper sharedHelper] allPages];
-    NSLog(@"pages: %u", [arr count]);
-
-    for (int i=0; i<[arr count]; i++) {
-        [pages addObject:[arr objectAtIndex:i]];
-    }
-    
     [tableOfPages reloadData];
 
     

@@ -24,7 +24,7 @@
 		secondaryLabel.textAlignment = UITextAlignmentLeft;
 		secondaryLabel.font = [UIFont systemFontOfSize:12];
 		myImageView = [[UIImageView alloc]init];
-        mEditButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        mEditButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
         
 		[self.contentView addSubview:primaryLabel];
 		[self.contentView addSubview:secondaryLabel];
