@@ -14,7 +14,7 @@
 #import "UnitCircleViewController.h"
 #import "PolesZerosViewController.h"
 #import "GraphViewController.h"
-
+#import "SplitViewController.h"
 #import "eBookAppDelegate.h"
 
 @implementation PageLoaderView
@@ -64,6 +64,11 @@
             
         } else if ([[URL scheme] isEqualToString:@"PolesZeros"]) {
             FilterDesignViewController * temp = [[PolesZerosViewController alloc] init];
+            [nav pushViewController:temp animated:TRUE];
+            [temp release];
+            
+        } else if ([[URL scheme] isEqualToString:@"Convolution"]) {
+            SplitViewController * temp = [[SplitViewController alloc] init];
             [nav pushViewController:temp animated:TRUE];
             [temp release];
             

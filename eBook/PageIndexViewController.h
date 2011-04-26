@@ -18,6 +18,7 @@
 
 - (void) downloadPage: (id) sender;
 - (void) reloadPages;
+- (IBAction) reload;
 
 @property (nonatomic, retain) IBOutlet NSMutableArray *pages;
 @property (nonatomic, retain) IBOutlet UITableView *tableOfPages;

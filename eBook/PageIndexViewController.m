@@ -127,6 +127,14 @@
 	return @"Select a Page";
 }
 
+#pragma mark - IBActions
+
+- (IBAction) reload {
+
+    [self reloadPages];
+    
+}
+
 #pragma mark - Callbacks
 
 - (void) downloadPage: (id) sender {
@@ -140,6 +148,7 @@
     
     //NSLog(@" type: %@", [[response class] description]);
     
+    [pages removeAllObjects];
     NSArray * array = (NSArray*) response;
     
     for (int i=0; i<[array count]; i++) {

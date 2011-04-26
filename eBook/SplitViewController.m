@@ -22,20 +22,15 @@
     if (self) {
         // Custom initialization
         
-        CGRect rect = [[UIScreen mainScreen] bounds];
         
+        // create continaer
+        CGRect rect = [[UIScreen mainScreen] bounds];  
+        UIView * container = [[UIView alloc] initWithFrame:rect];
+        
+        // add views
         CGRect rect1 = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height/4.0);
         CGRect rect2 = CGRectMake(rect.origin.x, rect.size.height/4.0, rect.size.width, rect.size.height/4.0);
         CGRect rect3 = CGRectMake(rect.origin.x, 2*rect.size.height/4.0, rect.size.width, rect.size.height/4.0);
-        
-  
-        UIView * container = [[UIView alloc] initWithFrame:rect];
-        
-        [self setView:container];
-        //        [container addSubview:[[GraphView alloc] initWithFrame:rect1]];
-        
-        //        [container addSubview:[[PolesZerosView alloc] initWithFrame:rect1]];
-        //        [container addSubview:[[FilterDesign alloc] initWithFrame:rect2]];
 
         view1 = [[ConvolveDeltasView alloc] initWithFrame:rect1];
         view2 = [[ConvolveDeltasView alloc] initWithFrame:rect2];
@@ -44,8 +39,8 @@
         [container addSubview:view2];
         [container addSubview:returnView];
         
-        
-        
+
+        // add slider
         CGRect frame = CGRectMake(rect.origin.x, 3*rect.size.height/4.0, rect.size.width, rect.size.height/4.0);
         UISlider *slider = [[UISlider alloc] initWithFrame:frame];
         [slider addTarget:self action:@selector(convolve:) forControlEvents:UIControlEventValueChanged];
@@ -54,20 +49,14 @@
         slider.maximumValue = 100.0;
         slider.continuous = YES;
         slider.value = 25.0;
-        
+            
         [container addSubview:slider];
+        [slider release];
+
         
-        
-        
-        
-        [view1 release];
-        [view2 release];
-        [returnView release];
-        
+        // set up container
+        [self setView:container];
         [container release];
-        
-        //        [self setView:[[PolesZerosView alloc] initWithFrame:rect1]];
-        //        [self setView:[[PolesZerosView alloc] initWithFrame:rect2]];
         
     }
     return self;
@@ -75,10 +64,10 @@
 
 - (void) convolve: (id) sender {
     
-    UISlider * slider = (UISlider*) sender;
-    float val = slider.value;
-    
-    NSLog(@"val is %f", val);
+//    UISlider * slider = (UISlider*) sender;
+//    float val = slider.value;
+//    
+//    NSLog(@"val is %f", val);
     
     [returnView clearAll];
 
@@ -87,10 +76,10 @@
 }
 
 - (void)dealloc {
-    [super dealloc];
     [view1 release];
     [view2 release];
     [returnView release];
+    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning {
