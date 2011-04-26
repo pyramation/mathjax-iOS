@@ -1,21 +1,22 @@
 //
-//  PageIndexViewController.m
+//  CDPageIndexViewController.m
 //  eBook
 //
-//  Created by Dan Lynch on 4/25/11.
+//  Created by Dan Lynch on 4/26/11.
 //  Copyright 2011 Pyramation Media. All rights reserved.
 //
 
+#import "CDPageIndexViewController.h"
 #import "PageIndexViewController.h"
 #import "PageLoaderViewController.h"
-#import "TableCell.h"
+#import "CDTableCell.h"
 #import "DataFetcher.h"
 #import "PageModel.h"
 #import "eBookAppDelegate.h"
 #import "CDHelper.h"
 #import "CDPage.h"
 
-@implementation PageIndexViewController
+@implementation CDPageIndexViewController
 
 @synthesize tableOfPages, pages;
 
@@ -51,7 +52,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-   [self reloadPages];
+    [self reloadPages];
 }
 
 - (void)viewDidUnload
@@ -70,12 +71,11 @@
 # pragma mark - TableView methods
 
 - (void) reloadPages {
-    DataFetcher * fetcher = [[DataFetcher alloc] initWithBase:@"http://www.mathapedia.com/sections.json" andQueries:nil andDelegate:self];    
-
-    [fetcher fetch];
-
-    //DataFetcher * fetcher2 = [[DataFetcher alloc] initWithBase:@"http://www.mathapedia.com/sections/21.json" andQueries:nil andDelegate:self];
-    //[fetcher2 fetch];
+    
+    [pages removeAllObjects];
+    [pages addObjectsFromArray:[[CDHelper sharedHelper] allPages]];    
+    [tableOfPages reloadData];
+        
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -86,9 +86,9 @@
 	
 	static NSString *CellIdentifier = @"Cell";
 	
-	TableCell *cell = (TableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	CDTableCell *cell = (CDTableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[TableCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[[CDTableCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
     [[cell mEditButton] addTarget:self action:@selector(pushPageView:) forControlEvents:UIControlEventTouchUpInside];
@@ -111,7 +111,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     PageModel * page = (PageModel*)[pages objectAtIndex:indexPath.row];
     PageLoaderViewController * vc = [[PageLoaderViewController alloc] initWithPage:page NibName:nil bundle:nil];
     
@@ -138,47 +138,6 @@
     [vc release];
 }
 
-
-#pragma mark - DataFetcher 
-
-- (void) dataFetcher: (DataFetcher*) fetcher hasResponse: (id) response {
-    
-    //NSLog(@" type: %@", [[response class] description]);
-    
-    
-    
-    NSArray * array = (NSArray*) response;
-    
-    for (int i=0; i<[array count]; i++) {
-        //NSLog(@" type: %@", [[[array objectAtIndex:i] class] description]);
-        
-        NSDictionary * dic = [array objectAtIndex:i];
-        NSDictionary * section = [dic valueForKey:@"section"];
-        NSLog(@"name %@", [section valueForKey:@"name"]);
-        PageModel * page = [[[PageModel alloc] init] autorelease];
-        page.name = [section valueForKey:@"name"];
-        page.desc = [section valueForKey:@"created_at"];
-        page.content = [section valueForKey:@"content"];
-        [pages addObject:page];
-
-//        [[CDHelper sharedHelper] savePage:page];
-        
-    }
-    
-    [fetcher release];
-    
-    
-    NSArray * arr = [[CDHelper sharedHelper] allPages];
-    NSLog(@"pages: %u", [arr count]);
-
-    for (int i=0; i<[arr count]; i++) {
-        [pages addObject:[arr objectAtIndex:i]];
-    }
-    
-    [tableOfPages reloadData];
-
-    
-}
 
 
 @end
