@@ -10,7 +10,7 @@
 
 @class Page;
 
-@interface PageLoaderView : UIWebView {
+@interface PageLoaderView : UIWebView <UIWebViewDelegate> {
     
 }
 
