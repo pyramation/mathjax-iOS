@@ -69,9 +69,7 @@
 //    
 //    NSLog(@"val is %f", val);
     
-    [returnView clearAll];
-
-    returnView.signal = [view1.signal convolve:view1.signal];
+    [view2.signal convolve:view1.signal signalToModify:returnView.signal];
        
 }
 

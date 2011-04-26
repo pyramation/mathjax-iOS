@@ -11,29 +11,36 @@
 
 @implementation DiscreteSignal
 
-@synthesize points;
+@synthesize points, base;
 
-- (id) convolve: (DiscreteSignal *) signal {
-    DiscreteSignal * returnSignal = [[DiscreteSignal alloc] init];
+- (void) convolve: (DiscreteSignal *) signal signalToModify: (DiscreteSignal*) signalToMod {
+    
+    [signalToMod.points removeAllObjects];
     
     // perform convolution here!
-    NSMutableArray * new = [[NSMutableArray alloc] init];
     for (int i = 0; i < [points count]; i++) {
         for (int j=0; j < [signal.points count]; j++) {
             //a.set(i+j, a.get(i+j) + x[i] * h[j]);
             CGPoint x = [[points objectAtIndex:i] CGPointValue];
+            x.y -= base;
             CGPoint h = [[signal.points objectAtIndex:j] CGPointValue];
+            h.y -= base;
             CGPoint newP;
-            if ([new count] > i+j) {
-                CGPoint cur = [[new objectAtIndex:i+j] CGPointValue];
+            if ([signalToMod.points count] > i+j) {
+                CGPoint cur = [[signalToMod.points objectAtIndex:i+j] CGPointValue];
+                cur.y -= base;
                 newP = CGPointMake(x.x, cur.y + x.y * h.y);
             } else newP = CGPointMake(x.x, x.y * h.y);
             
-            [new insertObject:[NSValue valueWithCGPoint:newP] atIndex:i+j];
+            newP.y += base;
+            [signalToMod.points insertObject:[NSValue valueWithCGPoint:newP] atIndex:i+j];
         }
     }
-    returnSignal.points = new;
-    return returnSignal;
+    
+    NSLog(@"num points: %d", [points count]);
+    NSLog(@"num points: %d", [signal.points count]);
+    NSLog(@"num points: %d", [signalToMod.points count]);
+    
 }
 
 - (id) init {

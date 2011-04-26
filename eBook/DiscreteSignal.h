@@ -12,11 +12,13 @@
 @interface DiscreteSignal : NSObject {
 
     NSMutableArray * points;
-    
+    CGFloat base;
 }
 
-- (id) convolve: (DiscreteSignal *) signal;
+
+- (void) convolve: (DiscreteSignal *) signal signalToModify: (DiscreteSignal*) signalToMod;
 
 @property (nonatomic, retain) NSMutableArray * points;
+@property (nonatomic, assign) CGFloat base;
 
 @end

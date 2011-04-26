@@ -140,7 +140,8 @@
         axis = [[Axis alloc] initWithSpacingX:GRIDSTEP Y:GRIDSTEP];
         
         signal = [[DiscreteSignal alloc] init];
-                
+        signal.base = self.frame.size.height/2.0;        
+        
         for(int i=self.frame.origin.x; i<self.frame.origin.x+self.frame.size.width; i+=GRIDSTEP) {
             [signal.points addObject:[NSValue valueWithCGPoint:CGPointMake(i, self.frame.size.height/2.0)]];
         }
