@@ -11,6 +11,7 @@
 		AA00D4BD1360E260007C7E03 /* ConvolveDeltasView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */; };
 		AA0C2DCB1361F429006EDC84 /* DiscreteSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C2DCA1361F429006EDC84 /* DiscreteSignal.m */; };
 		AA24E49513660C5800A66BBD /* PageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA24E49413660C5500A66BBD /* PageModel.m */; };
+		AA24E4BD1367322100A66BBD /* CDPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA24E4BC1367322100A66BBD /* CDPage.m */; };
 		AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */; };
 		AA39AD021357B6570075D8D9 /* FilterDesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD011357B6570075D8D9 /* FilterDesignViewController.m */; };
 		AA39AD061357C2FD0075D8D9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA39AD051357C2FC0075D8D9 /* icon.png */; };
@@ -270,7 +271,6 @@
 		AAA0994A134E24A7003A452F /* PolesZerosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA09949134E24A7003A452F /* PolesZerosViewController.m */; };
 		AAA0994D134E25AB003A452F /* PolesZerosView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA0994C134E25AB003A452F /* PolesZerosView.m */; };
 		AAB00BAD135E491100304853 /* MathJax in Resources */ = {isa = PBXBuildFile; fileRef = AAB00BAC135E491100304853 /* MathJax */; };
-		AACA459E13671D160082F5AF /* CDPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AACA459D13671D160082F5AF /* CDPage.m */; };
 		AACA45A113671DA40082F5AF /* CDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AACA45A013671DA40082F5AF /* CDHelper.m */; };
 		AACA45A81367257F0082F5AF /* CDPageIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AACA45A61367257F0082F5AF /* CDPageIndexViewController.m */; };
 		AACA45A91367257F0082F5AF /* CDPageIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACA45A71367257F0082F5AF /* CDPageIndexViewController.xib */; };
@@ -319,6 +319,8 @@
 		AA0C2DCA1361F429006EDC84 /* DiscreteSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscreteSignal.m; sourceTree = "<group>"; };
 		AA24E49313660C5000A66BBD /* PageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageModel.h; sourceTree = "<group>"; };
 		AA24E49413660C5500A66BBD /* PageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageModel.m; sourceTree = "<group>"; };
+		AA24E4BB1367322100A66BBD /* CDPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPage.h; sourceTree = "<group>"; };
+		AA24E4BC1367322100A66BBD /* CDPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPage.m; sourceTree = "<group>"; };
 		AA39ACFD1357B54C0075D8D9 /* FilterDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesign.h; sourceTree = "<group>"; };
 		AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDesign.m; sourceTree = "<group>"; };
 		AA39AD001357B6570075D8D9 /* FilterDesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesignViewController.h; sourceTree = "<group>"; };
@@ -641,8 +643,6 @@
 		AAA0994B134E25AB003A452F /* PolesZerosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolesZerosView.h; sourceTree = "<group>"; };
 		AAA0994C134E25AB003A452F /* PolesZerosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolesZerosView.m; sourceTree = "<group>"; };
 		AAB00BAC135E491100304853 /* MathJax */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MathJax; sourceTree = "<group>"; };
-		AACA459C13671D160082F5AF /* CDPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDPage.h; path = ../CDPage.h; sourceTree = "<group>"; };
-		AACA459D13671D160082F5AF /* CDPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDPage.m; path = ../CDPage.m; sourceTree = "<group>"; };
 		AACA459F13671DA40082F5AF /* CDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHelper.h; sourceTree = "<group>"; };
 		AACA45A013671DA40082F5AF /* CDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHelper.m; sourceTree = "<group>"; };
 		AACA45A51367257F0082F5AF /* CDPageIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPageIndexViewController.h; sourceTree = "<group>"; };
@@ -1282,10 +1282,10 @@
 		AACA45A21367205B0082F5AF /* Models/DB */ = {
 			isa = PBXGroup;
 			children = (
+				AA24E4BB1367322100A66BBD /* CDPage.h */,
+				AA24E4BC1367322100A66BBD /* CDPage.m */,
 				AA24E49313660C5000A66BBD /* PageModel.h */,
 				AA24E49413660C5500A66BBD /* PageModel.m */,
-				AACA459C13671D160082F5AF /* CDPage.h */,
-				AACA459D13671D160082F5AF /* CDPage.m */,
 			);
 			name = Models/DB;
 			sourceTree = "<group>";
@@ -1804,10 +1804,10 @@
 				AA4849D71365DA3000E23E03 /* PageIndexViewController.m in Sources */,
 				AA4849DB1365DC4900E23E03 /* TableCell.m in Sources */,
 				AA24E49513660C5800A66BBD /* PageModel.m in Sources */,
-				AACA459E13671D160082F5AF /* CDPage.m in Sources */,
 				AACA45A113671DA40082F5AF /* CDHelper.m in Sources */,
 				AACA45A81367257F0082F5AF /* CDPageIndexViewController.m in Sources */,
 				AACA45AC136725940082F5AF /* CDTableCell.m in Sources */,
+				AA24E4BD1367322100A66BBD /* CDPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
