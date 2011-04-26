@@ -966,15 +966,6 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
-		AA913DD9135CA286006DE2CB /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				AA4849C11365D7A400E23E03 /* Pages */,
-				AA24E499136613B100A66BBD /* Fetchers */,
-			);
-			name = Network;
-			sourceTree = "<group>";
-		};
 		AA913DDA135CA684006DE2CB /* TouchJSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -1273,6 +1264,7 @@
 		AACA459513671B630082F5AF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AA24E499136613B100A66BBD /* Fetchers */,
 				AACA459F13671DA40082F5AF /* CDHelper.h */,
 				AACA45A013671DA40082F5AF /* CDHelper.m */,
 			);
@@ -1364,9 +1356,9 @@
 		AAE1E24A134E112900C7D8C5 /* eBook */ = {
 			isa = PBXGroup;
 			children = (
-				AACA459513671B630082F5AF /* Helpers */,
-				AA913DD9135CA286006DE2CB /* Network */,
 				AA913DD8135CA268006DE2CB /* Main */,
+				AACA459513671B630082F5AF /* Helpers */,
+				AA4849C11365D7A400E23E03 /* Pages */,
 				AACE32AD1354ED3800028649 /* Classes */,
 				AAA09947134E2451003A452F /* apps */,
 				AAE1E259134E112A00C7D8C5 /* iPhone */,

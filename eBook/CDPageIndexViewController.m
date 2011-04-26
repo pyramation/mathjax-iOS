@@ -68,14 +68,16 @@
 	return YES;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self reloadPages];
+    [tableOfPages reloadData];
+}
+
 # pragma mark - TableView methods
 
 - (void) reloadPages {
-    
-    [pages removeAllObjects];
-    [pages addObjectsFromArray:[[CDHelper sharedHelper] allPages]];    
-    [tableOfPages reloadData];
-        
+    [pages release];    
+    pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
