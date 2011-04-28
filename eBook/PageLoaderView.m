@@ -22,7 +22,7 @@
 - (id) initWithFrame:(CGRect)frame page:(PageModel*)p {
     self = [super initWithFrame:frame];
     if (self) {
-        NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script><script type=\"text/javascript\" src=\"mathjax/MathJax.js?config=TeX-AMS_HTML-full\"></script></head><style>a,p{font-size: 18pt;}a{text-decoration:none;color:black;}</style><body>";
+        NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script><script type=\"text/javascript\" src=\"mathjax/MathJax.js?config=TeX-AMS_HTML-full\"></script></head><style>body{font-size: 18pt;}a{text-decoration:none;color:black;}</style><body>";
         NSString * setHtml = [[[NSString alloc] initWithFormat:@"%@%@</body></html>", html, p.content] autorelease];
         [self loadHTMLString:setHtml baseURL:[NSURL URLWithString:@"http://mathapedia.com"]]; 
         self.delegate = self;

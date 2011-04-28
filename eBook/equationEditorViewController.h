@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface equationEditorViewController : UIViewController {
+@interface equationEditorViewController : UIViewController <UIWebViewDelegate> {
     
     UIWebView * webview;
     UITextField * equation;

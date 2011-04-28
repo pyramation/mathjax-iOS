@@ -42,13 +42,13 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
     addMe(aViewc, aNav, @"Network Library", @"96-book.png", PageIndexViewController);
     addMe(cdViewc, cdNav, @"Library", @"96-book.png", CDPageIndexViewController);
-    addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
-    addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
-    addMe(plotViewC, plotNav, @"Graphs", @"77-ekg.png", GraphViewController);
-    addMe(dViewC, dNav, @"Convolve Deltas", @"55-network.png", ConvolveDeltasViewController);
-    addMe(blockViewC, blockNav, @"Dirac Deltas", @"55-network.png", DiracDeltasViewController);
-    addMe(splitViewC, splitNav, @"Split View", @"95-equalizer.png", SplitViewController);
-    addMe(filterViewC, filterNav, @"Filter Design", @"122-stats.png", FilterDesignViewController);
+//    addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
+//    addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
+//    addMe(plotViewC, plotNav, @"Graphs", @"77-ekg.png", GraphViewController);
+//    addMe(dViewC, dNav, @"Convolve Deltas", @"55-network.png", ConvolveDeltasViewController);
+//    addMe(blockViewC, blockNav, @"Dirac Deltas", @"55-network.png", DiracDeltasViewController);
+//    addMe(splitViewC, splitNav, @"Split View", @"95-equalizer.png", SplitViewController);
+//    addMe(filterViewC, filterNav, @"Filter Design", @"122-stats.png", FilterDesignViewController);
     addMe(eqViewC, eqNav, @"Equation Editor", @"06-magnify.png", equationEditorViewController);    
     
     UIWebView *htmlView = [[UIWebView alloc] init];

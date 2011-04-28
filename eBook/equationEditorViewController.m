@@ -25,18 +25,21 @@
     
     bool useServer = false;
     
+    webview.delegate = self;
+    
     if (!useServer) {
-        NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/javascript\" src=\"MathJax/MathJax.js\"></script><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script></head><body>$$\\int_x^y f(x) dx$$<img src=\"images/test.png\">";       
+        NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/javascript\" src=\"../MathJax.js?config=TeX-AMS_HTML-full\"></script><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script></head><body>$$\\int_x^y f(x) dx$$<img src=\"../../images/test.png\">";       
 
         NSString * setHtml = [[NSString alloc] initWithFormat:@"<br><br><br>%@%@</body></html>", html, equation.text];
-//        NSString * path = [[NSBundle mainBundle] resourcePath]; 
+        NSString * path = [[NSBundle mainBundle] resourcePath]; 
 //        path = [path stringByReplacingOccurrencesOfString:@"/" withString:@"//"];
-//        path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//        NSString * resourcesPath = [[NSString alloc] initWithFormat:@"file://%@/", path];
-//        NSLog(@"%@", resourcesPath);
+        path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString * resourcesPath = [[NSString alloc] initWithFormat:@"file://%@/MathJax/test/", path];
+        NSLog(@"%@", resourcesPath);
         
+        [webview loadHTMLString:setHtml baseURL:[NSURL URLWithString:resourcesPath]];
         //[webview loadHTMLString:setHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]]];
-        [webview loadHTMLString:setHtml baseURL:[[NSBundle mainBundle] resourceURL]];
+        //[webview loadHTMLString:setHtml baseURL:[[NSBundle mainBundle] resourceURL]];
         
     } else {
         NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/javascript\" src=\"mathjax/MathJax.js?config=TeX-AMS_HTML-full\"></script><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script></head><body>";
@@ -44,6 +47,12 @@
         [webview loadHTMLString:setHtml baseURL:[NSURL URLWithString:@"http://www.mathapedia.com"]];
     }
 
+    
+}
+
+- (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    
+    NSLog(@"error %@", [error description]);
     
 }
 
