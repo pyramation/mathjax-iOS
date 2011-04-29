@@ -1,0 +1,31 @@
+//
+//  BookView.h
+//  eBook
+//
+//  Created by Dan Lynch on 4/28/11.
+//  Copyright 2011 Pyramation Media. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+
+@interface BookView : UIView {
+ 
+    NSMutableArray * pages;
+    BOOL transitioning; 
+    UIView * containerView; 
+
+    UIView * view1; 
+    UIView * view2; 
+
+    
+}
+
+- (void) performTransition;
+
+@property (nonatomic, retain) NSMutableArray * pages;
+@property (nonatomic, retain) UIView * containerView;
+@property (nonatomic, retain) UIView * view1; 
+@property (nonatomic, retain) UIView * view2;
+
+@end

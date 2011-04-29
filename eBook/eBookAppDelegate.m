@@ -20,6 +20,8 @@
 #import "PageIndexViewController.h"
 #import "CDPageIndexViewController.h"
 
+#import "BookshelfViewController.h"
+
 @implementation eBookAppDelegate
 
 @synthesize window=_window;
@@ -39,6 +41,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
+    addMe(bViewC, bNav, @"Bookshelf", @"96-book.png", BookshelfViewController);
     addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
     addMe(aViewc, aNav, @"Network Library", @"96-book.png", PageIndexViewController);
     addMe(cdViewc, cdNav, @"Library", @"96-book.png", CDPageIndexViewController);
