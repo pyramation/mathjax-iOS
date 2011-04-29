@@ -22,7 +22,7 @@
     UIView * swipeView;
 }
 
-- (void) performTransition;
+-(void)performTransition: (NSString*) subtype;
 
 @property (nonatomic, retain) NSMutableArray * pages;
 @property (nonatomic, retain) UIView * containerView;

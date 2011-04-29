@@ -60,7 +60,7 @@
         }
 		else if (startTouchPosition.x > currentTouchPosition.x){
 			hswipe = TRUE;
-            [delegate swipeRight];
+            [delegate swipeLeft];
             //[self myProcessLeftSwipe:touches withEvent:event];
 		}
     }

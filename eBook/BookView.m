@@ -34,32 +34,28 @@
             self.view1 = [[PageLoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds] page:[pages objectAtIndex:0]];
             self.view2 = [[PageLoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds] page:[pages objectAtIndex:1]];
             [containerView addSubview:view1];
-            [containerView addSubview:view2];
-        
+            [containerView addSubview:view2];        
             [containerView addSubview:swipeView];
-            
+                        
         }
         [self addSubview:containerView];
-        [containerView release];
         
         
-        
-        
-        UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-105, [[UIScreen mainScreen] bounds].size.width, 100)];
-        [toolbar sizeToFit];
-        toolbar.barStyle = UIBarStyleBlackTranslucent;
-        
-        
-        UIBarButtonItem* buttonItem1 = [[UIBarButtonItem alloc] initWithTitle:@"Next Page" style:UIBarButtonSystemItemAction target:self action:@selector(performTransition)];
-        
-        [toolbar setItems:[NSArray arrayWithObjects:buttonItem1, nil]];
-        
-        [buttonItem1 release];
-        
-        
-       // [self addSubview:toolbar];
-        [toolbar release];
-        
+//        UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-105, [[UIScreen mainScreen] bounds].size.width, 100)];
+//        [toolbar sizeToFit];
+//        toolbar.barStyle = UIBarStyleBlackTranslucent;
+//        
+//        
+//        UIBarButtonItem* buttonItem1 = [[UIBarButtonItem alloc] initWithTitle:@"Next Page" style:UIBarButtonSystemItemAction target:self action:@selector(performTransition)];
+//        
+//        [toolbar setItems:[NSArray arrayWithObjects:buttonItem1, nil]];
+//        
+//        [buttonItem1 release];
+//        
+//        
+//        [self addSubview:toolbar];
+//        [toolbar release];
+//        
 
             
     }
@@ -86,7 +82,7 @@
 
 #pragma mark - Transitions
 
--(void)performTransition
+-(void)performTransition: (NSString*) subtype
 {
 	// First create a CATransition object to describe the transition
 	CATransition *transition = [CATransition animation];
@@ -96,14 +92,10 @@
 	transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
 	
 	// Now to set the type of transition. Since we need to choose at random, we'll setup a couple of arrays to help us.
-	NSString *types[4] = {kCATransitionMoveIn, kCATransitionPush, kCATransitionReveal, kCATransitionFade};
-	NSString *subtypes[4] = {kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom};
-	int rnd = random() % 4;
-	transition.type = types[rnd];
-	if(rnd < 3) // if we didn't pick the fade transition, then we need to set a subtype too
-	{
-		transition.subtype = subtypes[random() % 4];
-	}
+
+    transition.type = kCATransitionReveal;
+    transition.subtype = subtype;
+    
 	
 	// Finally, to avoid overlapping transitions we assign ourselves as the delegate for the animation and wait for the
 	// -animationDidStop:finished: message. When it comes in, we will flag that we are no longer transitioning.
@@ -126,15 +118,33 @@
 #pragma mark - Swipe Delegate
 
 - (void) swipeLeft {
+    
+    NSLog(@"swipe left");
 
-    [self performTransition];
+	if(!transitioning)
+	{
+		[self performTransition: kCATransitionFromRight];
+	}
     
 }
 
 - (void) swipeRight {
 
-    [self performTransition];
+    NSLog(@"swipe right");
     
+	if(!transitioning)
+	{
+		[self performTransition: kCATransitionFromLeft];
+	}
+     
 }
+
+#pragma mark - Transition Delegate
+
+-(void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
+{
+	transitioning = NO;
+}
+
 
 @end

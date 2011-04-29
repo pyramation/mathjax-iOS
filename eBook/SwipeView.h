@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#define HORIZ_SWIPE_DRAG_MIN  100	// for horizontal swipe
+#define HORIZ_SWIPE_DRAG_MIN  50	// for horizontal swipe
 #define VERT_SWIPE_DRAG_MAX    10	// for horizontal swipe
+
 #define VERT_SWIPE_DRAG_MIN  150	// for vertical swipe
 #define HORIZ_SWIPE_DRAG_MAX    10	// for vertical swipe
 
