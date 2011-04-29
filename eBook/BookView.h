@@ -22,7 +22,7 @@
     int index;
 }
 
--(void)performTransition: (NSString*) subtype;
+-(void)performTransition: (NSString*) subtype type: (NSString*) type;
 
 @property (nonatomic, retain) NSMutableArray * pages;
 @property (nonatomic, retain) UIView * containerView;

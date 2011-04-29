@@ -35,5 +35,5 @@
 @required
 - (void) swipeLeft;
 - (void) swipeRight;
-
+- (void) doubleTap;
 @end

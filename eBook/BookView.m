@@ -62,18 +62,18 @@
 
 #pragma mark - Transitions
 
--(void)performTransition: (NSString*) subtype
+-(void)performTransition: (NSString*) subtype type: (NSString*) type 
 {
 	// First create a CATransition object to describe the transition
 	CATransition *transition = [CATransition animation];
 	// Animate over 3/4 of a second
-	transition.duration = 0.75;
+	transition.duration = 0.65;
 	// using the ease in/out timing function
 	transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
 	
 	// Now to set the type of transition. Since we need to choose at random, we'll setup a couple of arrays to help us.
 
-    transition.type = kCATransitionReveal;
+    transition.type = type;
     transition.subtype = subtype;
     
 	
@@ -112,7 +112,7 @@
     
 	if(!transitioning)
 	{
-		[self performTransition: kCATransitionFromRight];
+		[self performTransition: kCATransitionFromRight type:kCATransitionReveal];
 	}
     
 }
@@ -121,9 +121,20 @@
 
 	if(!transitioning)
 	{
-		[self performTransition: kCATransitionFromLeft];
+		[self performTransition: kCATransitionFromLeft type:kCATransitionReveal];
 	}
      
+}
+
+- (void) doubleTap {
+    
+    NSLog(@"double tap!! ");
+
+    if(!transitioning)
+	{
+		[self performTransition: kCATransitionFromTop type:kCATransitionMoveIn];
+	}
+    
 }
 
 #pragma mark - Transition Delegate

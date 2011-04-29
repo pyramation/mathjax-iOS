@@ -81,4 +81,13 @@
 //	}
 }
 
+- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event 
+{
+        if([[touches anyObject] tapCount] == 2)
+        {
+            [delegate doubleTap];
+        }
+ 
+}
+
 @end
