@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @class PageModel;
 
 @interface PageLoaderView : UIWebView <UIWebViewDelegate> {
+    
     
 }
 

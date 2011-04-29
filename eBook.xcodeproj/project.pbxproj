@@ -25,6 +25,7 @@
 		AA4849D71365DA3000E23E03 /* PageIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4849D51365DA2B00E23E03 /* PageIndexViewController.m */; };
 		AA4849D81365DA3000E23E03 /* PageIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */; };
 		AA4849DB1365DC4900E23E03 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4849DA1365DC4100E23E03 /* TableCell.m */; };
+		AA586554136A8402007A7A68 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586553136A8402007A7A68 /* SwipeView.m */; };
 		AA6C2821136A64100016CF80 /* BookshelfView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C2820136A64100016CF80 /* BookshelfView.m */; };
 		AA6C2824136A69210016CF80 /* BookshelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C2823136A69210016CF80 /* BookshelfViewController.m */; };
 		AA6C2827136A786E0016CF80 /* BookView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C2826136A786D0016CF80 /* BookView.m */; };
@@ -349,11 +350,13 @@
 		AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageIndexViewController.xib; sourceTree = "<group>"; };
 		AA4849D91365DC3F00E23E03 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
 		AA4849DA1365DC4100E23E03 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
+		AA586552136A8402007A7A68 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
+		AA586553136A8402007A7A68 /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
 		AA6C281F136A64100016CF80 /* BookshelfView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookshelfView.h; sourceTree = "<group>"; };
 		AA6C2820136A64100016CF80 /* BookshelfView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookshelfView.m; sourceTree = "<group>"; };
 		AA6C2822136A69210016CF80 /* BookshelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookshelfViewController.h; sourceTree = "<group>"; };
 		AA6C2823136A69210016CF80 /* BookshelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookshelfViewController.m; sourceTree = "<group>"; };
-		AA6C2825136A786D0016CF80 /* BookView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = BookView.h; sourceTree = "<group>"; };
+		AA6C2825136A786D0016CF80 /* BookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookView.h; sourceTree = "<group>"; };
 		AA6C2826136A786D0016CF80 /* BookView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookView.m; sourceTree = "<group>"; };
 		AA6C2828136A7BC80016CF80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AA913D2E135C19B9006DE2CB /* UnitCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitCircleViewController.h; sourceTree = "<group>"; };
@@ -980,6 +983,8 @@
 				AA6C2823136A69210016CF80 /* BookshelfViewController.m */,
 				AA6C2825136A786D0016CF80 /* BookView.h */,
 				AA6C2826136A786D0016CF80 /* BookView.m */,
+				AA586552136A8402007A7A68 /* SwipeView.h */,
+				AA586553136A8402007A7A68 /* SwipeView.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1822,6 +1827,7 @@
 				AA6C2821136A64100016CF80 /* BookshelfView.m in Sources */,
 				AA6C2824136A69210016CF80 /* BookshelfViewController.m in Sources */,
 				AA6C2827136A786E0016CF80 /* BookView.m in Sources */,
+				AA586554136A8402007A7A68 /* SwipeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

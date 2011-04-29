@@ -16,7 +16,7 @@
 #import "CDPage.h"
 
 @implementation BookView
-@synthesize pages, containerView, view1, view2;
+@synthesize pages, containerView, view1, view2, swipeView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -25,6 +25,9 @@
         // Initialization code
         self.pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
         self.containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        self.swipeView = [[SwipeView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-205, [[UIScreen mainScreen] bounds].size.width, 205) delegate:self];
+        
         if ([pages count] >= 2) {
             
             // PageLoaderView
@@ -33,6 +36,8 @@
             [containerView addSubview:view1];
             [containerView addSubview:view2];
         
+            [containerView addSubview:swipeView];
+            
         }
         [self addSubview:containerView];
         [containerView release];
@@ -52,7 +57,7 @@
         [buttonItem1 release];
         
         
-        [self addSubview:toolbar];
+       // [self addSubview:toolbar];
         [toolbar release];
         
 
@@ -116,6 +121,20 @@
 	UIView *tmp = view2;
 	view2 = view1;
 	view1 = tmp;
+}
+
+#pragma mark - Swipe Delegate
+
+- (void) swipeLeft {
+
+    [self performTransition];
+    
+}
+
+- (void) swipeRight {
+
+    [self performTransition];
+    
 }
 
 @end

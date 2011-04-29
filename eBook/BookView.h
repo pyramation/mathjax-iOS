@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SwipeView.h"
 
-@interface BookView : UIView {
+@interface BookView : UIView <SwipeViewDelegate> {
  
     NSMutableArray * pages;
     BOOL transitioning; 
@@ -18,7 +19,7 @@
     UIView * view1; 
     UIView * view2; 
 
-    
+    UIView * swipeView;
 }
 
 - (void) performTransition;
@@ -27,5 +28,6 @@
 @property (nonatomic, retain) UIView * containerView;
 @property (nonatomic, retain) UIView * view1; 
 @property (nonatomic, retain) UIView * view2;
+@property (nonatomic, retain) UIView * swipeView;
 
 @end
