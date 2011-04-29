@@ -66,6 +66,8 @@
     [vec draw:context];
     CGContextSetRGBStrokeColor(context, 1.0, 0.0, 1.0, 1);    
     [vec drawComponents:context];
+    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1);    
+    [vec drawTrigComponents:context];
     NSString * str = [[NSString alloc] initWithFormat:@"%f", [vec angle]];
     angleLabel.text = str;
     [str release];

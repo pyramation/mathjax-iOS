@@ -17,6 +17,7 @@
 - (float) angle;
 - (void) draw : (CGContextRef) context;
 - (void) drawComponents : (CGContextRef) context;
+- (void) drawTrigComponents : (CGContextRef) context;
 - (void) drawArrow : (CGContextRef) context;
 - (void) drawVector : (CGContextRef) context;
 - (void) drawDot:(CGContextRef) context;

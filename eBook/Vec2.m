@@ -82,6 +82,38 @@
 
 }
 
+- (void) drawTrigComponents:(CGContextRef)context {
+
+    CGContextSetLineWidth(context, 2);
+    
+    
+    // http://mitat.tuu.fi/?p=34
+
+    float dash[2]={6 ,5}; // pattern 6 times “solid”, 5 times “empty”
+    CGContextSetLineDash(context,0,dash,2);
+
+    
+    CGContextBeginPath(context);
+    CGContextMoveToPoint(context, a.x, b.y);
+    CGContextAddLineToPoint(context, a.x, b.y);
+    CGContextAddLineToPoint(context, b.x, b.y);    
+    
+    CGContextMoveToPoint(context, b.x, a.y);
+    CGContextAddLineToPoint(context, b.x, a.y);
+    CGContextAddLineToPoint(context, b.x, b.y);    
+    CGContextStrokePath(context);
+ 
+    
+    float normal[1]={1};
+    CGContextSetLineDash(context,0,normal,0);
+    
+
+    
+}
+
+
+
+
 - (void) drawDot:(CGContextRef) context {
     
     CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
