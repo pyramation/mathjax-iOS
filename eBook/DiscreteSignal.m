@@ -8,6 +8,11 @@
 
 #import "DiscreteSignal.h"
 
+#define Y(signal, j) ([[signal.points objectAtIndex:j] CGPointValue].y - signal.base)
+
+#define getPT(signal, i) [[[signal points] objectAtIndex:i] CGPointValue]
+
+#define addPT(signal, pt, i)[[signal points] insertObject:[NSValue valueWithCGPoint:pt]  atIndex:i];
 
 @implementation DiscreteSignal
 
@@ -17,10 +22,18 @@
     
     [signalToMod.points removeAllObjects];
     
+    //    for (int i = 0; i < [points count]; i++ )
+    //    {
+    //        y[i] = 0;                      
+    //        for (int j = 0; j < [signal.points count]; j++ )
+    //        {
+    //            y[i] += x[i - j] * h[j];    
+    //        }
+    //    }
+    
     // perform convolution here!
     for (int i = 0; i < [points count]; i++) {
         for (int j=0; j < [signal.points count]; j++) {
-            //a.set(i+j, a.get(i+j) + x[i] * h[j]);
             CGPoint x = [[points objectAtIndex:i] CGPointValue];
             x.y -= base;
             CGPoint h = [[signal.points objectAtIndex:j] CGPointValue];
@@ -37,9 +50,9 @@
         }
     }
     
-    NSLog(@"num points: %d", [points count]);
-    NSLog(@"num points: %d", [signal.points count]);
-    NSLog(@"num points: %d", [signalToMod.points count]);
+//    NSLog(@"num points: %d", [points count]);
+//    NSLog(@"num points: %d", [signal.points count]);
+//    NSLog(@"num points: %d", [signalToMod.points count]);
     
 }
 
