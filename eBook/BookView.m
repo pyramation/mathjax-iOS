@@ -16,7 +16,7 @@
 #import "CDPage.h"
 
 @implementation BookView
-@synthesize pages, containerView, view1, view2, swipeView;
+@synthesize pages, containerView, swipeView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -27,35 +27,18 @@
         self.containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
         self.swipeView = [[SwipeView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-205, [[UIScreen mainScreen] bounds].size.width, 205) delegate:self];
+
         
-        if ([pages count] >= 2) {
-            
-            // PageLoaderView
-            self.view1 = [[PageLoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds] page:[pages objectAtIndex:0]];
-            self.view2 = [[PageLoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds] page:[pages objectAtIndex:1]];
-            [containerView addSubview:view1];
-            [containerView addSubview:view2];        
-            [containerView addSubview:swipeView];
-                        
+       for(int i=0; i<[pages count]; i++) {
+            [containerView addSubview: [[PageLoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds] page:[pages objectAtIndex:i]]];
         }
+        
+        
+        [containerView addSubview:swipeView];
         [self addSubview:containerView];
         
+        index = 0;
         
-//        UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-105, [[UIScreen mainScreen] bounds].size.width, 100)];
-//        [toolbar sizeToFit];
-//        toolbar.barStyle = UIBarStyleBlackTranslucent;
-//        
-//        
-//        UIBarButtonItem* buttonItem1 = [[UIBarButtonItem alloc] initWithTitle:@"Next Page" style:UIBarButtonSystemItemAction target:self action:@selector(performTransition)];
-//        
-//        [toolbar setItems:[NSArray arrayWithObjects:buttonItem1, nil]];
-//        
-//        [buttonItem1 release];
-//        
-//        
-//        [self addSubview:toolbar];
-//        [toolbar release];
-//        
 
             
     }
@@ -73,8 +56,6 @@
 
 - (void)dealloc
 {
-    [view1 release];
-    [view2 release];
     [containerView release];
     [pages release];
     [super dealloc];
@@ -104,23 +85,32 @@
 	
 	// Next add it to the containerView's layer. This will perform the transition based on how we change its contents.
 	[containerView.layer addAnimation:transition forKey:nil];
-	
-	// Here we hide view1, and show view2, which will cause Core Animation to animate view1 away and view2 in.
-	view1.hidden = YES;
-	view2.hidden = NO;
-	
-	// And so that we will continue to swap between our two images, we swap the instance variables referencing them.
-	UIView *tmp = view2;
-	view2 = view1;
-	view1 = tmp;
+    
+    for(int i=0; i<[[containerView subviews] count]; i++) {
+        if ([[[containerView subviews] objectAtIndex:i] isKindOfClass:[PageLoaderView class]]) {            
+            UIView* v = (UIView*) [[containerView subviews] objectAtIndex:i];
+            v.hidden = YES;
+        }
+    }
+    
+    
+    unsigned int u;
+    
+    if (subtype == kCATransitionFromLeft) {
+        u = index-- % [pages count];
+    } else {
+        u = index++ % [pages count];        
+    }
+    
+    UIView * cv = [[containerView subviews] objectAtIndex:u];
+    cv.hidden = NO;
+    
 }
 
 #pragma mark - Swipe Delegate
 
 - (void) swipeLeft {
     
-    NSLog(@"swipe left");
-
 	if(!transitioning)
 	{
 		[self performTransition: kCATransitionFromRight];
@@ -130,8 +120,6 @@
 
 - (void) swipeRight {
 
-    NSLog(@"swipe right");
-    
 	if(!transitioning)
 	{
 		[self performTransition: kCATransitionFromLeft];

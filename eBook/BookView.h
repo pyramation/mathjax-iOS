@@ -13,21 +13,19 @@
 @interface BookView : UIView <SwipeViewDelegate> {
  
     NSMutableArray * pages;
+    
     BOOL transitioning; 
     UIView * containerView; 
 
-    UIView * view1; 
-    UIView * view2; 
-
     UIView * swipeView;
+
+    int index;
 }
 
 -(void)performTransition: (NSString*) subtype;
 
 @property (nonatomic, retain) NSMutableArray * pages;
 @property (nonatomic, retain) UIView * containerView;
-@property (nonatomic, retain) UIView * view1; 
-@property (nonatomic, retain) UIView * view2;
 @property (nonatomic, retain) UIView * swipeView;
 
 @end
