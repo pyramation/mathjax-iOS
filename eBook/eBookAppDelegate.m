@@ -33,6 +33,7 @@ UINavigationController * nav = [[UINavigationController alloc] initWithRootViewC
 nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 [view.tabBarItem initWithTitle:title image:[UIImage imageNamed:icon] tag:0];\
 [controllers addObject:nav]; \
+[nav release]; \
 [view release]
 
 
@@ -69,8 +70,9 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     tbarController.viewControllers = controllers;
     tbarController.customizableViewControllers = controllers;
     tbarController.delegate = self;
-    
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:tbarController];
+    [tbarController release];
+    
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
     _window.rootViewController = self.navigationController;

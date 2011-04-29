@@ -147,11 +147,14 @@
     model.pages = pages;    
     [[CDHelper sharedHelper] saveBook:model];
  
-    NSArray * books = [[CDHelper sharedHelper] allBooks];
-    NSLog(@"size of books %d", [books count]);
-    
+//    NSArray * books = [[CDHelper sharedHelper] allBooks];
+//    NSLog(@"size of books %d", [books count]);
+
+    // memory with pages here
     [[CDHelper sharedHelper] clearPages];
     
+    [self reloadPages];
+    [tableOfPages reloadData];
 }
 
 

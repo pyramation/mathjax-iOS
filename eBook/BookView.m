@@ -64,6 +64,9 @@
 
 -(void)performTransition: (NSString*) subtype type: (NSString*) type 
 {
+    
+    if ([[containerView subviews] count] <= 1) return;
+    
 	// First create a CATransition object to describe the transition
 	CATransition *transition = [CATransition animation];
 	// Animate over 3/4 of a second
@@ -96,10 +99,12 @@
     unsigned int u;
     
     if (subtype == kCATransitionFromLeft) {
-        u = index-- % [pages count];
+        u = --index % [pages count];
     } else {
-        u = index++ % [pages count];        
+        u = ++index % [pages count];        
     }
+    
+    NSLog(@"%u", u);
     
     UIView * cv = [[containerView subviews] objectAtIndex:u];
     cv.hidden = NO;
@@ -130,6 +135,18 @@
     
     NSLog(@"double tap!! ");
 
+    [pages release];
+    pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
+    
+    while( [[containerView subviews] count] > 0 ) {
+		[[[containerView subviews] objectAtIndex:0] removeFromSuperview]; 
+	}
+    for(int i=0; i<[pages count]; i++) {
+        [containerView addSubview: [[PageLoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds] page:[pages objectAtIndex:i]]];
+    }
+    [containerView addSubview:swipeView];
+    index = -1;
+    
     if(!transitioning)
 	{
 		[self performTransition: kCATransitionFromTop type:kCATransitionMoveIn];

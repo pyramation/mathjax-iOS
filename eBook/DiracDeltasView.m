@@ -45,7 +45,7 @@
     CGContextSetLineWidth(context, 4);
 
     
-    CGFloat x = self.frame.size.width/2.0 + self.frame.origin.x;
+    //CGFloat x = self.frame.size.width/2.0 + self.frame.origin.x;
     CGFloat y = self.frame.size.height/2.0 + self.frame.origin.y;  
         
     CGContextBeginPath(context);
@@ -71,7 +71,7 @@
         CGFloat xx = p.x;
         CGFloat yy = p.y;
 
-        x = xx;
+        CGFloat x = xx;
         y = self.frame.size.height/2.0;
 
         

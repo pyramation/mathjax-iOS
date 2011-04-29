@@ -30,20 +30,21 @@
     if (!useServer) {
         NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/javascript\" src=\"../MathJax.js?config=TeX-AMS_HTML-full\"></script><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script></head><body>$$\\int_x^y f(x) dx$$<img src=\"../../images/test.png\">";       
 
-        NSString * setHtml = [[NSString alloc] initWithFormat:@"<br><br><br>%@%@</body></html>", html, equation.text];
+        NSString * setHtml = [[[NSString alloc] initWithFormat:@"<br><br><br>%@%@</body></html>", html, equation.text] autorelease];
         NSString * path = [[NSBundle mainBundle] resourcePath]; 
 //        path = [path stringByReplacingOccurrencesOfString:@"/" withString:@"//"];
         path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSString * resourcesPath = [[NSString alloc] initWithFormat:@"file://%@/MathJax/test/", path];
+        NSString * resourcesPath = [[[NSString alloc] initWithFormat:@"file://%@/MathJax/test/", path] autorelease];
         NSLog(@"%@", resourcesPath);
         
         [webview loadHTMLString:setHtml baseURL:[NSURL URLWithString:resourcesPath]];
         //[webview loadHTMLString:setHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]]];
         //[webview loadHTMLString:setHtml baseURL:[[NSBundle mainBundle] resourceURL]];
         
+        
     } else {
         NSString * html = @"<!DOCTYPE html><html><head><title>MathJax</title><script type=\"text/javascript\" src=\"mathjax/MathJax.js?config=TeX-AMS_HTML-full\"></script><script type=\"text/x-mathjax-config\">MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}});</script></head><body>";
-        NSString * setHtml = [[NSString alloc] initWithFormat:@"%@<br><br><br><br>$$%@$$</body></html>", html, equation.text];
+        NSString * setHtml = [[[NSString alloc] initWithFormat:@"%@<br><br><br><br>$$%@$$</body></html>", html, equation.text] autorelease];
         [webview loadHTMLString:setHtml baseURL:[NSURL URLWithString:@"http://www.mathapedia.com"]];
     }
 
