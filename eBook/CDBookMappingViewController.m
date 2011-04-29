@@ -13,6 +13,7 @@
 #import "CDTableCell.h"
 #import "TableCell.h"
 #import "PageModel.h"
+#import "BookModel.h"
 
 @implementation CDBookMappingViewController
 
@@ -112,8 +113,8 @@
         [[cell mEditButton] addTarget:self action:@selector(hitBookView:) forControlEvents:UIControlEventTouchUpInside];
         [[cell mEditButton] setTag:indexPath.row];
 
-        cell.primaryLabel.text = @"sdfsdfdsf";
-        cell.secondaryLabel.text = @"page desc";
+        cell.primaryLabel.text = @"";
+        cell.secondaryLabel.text = @"";
         cell.myImageView.image = [UIImage imageNamed:@"96-book.png"];
         return cell;
         
@@ -156,6 +157,16 @@
         UINavigationController * nav = [delegate navigationController];
         [nav pushViewController:vc animated:YES];
         [vc release];
+        
+    } else if (tableOfBooks == tableView) {
+        
+//        BookModel * book = (BookModel*)[books objectAtIndex:indexPath.row];
+        
+//        [pages release];
+ //       self.pages = book.pages;
+        
+  //      [tableOfPages reloadData];
+        
     }
 }
 

@@ -24,6 +24,7 @@
     if (self) {
         // Initialization code
         self.pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
+        
         self.containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
         self.swipeView = [[SwipeView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-205, [[UIScreen mainScreen] bounds].size.width, 205) delegate:self];
