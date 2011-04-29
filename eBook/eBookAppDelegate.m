@@ -44,7 +44,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
     addMe(bViewC, bNav, @"Bookshelf", @"96-book.png", BookshelfViewController);
-    addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
+//    addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
     addMe(aViewc, aNav, @"Network Library", @"96-book.png", PageIndexViewController);
     addMe(cdViewc, cdNav, @"Library", @"96-book.png", CDPageIndexViewController);
     addMe(bdViewc, bdNav, @"Book Library", @"96-book.png", CDBookMappingViewController);
@@ -58,12 +58,12 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 //    addMe(filterViewC, filterNav, @"Filter Design", @"122-stats.png", FilterDesignViewController);
     addMe(eqViewC, eqNav, @"Equation Editor", @"06-magnify.png", equationEditorViewController);    
     
-    UIWebView *htmlView = [[UIWebView alloc] init];
-    [htmlView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"sample-tex" ofType:@"html" inDirectory:@"MathJax/test"]isDirectory:NO]]];
-    [htmlView setScalesPageToFit:YES];
-    webViewC.view = htmlView;
-    htmlView.delegate = self;
-    [htmlView release];
+//    UIWebView *htmlView = [[UIWebView alloc] init];
+//    [htmlView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"sample-tex" ofType:@"html" inDirectory:@"MathJax/test"]isDirectory:NO]]];
+//    [htmlView setScalesPageToFit:YES];
+//    webViewC.view = htmlView;
+//    htmlView.delegate = self;
+//    [htmlView release];
     
     
     UITabBarController * tbarController = [[UITabBarController alloc] init];

@@ -160,12 +160,11 @@
         
     } else if (tableOfBooks == tableView) {
         
-//        BookModel * book = (BookModel*)[books objectAtIndex:indexPath.row];
-        
-//        [pages release];
- //       self.pages = book.pages;
-        
-  //      [tableOfPages reloadData];
+        BookModel * book = (BookModel*)[books objectAtIndex:indexPath.row];
+ 
+        [pages removeAllObjects];
+        [pages addObjectsFromArray:book.pages];
+        [tableOfPages reloadData];
         
     }
 }
