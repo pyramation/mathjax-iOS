@@ -18,7 +18,7 @@
 
 @implementation CDBookMappingViewController
 
-@synthesize books, tableOfBooks, pages, tableOfPages, iPages, tableOfIPages;
+@synthesize books, tableOfBooks, pages, tableOfPages, iPages, tableOfIPages, title, desc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,6 +49,11 @@
 }
 
 #pragma mark - View lifecycle
+
+- (void) viewWillAppear:(BOOL)animated {
+    
+    [self reloadAll];    
+}
 
 - (void)viewDidLoad
 {
@@ -198,11 +203,26 @@
 
 - (IBAction) reload {
     
-    [self reloadPages];
+    [self reloadAll];
+}
 
+- (IBAction) deleteBook {
+    
+}
+
+- (IBAction) updateBook {
+    
+    NSLog(@"title: %@, desc: %@", self.title.text, self.desc.text);
+    
+}
+
+- (void) reloadAll {
+    [self reloadPages];
+    
     [tableOfPages reloadData];
     [tableOfBooks reloadData];
     [tableOfIPages reloadData];
+    
 }
 
 - (void) reloadPages {
@@ -216,7 +236,13 @@
 //    [iPages release];
     
     
-    
+}
+
+#pragma mark - UITextViewDelegate
+
+-(BOOL) textFieldShouldReturn:(UITextField*) textField {
+    [textField resignFirstResponder]; 
+    return YES;
 }
 
 @end

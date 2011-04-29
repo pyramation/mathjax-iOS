@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface CDBookMappingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface CDBookMappingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate> {
     
     NSMutableArray * books;
     IBOutlet UITableView *tableOfBooks;
@@ -21,10 +21,20 @@
     NSMutableArray * pages;
     IBOutlet UITableView *tableOfPages; 
     
+    IBOutlet UITextField * title;
+    IBOutlet UITextField * desc;
+    
+    
 }
 
 - (IBAction) reload;
+
+- (IBAction) updateBook;
+- (IBAction) deleteBook;
+
 - (void) reloadPages;
+- (void) reloadAll;
+
 
 - (void) hitPageView: (id) sender;
 - (void) hitBookView: (id) sender;
@@ -39,5 +49,9 @@
 
 @property (nonatomic, retain) IBOutlet NSMutableArray *pages;
 @property (nonatomic, retain) IBOutlet UITableView *tableOfPages;
+
+@property (nonatomic, retain) IBOutlet UITextField * title;
+@property (nonatomic, retain) IBOutlet UITextField * desc;
+
 
 @end

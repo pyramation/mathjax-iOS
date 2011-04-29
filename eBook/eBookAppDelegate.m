@@ -43,11 +43,11 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
-    addMe(bViewC, bNav, @"Bookshelf", @"96-book.png", BookshelfViewController);
+    addMe(bViewC, bNav, @"Current Book", @"96-book.png", BookshelfViewController);
 //    addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
-    addMe(aViewc, aNav, @"Network Library", @"96-book.png", PageIndexViewController);
-    addMe(cdViewc, cdNav, @"Library", @"96-book.png", CDPageIndexViewController);
-    addMe(bdViewc, bdNav, @"Book Library", @"96-book.png", CDBookMappingViewController);
+    addMe(aViewc, aNav, @"Network Library", @"40-inbox.png", PageIndexViewController);
+    addMe(cdViewc, cdNav, @"Pages", @"96-book.png", CDPageIndexViewController);
+    addMe(bdViewc, bdNav, @"Books", @"33-cabinet.png", CDBookMappingViewController);
     
 //    addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
 //    addMe(poleViewC, poleNav, @"Poles and Zeros", @"73-radar.png", PolesZerosViewController);
@@ -76,13 +76,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
     _window.rootViewController = self.navigationController;
-    
-    // ASITEST
-    //    DataFetcher * fetcher = [[DataFetcher alloc] initWithBase:@"http://da.nlynch.com/categories/26.json" andQueries:nil andDelegate:self];
-    //  [fetcher fetch];
-
-    
-    
+        
     // Override point for customization after application launch.
     [_window makeKeyAndVisible];
     return YES;
