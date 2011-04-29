@@ -9,16 +9,24 @@
 #import <Foundation/Foundation.h>
 
 @class PageModel;
+@class BookModel;
 
 @interface CDHelper : NSObject {}
+
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 +(id) sharedHelper;
 
 - (void) savePage: (PageModel*) page;
 - (NSArray*) allPages;
+- (void) clearPages;
+
+- (void) saveBook: (BookModel*) book;
+- (NSArray*) allBooks;
+
 
 @end

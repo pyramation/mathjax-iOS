@@ -15,6 +15,7 @@
 #import "eBookAppDelegate.h"
 #import "CDHelper.h"
 #import "CDPage.h"
+#import "BookModel.h"
 
 @implementation CDPageIndexViewController
 
@@ -139,6 +140,19 @@
     [vc release];
 }
 
+- (IBAction) saveAsBook {
+    
+    NSLog(@"save as a book!!");
+    BookModel * model = [[BookModel alloc] init];
+    model.pages = pages;    
+    [[CDHelper sharedHelper] saveBook:model];
+ 
+    NSArray * books = [[CDHelper sharedHelper] allBooks];
+    NSLog(@"size of books %d", [books count]);
+    
+    [[CDHelper sharedHelper] clearPages];
+    
+}
 
 
 @end

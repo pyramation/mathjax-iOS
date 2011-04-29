@@ -7,8 +7,12 @@
 //
 
 #import "CDHelper.h"
+
 #import "CDPage.h"
 #import "PageModel.h"
+
+#import "CDBook.h"
+#import "BookModel.h"
 
 @implementation CDHelper
 @synthesize managedObjectContext=__managedObjectContext;
@@ -48,12 +52,50 @@ static CDHelper *sharedSingleton;
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];
     [fetchRequest release];
-    NSMutableArray* routeArray = [NSMutableArray arrayWithCapacity:[fetchedObjects count]];
+    NSMutableArray* pageArray = [NSMutableArray arrayWithCapacity:[fetchedObjects count]];
     for (CDPage* page in fetchedObjects ) {
-        [routeArray addObject:((PageModel*)page.page)];
+        [pageArray addObject:((PageModel*)page.page)];
     }
-    return [NSArray arrayWithArray:routeArray];
+    return [NSArray arrayWithArray:pageArray];
 }
+
+- (void) clearPages {
+    NSError *err;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CDPage"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];
+    [fetchRequest release];
+   
+    for (CDPage* page in fetchedObjects ) {
+        [self.managedObjectContext deleteObject:page];
+    }
+
+}
+
+- (void) saveBook: (BookModel*) book {
+    CDBook* model = [NSEntityDescription insertNewObjectForEntityForName:@"CDBook" inManagedObjectContext:[self managedObjectContext]];
+    model.pages = book.pages;
+    [self clearPages];
+    [self saveContext];
+}
+
+- (NSArray*) allBooks {
+    NSError *err;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CDBook"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];
+    [fetchRequest release];
+    NSMutableArray* bookArray = [NSMutableArray arrayWithCapacity:[fetchedObjects count]];
+    for (CDBook* book in fetchedObjects ) {
+        [bookArray addObject:book];
+    }
+    return [NSArray arrayWithArray:bookArray];
+}
+
 
 
 #pragma mark - context

@@ -38,8 +38,6 @@
         [self addSubview:containerView];
         
         index = 0;
-        
-
             
     }
     return self;

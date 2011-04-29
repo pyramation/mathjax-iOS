@@ -26,6 +26,10 @@
 		AA4849D81365DA3000E23E03 /* PageIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */; };
 		AA4849DB1365DC4900E23E03 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4849DA1365DC4100E23E03 /* TableCell.m */; };
 		AA586554136A8402007A7A68 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586553136A8402007A7A68 /* SwipeView.m */; };
+		AA58655F136A9B9F007A7A68 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58655E136A9B9E007A7A68 /* BookModel.m */; };
+		AA586563136A9CF5007A7A68 /* CDBook.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586562136A9CF4007A7A68 /* CDBook.m */; };
+		AA58656E136AA104007A7A68 /* CDBookMappingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58656C136AA104007A7A68 /* CDBookMappingViewController.m */; };
+		AA58656F136AA104007A7A68 /* CDBookMappingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA58656D136AA104007A7A68 /* CDBookMappingViewController.xib */; };
 		AA6C2821136A64100016CF80 /* BookshelfView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C2820136A64100016CF80 /* BookshelfView.m */; };
 		AA6C2824136A69210016CF80 /* BookshelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C2823136A69210016CF80 /* BookshelfViewController.m */; };
 		AA6C2827136A786E0016CF80 /* BookView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6C2826136A786D0016CF80 /* BookView.m */; };
@@ -352,6 +356,13 @@
 		AA4849DA1365DC4100E23E03 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
 		AA586552136A8402007A7A68 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
 		AA586553136A8402007A7A68 /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
+		AA58655D136A9B9D007A7A68 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
+		AA58655E136A9B9E007A7A68 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
+		AA586561136A9CF3007A7A68 /* CDBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBook.h; sourceTree = "<group>"; };
+		AA586562136A9CF4007A7A68 /* CDBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBook.m; sourceTree = "<group>"; };
+		AA58656B136AA104007A7A68 /* CDBookMappingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBookMappingViewController.h; sourceTree = "<group>"; };
+		AA58656C136AA104007A7A68 /* CDBookMappingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBookMappingViewController.m; sourceTree = "<group>"; };
+		AA58656D136AA104007A7A68 /* CDBookMappingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDBookMappingViewController.xib; sourceTree = "<group>"; };
 		AA6C281F136A64100016CF80 /* BookshelfView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookshelfView.h; sourceTree = "<group>"; };
 		AA6C2820136A64100016CF80 /* BookshelfView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookshelfView.m; sourceTree = "<group>"; };
 		AA6C2822136A69210016CF80 /* BookshelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookshelfViewController.h; sourceTree = "<group>"; };
@@ -745,6 +756,7 @@
 		AA24E49713660FAE00A66BBD /* Tables */ = {
 			isa = PBXGroup;
 			children = (
+				AA586565136AA090007A7A68 /* BookCoreData */,
 				AACA45A41367254D0082F5AF /* CoreData */,
 				AACA45A31367254A0082F5AF /* Internet */,
 			);
@@ -842,6 +854,42 @@
 				AA24E49713660FAE00A66BBD /* Tables */,
 			);
 			name = Pages;
+			sourceTree = "<group>";
+		};
+		AA586560136A9BAD007A7A68 /* BooksPages */ = {
+			isa = PBXGroup;
+			children = (
+				AA586564136A9FEC007A7A68 /* Books */,
+				AA4849C11365D7A400E23E03 /* Pages */,
+			);
+			name = BooksPages;
+			sourceTree = "<group>";
+		};
+		AA586564136A9FEC007A7A68 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				AA6C281F136A64100016CF80 /* BookshelfView.h */,
+				AA6C2820136A64100016CF80 /* BookshelfView.m */,
+				AA6C2822136A69210016CF80 /* BookshelfViewController.h */,
+				AA6C2823136A69210016CF80 /* BookshelfViewController.m */,
+				AA6C2825136A786D0016CF80 /* BookView.h */,
+				AA6C2826136A786D0016CF80 /* BookView.m */,
+				AA586552136A8402007A7A68 /* SwipeView.h */,
+				AA586553136A8402007A7A68 /* SwipeView.m */,
+				AA58655D136A9B9D007A7A68 /* BookModel.h */,
+				AA58655E136A9B9E007A7A68 /* BookModel.m */,
+			);
+			name = Books;
+			sourceTree = "<group>";
+		};
+		AA586565136AA090007A7A68 /* BookCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AA58656B136AA104007A7A68 /* CDBookMappingViewController.h */,
+				AA58656C136AA104007A7A68 /* CDBookMappingViewController.m */,
+				AA58656D136AA104007A7A68 /* CDBookMappingViewController.xib */,
+			);
+			name = BookCoreData;
 			sourceTree = "<group>";
 		};
 		AA913D2C135C1991006DE2CB /* UnitCircle */ = {
@@ -974,17 +1022,10 @@
 		AA913DD8135CA268006DE2CB /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AA586560136A9BAD007A7A68 /* BooksPages */,
 				AAE1E253134E112900C7D8C5 /* eBookAppDelegate.h */,
 				AAE1E254134E112900C7D8C5 /* eBookAppDelegate.m */,
 				AAE1E256134E112900C7D8C5 /* eBook.xcdatamodeld */,
-				AA6C281F136A64100016CF80 /* BookshelfView.h */,
-				AA6C2820136A64100016CF80 /* BookshelfView.m */,
-				AA6C2822136A69210016CF80 /* BookshelfViewController.h */,
-				AA6C2823136A69210016CF80 /* BookshelfViewController.m */,
-				AA6C2825136A786D0016CF80 /* BookView.h */,
-				AA6C2826136A786D0016CF80 /* BookView.m */,
-				AA586552136A8402007A7A68 /* SwipeView.h */,
-				AA586553136A8402007A7A68 /* SwipeView.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1297,6 +1338,8 @@
 		AACA45A21367205B0082F5AF /* Models/DB */ = {
 			isa = PBXGroup;
 			children = (
+				AA586561136A9CF3007A7A68 /* CDBook.h */,
+				AA586562136A9CF4007A7A68 /* CDBook.m */,
 				AA24E4BB1367322100A66BBD /* CDPage.h */,
 				AA24E4BC1367322100A66BBD /* CDPage.m */,
 				AA24E49313660C5000A66BBD /* PageModel.h */,
@@ -1382,7 +1425,6 @@
 			children = (
 				AA913DD8135CA268006DE2CB /* Main */,
 				AACA459513671B630082F5AF /* Helpers */,
-				AA4849C11365D7A400E23E03 /* Pages */,
 				AACE32AD1354ED3800028649 /* Classes */,
 				AAA09947134E2451003A452F /* apps */,
 				AAE1E259134E112A00C7D8C5 /* iPhone */,
@@ -1721,6 +1763,7 @@
 				AA9A0AD6135F36E300A7DC60 /* equationEditorViewController.xib in Resources */,
 				AA4849D81365DA3000E23E03 /* PageIndexViewController.xib in Resources */,
 				AACA45A91367257F0082F5AF /* CDPageIndexViewController.xib in Resources */,
+				AA58656F136AA104007A7A68 /* CDBookMappingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1828,6 +1871,9 @@
 				AA6C2824136A69210016CF80 /* BookshelfViewController.m in Sources */,
 				AA6C2827136A786E0016CF80 /* BookView.m in Sources */,
 				AA586554136A8402007A7A68 /* SwipeView.m in Sources */,
+				AA58655F136A9B9F007A7A68 /* BookModel.m in Sources */,
+				AA586563136A9CF5007A7A68 /* CDBook.m in Sources */,
+				AA58656E136AA104007A7A68 /* CDBookMappingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
