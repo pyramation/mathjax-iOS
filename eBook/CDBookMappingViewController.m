@@ -14,6 +14,7 @@
 #import "TableCell.h"
 #import "PageModel.h"
 #import "BookModel.h"
+#import "BookView.h"
 
 @implementation CDBookMappingViewController
 
@@ -176,6 +177,18 @@
 }
 
 - (void) hitBookView: (id) sender {
+
+    BookModel * book = (BookModel*)[books objectAtIndex:((UIButton*)sender).tag];
+
+    BookView * v = [[BookView alloc] initWithFrame:[[UIScreen mainScreen] bounds] withPages:book.pages];
+    
+    eBookAppDelegate * delegate = (eBookAppDelegate*) [[UIApplication sharedApplication] delegate];
+    UINavigationController * nav = [delegate navigationController];
+
+    UIViewController * vc = [[UIViewController alloc] init];
+    [vc setView:v];
+    [nav pushViewController:vc animated:YES];
+    [vc release];
     
 }
 

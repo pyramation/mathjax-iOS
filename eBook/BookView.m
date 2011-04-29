@@ -44,6 +44,33 @@
     return self;
 }
 
+- (id)initWithFrame:(CGRect)frame withPages: (NSMutableArray*) pgs
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        self.pages = pgs;
+        
+        self.containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        self.swipeView = [[SwipeView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-205, [[UIScreen mainScreen] bounds].size.width, 205) delegate:self];
+        
+        
+        for(int i=0; i<[pages count]; i++) {
+            [containerView addSubview: [[PageLoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds] page:[pages objectAtIndex:i]]];
+        }
+        
+        
+        [containerView addSubview:swipeView];
+        [self addSubview:containerView];
+        
+        index = 0;
+        
+    }
+    return self;
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -133,8 +160,6 @@
 
 - (void) doubleTap {
     
-    NSLog(@"double tap!! ");
-
     [pages release];
     pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
     

@@ -19,6 +19,10 @@
 - (void) pushPageView: (id) sender;
 - (void) reloadPages;
 
+- (IBAction) saveAsBook;
+- (IBAction) clearPages;
+
+
 @property (nonatomic, retain) IBOutlet NSMutableArray *pages;
 @property (nonatomic, retain) IBOutlet UITableView *tableOfPages;
 

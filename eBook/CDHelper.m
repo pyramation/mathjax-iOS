@@ -77,7 +77,6 @@ static CDHelper *sharedSingleton;
 - (void) saveBook: (BookModel*) book {
     CDBook* model = [NSEntityDescription insertNewObjectForEntityForName:@"CDBook" inManagedObjectContext:[self managedObjectContext]];
     model.pages = book.pages;
-    [self clearPages];
     [self saveContext];
 }
 

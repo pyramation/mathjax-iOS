@@ -23,6 +23,7 @@
 }
 
 -(void)performTransition: (NSString*) subtype type: (NSString*) type;
+- (id)initWithFrame:(CGRect)frame withPages: (NSMutableArray*) pgs;
 
 @property (nonatomic, retain) NSMutableArray * pages;
 @property (nonatomic, retain) UIView * containerView;
