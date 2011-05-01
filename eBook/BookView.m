@@ -27,7 +27,7 @@
         
         self.containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
-        self.swipeView = [[SwipeView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-205, [[UIScreen mainScreen] bounds].size.width, 205) delegate:self];
+        self.swipeView = [[TouchSwipeView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-205, [[UIScreen mainScreen] bounds].size.width, 205) delegate:self];
 
         
        for(int i=0; i<[pages count]; i++) {
@@ -53,7 +53,7 @@
         
         self.containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
-        self.swipeView = [[SwipeView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-205, [[UIScreen mainScreen] bounds].size.width, 205) delegate:self];
+        self.swipeView = [[TouchSwipeView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-205, [[UIScreen mainScreen] bounds].size.width, 205) delegate:self];
         
         
         for(int i=0; i<[pages count]; i++) {
@@ -177,10 +177,16 @@
      
 }
 
+- (void) swipeDown {
+    
+}
+
+- (void) swipeUp {
+    
+}
+
 - (void) doubleTap {
     
-    //[pages release];
-    //pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
     
     [self refreshPages];
     index = -1;
@@ -189,6 +195,9 @@
 	{
 		[self performTransition: kCATransitionFromTop type:kCATransitionMoveIn];
 	}
+}
+
+- (void) singleTap {
     
 }
 

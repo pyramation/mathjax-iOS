@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "SwipeView.h"
+#import "TouchSwipeView.h"
 
-@interface BookView : UIView <SwipeViewDelegate> {
+@interface BookView : UIView <TouchSwipeViewDelegate> {
  
     NSMutableArray * pages;
     

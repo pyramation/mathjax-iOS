@@ -25,7 +25,7 @@
 		AA4849D71365DA3000E23E03 /* PageIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4849D51365DA2B00E23E03 /* PageIndexViewController.m */; };
 		AA4849D81365DA3000E23E03 /* PageIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */; };
 		AA4849DB1365DC4900E23E03 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4849DA1365DC4100E23E03 /* TableCell.m */; };
-		AA586554136A8402007A7A68 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586553136A8402007A7A68 /* SwipeView.m */; };
+		AA586554136A8402007A7A68 /* TouchSwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586553136A8402007A7A68 /* TouchSwipeView.m */; };
 		AA58655F136A9B9F007A7A68 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58655E136A9B9E007A7A68 /* BookModel.m */; };
 		AA586563136A9CF5007A7A68 /* CDBook.m in Sources */ = {isa = PBXBuildFile; fileRef = AA586562136A9CF4007A7A68 /* CDBook.m */; };
 		AA58656E136AA104007A7A68 /* CDBookMappingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58656C136AA104007A7A68 /* CDBookMappingViewController.m */; };
@@ -354,8 +354,8 @@
 		AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageIndexViewController.xib; sourceTree = "<group>"; };
 		AA4849D91365DC3F00E23E03 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
 		AA4849DA1365DC4100E23E03 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
-		AA586552136A8402007A7A68 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
-		AA586553136A8402007A7A68 /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
+		AA586552136A8402007A7A68 /* TouchSwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TouchSwipeView.h; sourceTree = "<group>"; };
+		AA586553136A8402007A7A68 /* TouchSwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchSwipeView.m; sourceTree = "<group>"; };
 		AA58655D136A9B9D007A7A68 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
 		AA58655E136A9B9E007A7A68 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
 		AA586561136A9CF3007A7A68 /* CDBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBook.h; sourceTree = "<group>"; };
@@ -874,8 +874,8 @@
 				AA6C2823136A69210016CF80 /* BookshelfViewController.m */,
 				AA6C2825136A786D0016CF80 /* BookView.h */,
 				AA6C2826136A786D0016CF80 /* BookView.m */,
-				AA586552136A8402007A7A68 /* SwipeView.h */,
-				AA586553136A8402007A7A68 /* SwipeView.m */,
+				AA586552136A8402007A7A68 /* TouchSwipeView.h */,
+				AA586553136A8402007A7A68 /* TouchSwipeView.m */,
 				AA58655D136A9B9D007A7A68 /* BookModel.h */,
 				AA58655E136A9B9E007A7A68 /* BookModel.m */,
 			);
@@ -1870,7 +1870,7 @@
 				AA6C2821136A64100016CF80 /* BookshelfView.m in Sources */,
 				AA6C2824136A69210016CF80 /* BookshelfViewController.m in Sources */,
 				AA6C2827136A786E0016CF80 /* BookView.m in Sources */,
-				AA586554136A8402007A7A68 /* SwipeView.m in Sources */,
+				AA586554136A8402007A7A68 /* TouchSwipeView.m in Sources */,
 				AA58655F136A9B9F007A7A68 /* BookModel.m in Sources */,
 				AA586563136A9CF5007A7A68 /* CDBook.m in Sources */,
 				AA58656E136AA104007A7A68 /* CDBookMappingViewController.m in Sources */,
