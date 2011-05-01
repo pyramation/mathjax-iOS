@@ -1385,7 +1385,6 @@
 		AAE1E233134E112900C7D8C5 = {
 			isa = PBXGroup;
 			children = (
-				AA6C2828136A7BC80016CF80 /* QuartzCore.framework */,
 				AA39AD051357C2FC0075D8D9 /* icon.png */,
 				AAE1E24A134E112900C7D8C5 /* eBook */,
 				AAE1E273134E112A00C7D8C5 /* eBookTests */,
@@ -1407,6 +1406,7 @@
 		AAE1E241134E112900C7D8C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA6C2828136A7BC80016CF80 /* QuartzCore.framework */,
 				AA913DD6135CA213006DE2CB /* libz.1.2.3.dylib */,
 				AA913D45135C9F16006DE2CB /* extFrameworks */,
 				AA913DD4135CA1D0006DE2CB /* SystemConfiguration.framework */,

@@ -4862,22 +4862,6 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 					<int key="connectionID">28</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">title</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="983815801"/>
-					</object>
-					<int key="connectionID">29</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">desc</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="795234580"/>
-					</object>
-					<int key="connectionID">30</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">updateBook</string>
 						<reference key="source" ref="839913938"/>
@@ -4910,6 +4894,22 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 						<reference key="destination" ref="841351856"/>
 					</object>
 					<int key="connectionID">34</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">mDesc</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="795234580"/>
+					</object>
+					<int key="connectionID">37</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">mTitle</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="983815801"/>
+					</object>
+					<int key="connectionID">38</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5075,7 +5075,7 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">34</int>
+			<int key="maxID">38</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5127,24 +5127,24 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>books</string>
-							<string>desc</string>
 							<string>iPages</string>
+							<string>mDesc</string>
+							<string>mTitle</string>
 							<string>pages</string>
 							<string>tableOfBooks</string>
 							<string>tableOfIPages</string>
 							<string>tableOfPages</string>
-							<string>title</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSMutableArray</string>
+							<string>NSMutableArray</string>
+							<string>UITextField</string>
 							<string>UITextField</string>
 							<string>NSMutableArray</string>
-							<string>NSMutableArray</string>
 							<string>UITableView</string>
 							<string>UITableView</string>
 							<string>UITableView</string>
-							<string>UITextField</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -5152,13 +5152,13 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>books</string>
-							<string>desc</string>
 							<string>iPages</string>
+							<string>mDesc</string>
+							<string>mTitle</string>
 							<string>pages</string>
 							<string>tableOfBooks</string>
 							<string>tableOfIPages</string>
 							<string>tableOfPages</string>
-							<string>title</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -5167,12 +5167,16 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 								<string key="candidateClassName">NSMutableArray</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">desc</string>
+								<string key="name">iPages</string>
+								<string key="candidateClassName">NSMutableArray</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">mDesc</string>
 								<string key="candidateClassName">UITextField</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">iPages</string>
-								<string key="candidateClassName">NSMutableArray</string>
+								<string key="name">mTitle</string>
+								<string key="candidateClassName">UITextField</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">pages</string>
@@ -5189,10 +5193,6 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 							<object class="IBToOneOutletInfo">
 								<string key="name">tableOfPages</string>
 								<string key="candidateClassName">UITableView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">title</string>
-								<string key="candidateClassName">UITextField</string>
 							</object>
 						</object>
 					</object>

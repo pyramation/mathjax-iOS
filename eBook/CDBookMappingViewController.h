@@ -21,8 +21,8 @@
     NSMutableArray * pages;
     IBOutlet UITableView *tableOfPages; 
     
-    IBOutlet UITextField * title;
-    IBOutlet UITextField * desc;
+    IBOutlet UITextField * mTitle;
+    IBOutlet UITextField * mDesc;
     
     
 }
@@ -50,8 +50,8 @@
 @property (nonatomic, retain) IBOutlet NSMutableArray *pages;
 @property (nonatomic, retain) IBOutlet UITableView *tableOfPages;
 
-@property (nonatomic, retain) IBOutlet UITextField * title;
-@property (nonatomic, retain) IBOutlet UITextField * desc;
+@property (nonatomic, retain) IBOutlet UITextField * mTitle;
+@property (nonatomic, retain) IBOutlet UITextField * mDesc;
 
 
 @end

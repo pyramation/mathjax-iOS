@@ -18,7 +18,7 @@
 
 @implementation CDBookMappingViewController
 
-@synthesize books, tableOfBooks, pages, tableOfPages, iPages, tableOfIPages, title, desc;
+@synthesize books, tableOfBooks, pages, tableOfPages, iPages, tableOfIPages, mTitle, mDesc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -212,7 +212,7 @@
 
 - (IBAction) updateBook {
     
-    NSLog(@"title: %@, desc: %@", self.title.text, self.desc.text);
+    NSLog(@"title: %@, desc: %@", self.mTitle.text, self.mDesc.text);
     
 }
 

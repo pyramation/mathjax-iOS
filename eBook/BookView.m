@@ -87,6 +87,25 @@
     [super dealloc];
 }
 
+#pragma mark - pages
+
+- (void) refreshPages {
+
+    [pages removeAllObjects];
+    [pages addObjectsFromArray:[[CDHelper sharedHelper] allPages]];
+
+    while( [[containerView subviews] count] > 0 ) {
+        [[[containerView subviews] objectAtIndex:0] removeFromSuperview]; 
+    }
+    for(int i=0; i<[pages count]; i++) {
+        PageLoaderView * pv = [[[PageLoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds] page:[pages objectAtIndex:i]] autorelease];
+        
+        [containerView addSubview: pv];
+    }
+    [containerView addSubview:swipeView];
+
+}
+
 #pragma mark - Transitions
 
 -(void)performTransition: (NSString*) subtype type: (NSString*) type 
@@ -160,16 +179,10 @@
 
 - (void) doubleTap {
     
-    [pages release];
-    pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
+    //[pages release];
+    //pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
     
-    while( [[containerView subviews] count] > 0 ) {
-		[[[containerView subviews] objectAtIndex:0] removeFromSuperview]; 
-	}
-    for(int i=0; i<[pages count]; i++) {
-        [containerView addSubview: [[PageLoaderView alloc] initWithFrame:[[UIScreen mainScreen] bounds] page:[pages objectAtIndex:i]]];
-    }
-    [containerView addSubview:swipeView];
+    [self refreshPages];
     index = -1;
     
     if(!transitioning)

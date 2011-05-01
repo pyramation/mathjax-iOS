@@ -25,6 +25,8 @@
 -(void)performTransition: (NSString*) subtype type: (NSString*) type;
 - (id)initWithFrame:(CGRect)frame withPages: (NSMutableArray*) pgs;
 
+- (void) refreshPages;
+
 @property (nonatomic, retain) NSMutableArray * pages;
 @property (nonatomic, retain) UIView * containerView;
 @property (nonatomic, retain) UIView * swipeView;
