@@ -41,7 +41,7 @@
         
         index = 0;
         bookIndex = 0;
-            
+        
     }
     return self;
 }

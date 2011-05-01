@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
-@interface CDBookMappingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate> {
+#import "DataFetcher.h"
+@class CDBook;
+@interface CDBookMappingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, DataFetcherDelegate> {
     
     NSMutableArray * books;
     IBOutlet UITableView *tableOfBooks;
@@ -23,16 +23,18 @@
     
     IBOutlet UITextField * mTitle;
     IBOutlet UITextField * mDesc;
+    IBOutlet UITextField * mSearch;
     
-    
+    CDBook * curBook;
 }
 
 - (IBAction) reload;
-
+- (IBAction) search;
+- (IBAction) saveBook;
 - (IBAction) updateBook;
 - (IBAction) deleteBook;
 - (IBAction) deleteBooks;
-
+- (IBAction) clearPages;
 
 - (void) reloadPages;
 - (void) reloadAll;
@@ -51,6 +53,8 @@
 
 @property (nonatomic, retain) IBOutlet NSMutableArray *pages;
 @property (nonatomic, retain) IBOutlet UITableView *tableOfPages;
+
+@property (nonatomic, retain) IBOutlet UITextField * mSearch;
 
 @property (nonatomic, retain) IBOutlet UITextField * mTitle;
 @property (nonatomic, retain) IBOutlet UITextField * mDesc;

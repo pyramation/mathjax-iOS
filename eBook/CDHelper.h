@@ -10,7 +10,7 @@
 
 @class PageModel;
 @class BookModel;
-
+@class CDBook;
 @interface CDHelper : NSObject {}
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
@@ -25,7 +25,10 @@
 - (NSArray*) allPages;
 - (void) clearPages;
 
+
 - (void) saveBook: (BookModel*) book;
+- (void) deleteBook: (CDBook*) book;
+- (NSArray*) allCDBooks;
 - (NSArray*) allBooks;
 - (void) clearBooks;
 

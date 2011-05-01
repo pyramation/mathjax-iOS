@@ -10,10 +10,12 @@
 
 
 @implementation BookModel
-@synthesize pages;
+@synthesize pages, desc, title;
 
 
 - (void)dealloc {
+    [title release];
+    [desc release];
     [pages release];
     [super dealloc];
     

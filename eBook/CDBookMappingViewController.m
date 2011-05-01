@@ -11,6 +11,8 @@
 #import "PageLoaderViewController.h"
 #import "CDHelper.h"
 #import "CDTableCell.h"
+#import "DelTableCell.h"
+#import "CDBook.h"
 #import "TableCell.h"
 #import "PageModel.h"
 #import "BookModel.h"
@@ -18,7 +20,7 @@
 
 @implementation CDBookMappingViewController
 
-@synthesize books, tableOfBooks, pages, tableOfPages, iPages, tableOfIPages, mTitle, mDesc;
+@synthesize books, tableOfBooks, pages, tableOfPages, iPages, tableOfIPages, mTitle, mDesc, mSearch;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +30,7 @@
         pages = [[NSMutableArray alloc] init];
         iPages = [[NSMutableArray alloc] init];
         books = [[NSMutableArray alloc] init];
+        curBook = nil;
     }
     return self;
 }
@@ -93,9 +96,9 @@
     
     if (tableOfPages == tableView) {
     
-        TableCell *cell = (TableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        DelTableCell *cell = (DelTableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
-            cell = [[[TableCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[[DelTableCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
         }
         
         [[cell mEditButton] addTarget:self action:@selector(hitPageView:) forControlEvents:UIControlEventTouchUpInside];
@@ -119,8 +122,10 @@
         [[cell mEditButton] addTarget:self action:@selector(hitBookView:) forControlEvents:UIControlEventTouchUpInside];
         [[cell mEditButton] setTag:indexPath.row];
 
-        cell.primaryLabel.text = @"";
-        cell.secondaryLabel.text = @"";
+        
+        CDBook * book = (CDBook*) [books objectAtIndex:indexPath.row];
+        cell.primaryLabel.text = book.title;
+        cell.secondaryLabel.text = book.desc;
         cell.myImageView.image = [UIImage imageNamed:@"96-book.png"];
         return cell;
         
@@ -136,9 +141,9 @@
         [[cell mEditButton] setTag:indexPath.row];
         
         
-        
-        cell.primaryLabel.text = @"internetbooks";
-        cell.secondaryLabel.text = @"page desc";
+        PageModel * page = (PageModel*)[iPages objectAtIndex:indexPath.row];        
+        cell.primaryLabel.text = page.name;
+        cell.secondaryLabel.text = page.desc;
         cell.myImageView.image = [UIImage imageNamed:@"icon.png"];
         return cell;
     }
@@ -166,11 +171,14 @@
         
     } else if (tableOfBooks == tableView) {
         
-        BookModel * book = (BookModel*)[books objectAtIndex:indexPath.row];
- 
+        curBook = (CDBook*) [books objectAtIndex:indexPath.row];
+        
         [pages removeAllObjects];
-        [pages addObjectsFromArray:book.pages];
+        [pages addObjectsFromArray:curBook.pages];
         [tableOfPages reloadData];
+        
+        self.mDesc.text = curBook.desc;
+        self.mTitle.text = curBook.title;
         
     }
 }
@@ -178,27 +186,41 @@
 #pragma mark - Callbacks and IBActions
 
 - (void) hitPageView: (id) sender {
+    // delete the page
+    
     
 }
 
 - (void) hitBookView: (id) sender {
 
-    BookModel * book = (BookModel*)[books objectAtIndex:((UIButton*)sender).tag];
+    CDBook * cdbook = (CDBook*)[books objectAtIndex:((UIButton*)sender).tag];
 
-    BookView * v = [[BookView alloc] initWithFrame:[[UIScreen mainScreen] bounds] withPages:book.pages];
+    BookView * v = [[BookView alloc] initWithFrame:[[UIScreen mainScreen] bounds] withPages:cdbook.pages];
     
     eBookAppDelegate * delegate = (eBookAppDelegate*) [[UIApplication sharedApplication] delegate];
     UINavigationController * nav = [delegate navigationController];
 
     UIViewController * vc = [[UIViewController alloc] init];
     [vc setView:v];
+    [v release];
     [nav pushViewController:vc animated:YES];
     [vc release];
     
 }
 
 - (void) hitNetView: (id) sender {
-        
+  // add page to current book!
+
+//    if (!curBook) return;
+    
+//    id pgs = [curBook pages];
+//    [pgs addObject:(PageModel*)[iPages objectAtIndex:((UIButton*)sender).tag]];    
+//    [curBook setPages:[[[NSMutableArray alloc] initWithArray:pgs] autorelease]];
+//    [[CDHelper sharedHelper] saveContext];
+
+    [pages addObject:(PageModel*)[iPages objectAtIndex:((UIButton*)sender).tag]];
+    [tableOfPages reloadData];
+    
 }
 
 - (IBAction) reload {
@@ -207,38 +229,75 @@
 }
 
 - (IBAction) deleteBook {
-    
+    if (!curBook) return;
+    [[CDHelper sharedHelper] deleteBook:curBook];
+    curBook = nil;
+    [tableOfBooks reloadData];
+    [pages removeAllObjects];
+    [tableOfPages reloadData];
 }
 
 - (IBAction) deleteBooks {
     [[CDHelper sharedHelper] clearBooks];
 }
 
+- (IBAction) clearPages {
+    
+    [pages removeAllObjects];
+    [tableOfPages reloadData];
+    
+}
+
 - (IBAction) updateBook {
+     
+    if (!curBook) return;
+    curBook.title = self.mTitle.text;
+    curBook.desc = self.mDesc.text;
+    [[CDHelper sharedHelper] saveContext];
+    [tableOfBooks reloadData];
+}
+
+- (IBAction) saveBook {
+        
+    BookModel * model = [[BookModel alloc] init];
+    model.pages = pages;
+    model.title = self.mTitle.text;
+    model.desc = self.mDesc.text;
+    [[CDHelper sharedHelper] saveBook:model];
     
-    NSLog(@"title: %@, desc: %@", self.mTitle.text, self.mDesc.text);
-    
+    [books removeAllObjects];
+    [books addObjectsFromArray:[[CDHelper sharedHelper] allBooks]];
+    [tableOfBooks reloadData];
 }
 
 - (void) reloadAll {
     [self reloadPages];
-    
     [tableOfPages reloadData];
-    [tableOfBooks reloadData];
-    [tableOfIPages reloadData];
-    
+    [tableOfBooks reloadData];    
 }
 
 - (void) reloadPages {
         
-    [pages release];    
-    pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
+    [pages removeAllObjects];    
+    [pages addObjectsFromArray:[[CDHelper sharedHelper] allPages]];
     
-    [books release];
-    books = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allBooks]];
+    [books removeAllObjects];
+    [books addObjectsFromArray:[[CDHelper sharedHelper] allBooks]];
     
-//    [iPages release];
     
+    DataFetcher * fetcher = [[DataFetcher alloc] initWithBase:@"http://www.mathapedia.com/sections.json" andQueries:nil andDelegate:self];    
+    
+    [fetcher fetch];
+    
+}
+
+- (IBAction) search {
+
+    NSString * base = [[[NSString alloc] initWithFormat:@"http://www.mathapedia.com/sections.json?&search=%@", self.mSearch.text] autorelease];
+    base = [base stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    DataFetcher * fetcher = [[DataFetcher alloc] initWithBase:base andQueries:nil andDelegate:self];    
+    
+    [fetcher fetch];    
     
 }
 
@@ -248,5 +307,35 @@
     [textField resignFirstResponder]; 
     return YES;
 }
+
+#pragma mark - DataFetcher Delegate
+
+- (void) dataFetcher: (DataFetcher*) fetcher hasResponse: (id) response {
+    
+    //NSLog(@" type: %@", [[response class] description]);
+    
+    [iPages removeAllObjects];
+    NSArray * array = (NSArray*) response;
+    
+    for (int i=0; i<[array count]; i++) {
+        //NSLog(@" type: %@", [[[array objectAtIndex:i] class] description]);
+        
+        NSDictionary * dic = [array objectAtIndex:i];
+        NSDictionary * section = [dic valueForKey:@"section"];
+        NSLog(@"name %@", [section valueForKey:@"name"]);
+        PageModel * page = [[[PageModel alloc] init] autorelease];
+        page.name = [section valueForKey:@"name"];
+        page.desc = [section valueForKey:@"created_at"];
+        page.content = [section valueForKey:@"content"];
+        [iPages addObject:page];        
+    }
+    
+    [fetcher release];
+    [tableOfIPages reloadData];
+    
+    
+}
+
+
 
 @end

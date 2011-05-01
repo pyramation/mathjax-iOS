@@ -43,7 +43,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
-    addMe(bViewC, bNav, @"Current Book", @"96-book.png", BookshelfViewController);
+//    addMe(bViewC, bNav, @"Current Book", @"96-book.png", BookshelfViewController);
 //    addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
     addMe(aViewc, aNav, @"Network Library", @"40-inbox.png", PageIndexViewController);
     addMe(cdViewc, cdNav, @"Pages", @"96-book.png", CDPageIndexViewController);

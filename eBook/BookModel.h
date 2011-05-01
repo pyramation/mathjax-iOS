@@ -12,9 +12,13 @@
 @interface BookModel : NSObject {
 
     NSMutableArray * pages;
+    NSString * title;
+    NSString * desc;
     
 }
 
 @property (nonatomic, retain) NSMutableArray * pages;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * desc;
 
 @end

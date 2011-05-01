@@ -71,16 +71,32 @@ static CDHelper *sharedSingleton;
     for (CDPage* page in fetchedObjects ) {
         [self.managedObjectContext deleteObject:page];
     }
+    [self saveContext];
 
 }
 
 - (void) saveBook: (BookModel*) book {
     CDBook* model = [NSEntityDescription insertNewObjectForEntityForName:@"CDBook" inManagedObjectContext:[self managedObjectContext]];
     model.pages = book.pages;
+    model.title = book.title;
+    model.desc = book.desc;
     [self saveContext];
 }
 
 - (NSArray*) allBooks {
+    NSArray *fetchedObjects = [self allCDBooks];
+    NSMutableArray* bookArray = [NSMutableArray arrayWithCapacity:[fetchedObjects count]];
+    for (CDBook* book in fetchedObjects ) {
+        BookModel * b = [[[BookModel alloc] init] autorelease];
+        b.pages = book.pages;
+        b.title = book.title;
+        b.desc = book.desc;
+        [bookArray addObject:b];
+    }
+    return [NSArray arrayWithArray:bookArray];
+}
+
+- (NSArray*) allCDBooks {
     NSError *err;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"CDBook"
@@ -88,11 +104,12 @@ static CDHelper *sharedSingleton;
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];
     [fetchRequest release];
-    NSMutableArray* bookArray = [NSMutableArray arrayWithCapacity:[fetchedObjects count]];
-    for (CDBook* book in fetchedObjects ) {
-        [bookArray addObject:book];
-    }
-    return [NSArray arrayWithArray:bookArray];
+    return fetchedObjects;
+}
+
+- (void) deleteBook: (CDBook*) book {
+    [self.managedObjectContext deleteObject:book];
+    [self saveContext];
 }
 
 - (void) clearBooks {
@@ -107,7 +124,7 @@ static CDHelper *sharedSingleton;
     for (CDBook* book in fetchedObjects ) {
         [self.managedObjectContext deleteObject:book];
     }
-    
+    [self saveContext];
 }
 
 

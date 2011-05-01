@@ -10,6 +10,7 @@
 		AA00D4BC1360E260007C7E03 /* ConvolveDeltasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA00D4BA1360E260007C7E03 /* ConvolveDeltasViewController.m */; };
 		AA00D4BD1360E260007C7E03 /* ConvolveDeltasView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */; };
 		AA0C2DCB1361F429006EDC84 /* DiscreteSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C2DCA1361F429006EDC84 /* DiscreteSignal.m */; };
+		AA1D9255136CFEEC004E4964 /* DelTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D9254136CFEE9004E4964 /* DelTableCell.m */; };
 		AA24E49513660C5800A66BBD /* PageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA24E49413660C5500A66BBD /* PageModel.m */; };
 		AA24E4BD1367322100A66BBD /* CDPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA24E4BC1367322100A66BBD /* CDPage.m */; };
 		AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */; };
@@ -326,6 +327,8 @@
 		AA00D4BB1360E260007C7E03 /* ConvolveDeltasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvolveDeltasView.m; sourceTree = "<group>"; };
 		AA0C2DC91361F429006EDC84 /* DiscreteSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscreteSignal.h; sourceTree = "<group>"; };
 		AA0C2DCA1361F429006EDC84 /* DiscreteSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscreteSignal.m; sourceTree = "<group>"; };
+		AA1D9253136CFEE5004E4964 /* DelTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelTableCell.h; sourceTree = "<group>"; };
+		AA1D9254136CFEE9004E4964 /* DelTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelTableCell.m; sourceTree = "<group>"; };
 		AA24E49313660C5000A66BBD /* PageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageModel.h; sourceTree = "<group>"; };
 		AA24E49413660C5500A66BBD /* PageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageModel.m; sourceTree = "<group>"; };
 		AA24E4BB1367322100A66BBD /* CDPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPage.h; sourceTree = "<group>"; };
@@ -354,7 +357,7 @@
 		AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageIndexViewController.xib; sourceTree = "<group>"; };
 		AA4849D91365DC3F00E23E03 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
 		AA4849DA1365DC4100E23E03 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
-		AA586552136A8402007A7A68 /* TouchSwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TouchSwipeView.h; sourceTree = "<group>"; };
+		AA586552136A8402007A7A68 /* TouchSwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchSwipeView.h; sourceTree = "<group>"; };
 		AA586553136A8402007A7A68 /* TouchSwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchSwipeView.m; sourceTree = "<group>"; };
 		AA58655D136A9B9D007A7A68 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
 		AA58655E136A9B9E007A7A68 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
@@ -885,6 +888,8 @@
 		AA586565136AA090007A7A68 /* BookCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				AA1D9253136CFEE5004E4964 /* DelTableCell.h */,
+				AA1D9254136CFEE9004E4964 /* DelTableCell.m */,
 				AA58656B136AA104007A7A68 /* CDBookMappingViewController.h */,
 				AA58656C136AA104007A7A68 /* CDBookMappingViewController.m */,
 				AA58656D136AA104007A7A68 /* CDBookMappingViewController.xib */,
@@ -1874,6 +1879,7 @@
 				AA58655F136A9B9F007A7A68 /* BookModel.m in Sources */,
 				AA586563136A9CF5007A7A68 /* CDBook.m in Sources */,
 				AA58656E136AA104007A7A68 /* CDBookMappingViewController.m in Sources */,
+				AA1D9255136CFEEC004E4964 /* DelTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
