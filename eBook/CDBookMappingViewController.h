@@ -31,6 +31,8 @@
 
 - (IBAction) updateBook;
 - (IBAction) deleteBook;
+- (IBAction) deleteBooks;
+
 
 - (void) reloadPages;
 - (void) reloadAll;

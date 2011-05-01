@@ -11,7 +11,7 @@
 #define HORIZ_SWIPE_DRAG_MIN  50	// for horizontal swipe
 #define VERT_SWIPE_DRAG_MAX    10	// for horizontal swipe
 
-#define VERT_SWIPE_DRAG_MIN  150	// for vertical swipe
+#define VERT_SWIPE_DRAG_MIN   50	// for vertical swipe
 #define HORIZ_SWIPE_DRAG_MAX    10	// for vertical swipe
 
 @protocol TouchSwipeViewDelegate; 
@@ -33,8 +33,6 @@
 @required
 - (void) swipeLeft;
 - (void) swipeRight;
-- (void) swipeUp;
-- (void) swipeDown;
 
 - (void) doubleTap;
 - (void) singleTap;

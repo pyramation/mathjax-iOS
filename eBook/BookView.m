@@ -8,7 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "BookView.h"
-
+#import "BookModel.h"
 #import "PageLoaderView.h"
 #import "PageModel.h"
 
@@ -16,7 +16,7 @@
 #import "CDPage.h"
 
 @implementation BookView
-@synthesize pages, containerView, swipeView;
+@synthesize pages, books, containerView, swipeView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -24,6 +24,7 @@
     if (self) {
         // Initialization code
         self.pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
+        self.books = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allBooks]];
         
         self.containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
@@ -39,6 +40,7 @@
         [self addSubview:containerView];
         
         index = 0;
+        bookIndex = 0;
             
     }
     return self;
@@ -50,7 +52,8 @@
     if (self) {
         // Initialization code
         self.pages = pgs;
-        
+        self.books = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allBooks]];
+
         self.containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
         self.swipeView = [[TouchSwipeView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-205, [[UIScreen mainScreen] bounds].size.width, 205) delegate:self];
@@ -65,6 +68,7 @@
         [self addSubview:containerView];
         
         index = 0;
+        bookIndex = 0;
         
     }
     return self;
@@ -84,15 +88,13 @@
 {
     [containerView release];
     [pages release];
+    [books release];
     [super dealloc];
 }
 
 #pragma mark - pages
 
 - (void) refreshPages {
-
-    [pages removeAllObjects];
-    [pages addObjectsFromArray:[[CDHelper sharedHelper] allPages]];
 
     while( [[containerView subviews] count] > 0 ) {
         [[[containerView subviews] objectAtIndex:0] removeFromSuperview]; 
@@ -177,16 +179,15 @@
      
 }
 
-- (void) swipeDown {
-    
-}
-
-- (void) swipeUp {
-    
-}
-
 - (void) doubleTap {
     
+    [pages removeAllObjects];
+    [books removeAllObjects];
+    [books addObjectsFromArray:[[CDHelper sharedHelper] allBooks]];
+    unsigned int u = ++bookIndex % [books count];
+    BookModel * book = [books objectAtIndex:u];
+    [pages addObjectsFromArray:book.pages];
+    [books removeAllObjects];
     
     [self refreshPages];
     index = -1;

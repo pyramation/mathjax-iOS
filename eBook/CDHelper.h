@@ -27,7 +27,7 @@
 
 - (void) saveBook: (BookModel*) book;
 - (NSArray*) allBooks;
-
+- (void) clearBooks;
 
 
 @end

@@ -95,6 +95,20 @@ static CDHelper *sharedSingleton;
     return [NSArray arrayWithArray:bookArray];
 }
 
+- (void) clearBooks {
+    NSError *err;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CDBook"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];
+    [fetchRequest release];
+    
+    for (CDBook* book in fetchedObjects ) {
+        [self.managedObjectContext deleteObject:book];
+    }
+    
+}
 
 
 #pragma mark - context

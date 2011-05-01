@@ -60,15 +60,15 @@
     }
 	
 	// vertical swipe detection	
-	if (fabsf(startTouchPosition.y - currentTouchPosition.y) >= VERT_SWIPE_DRAG_MIN &&
-        fabsf(startTouchPosition.x - currentTouchPosition.x) <= HORIZ_SWIPE_DRAG_MAX) {
-		if (startTouchPosition.y < currentTouchPosition.y) {
-            [delegate swipeDown];
-		}
-		else if (startTouchPosition.y > currentTouchPosition.y){
-            [delegate swipeUp];
-		}
-	}
+//	if (fabsf(startTouchPosition.y - currentTouchPosition.y) >= VERT_SWIPE_DRAG_MIN &&
+//        fabsf(startTouchPosition.x - currentTouchPosition.x) <= HORIZ_SWIPE_DRAG_MAX) {
+//		if (startTouchPosition.y < currentTouchPosition.y) {
+//            [delegate swipeDown];
+//		}
+//		else if (startTouchPosition.y > currentTouchPosition.y){
+//            [delegate swipeUp];
+//		}
+//	}
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event  {

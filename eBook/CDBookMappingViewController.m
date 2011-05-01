@@ -210,6 +210,10 @@
     
 }
 
+- (IBAction) deleteBooks {
+    [[CDHelper sharedHelper] clearBooks];
+}
+
 - (IBAction) updateBook {
     
     NSLog(@"title: %@, desc: %@", self.mTitle.text, self.mDesc.text);

@@ -13,6 +13,7 @@
 @interface BookView : UIView <TouchSwipeViewDelegate> {
  
     NSMutableArray * pages;
+    NSMutableArray * books;
     
     BOOL transitioning; 
     UIView * containerView; 
@@ -20,6 +21,7 @@
     UIView * swipeView;
 
     int index;
+    int bookIndex;
 }
 
 -(void)performTransition: (NSString*) subtype type: (NSString*) type;
@@ -28,6 +30,7 @@
 - (void) refreshPages;
 
 @property (nonatomic, retain) NSMutableArray * pages;
+@property (nonatomic, retain) NSMutableArray * books;
 @property (nonatomic, retain) UIView * containerView;
 @property (nonatomic, retain) UIView * swipeView;
 
