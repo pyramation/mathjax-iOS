@@ -163,6 +163,13 @@
         book.title = [chapter valueForKey:@"name"];
         book.desc = [chapter valueForKey:@"desc"];
          
+        PageModel * page0 = [[[PageModel alloc] init] autorelease];
+        page0.name = book.title;
+        page0.desc = book.desc;
+        page0.content = [[[NSString alloc] initWithFormat:@"<br><br><br><br><br><div style=\"text-align: center;font-family: Helvetica, Arial;\"><h2>%@</h2><h3>%@</h3></div>", page0.name, page0.desc] autorelease];
+        [book.pages addObject:page0];        
+
+        
         NSArray * array = (NSArray*) [chapter valueForKey:@"sections"];
 
         for (int i=0; i<[array count]; i++) {

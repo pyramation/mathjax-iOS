@@ -325,7 +325,7 @@
         NSLog(@"name %@", [section valueForKey:@"name"]);
         PageModel * page = [[[PageModel alloc] init] autorelease];
         page.name = [section valueForKey:@"name"];
-        page.desc = [section valueForKey:@"created_at"];
+        page.desc = [section valueForKey:@"description"];
         page.content = [section valueForKey:@"content"];
         [iPages addObject:page];        
     }

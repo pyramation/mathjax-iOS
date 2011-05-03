@@ -47,8 +47,8 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
     addMe(bViewC, bNav, @"Current Book", @"96-book.png", BookshelfViewController);
 //    addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
     addMe(cViewc, cNav, @"Network Library", @"40-inbox.png", ChapterIndexViewController);
-    addMe(aViewc, aNav, @"Network Library", @"40-inbox.png", PageIndexViewController);
-    addMe(cdViewc, cdNav, @"Pages", @"96-book.png", CDPageIndexViewController);
+//    addMe(aViewc, aNav, @"Network Library", @"40-inbox.png", PageIndexViewController);
+ //   addMe(cdViewc, cdNav, @"Pages", @"96-book.png", CDPageIndexViewController);
     addMe(bdViewc, bdNav, @"Books", @"33-cabinet.png", CDBookMappingViewController);
     
 //    addMe(unitViewC, unitNav, @"Unit Circle", @"11-clock.png", UnitCircleViewController);
@@ -58,7 +58,7 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 //    addMe(blockViewC, blockNav, @"Dirac Deltas", @"55-network.png", DiracDeltasViewController);
 //    addMe(splitViewC, splitNav, @"Split View", @"95-equalizer.png", SplitViewController);
 //    addMe(filterViewC, filterNav, @"Filter Design", @"122-stats.png", FilterDesignViewController);
-    addMe(eqViewC, eqNav, @"Equation Editor", @"06-magnify.png", equationEditorViewController);    
+  //  addMe(eqViewC, eqNav, @"Equation Editor", @"06-magnify.png", equationEditorViewController);    
     
 //    UIWebView *htmlView = [[UIWebView alloc] init];
 //    [htmlView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"sample-tex" ofType:@"html" inDirectory:@"MathJax/test"]isDirectory:NO]]];

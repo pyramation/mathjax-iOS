@@ -304,7 +304,7 @@
 					<object class="IBUIButton" id="107774218">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{621, 799}, {74, 37}}</string>
+						<string key="NSFrame">{{600, 799}, {117, 37}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -314,7 +314,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="345662986"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">delete</string>
+						<string key="IBUINormalTitle">delete books</string>
 						<reference key="IBUIHighlightedTitleColor" ref="741668935"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>

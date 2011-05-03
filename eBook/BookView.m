@@ -23,8 +23,14 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
+        
         self.books = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allBooks]];
+        
+        if ([self.books count] > 0) {
+            
+            self.pages = ((BookModel*)[self.books objectAtIndex:0]).pages;
+            
+        } else self.pages = [[NSMutableArray alloc] initWithArray:[[CDHelper sharedHelper] allPages]];
         
         self.containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
@@ -39,7 +45,7 @@
         [containerView addSubview:swipeView];
         [self addSubview:containerView];
         
-        index = 0;
+        index = -1;
         bookIndex = 0;
         
     }
