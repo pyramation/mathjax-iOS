@@ -13,6 +13,8 @@
 		AA1D9255136CFEEC004E4964 /* DelTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D9254136CFEE9004E4964 /* DelTableCell.m */; };
 		AA24E49513660C5800A66BBD /* PageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA24E49413660C5500A66BBD /* PageModel.m */; };
 		AA24E4BD1367322100A66BBD /* CDPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA24E4BC1367322100A66BBD /* CDPage.m */; };
+		AA2FCFA4136FBA7C00E54485 /* ChapterIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2FCFA2136FBA7C00E54485 /* ChapterIndexViewController.m */; };
+		AA2FCFA5136FBA7C00E54485 /* ChapterIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA2FCFA3136FBA7C00E54485 /* ChapterIndexViewController.xib */; };
 		AA39ACFF1357B54E0075D8D9 /* FilterDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */; };
 		AA39AD021357B6570075D8D9 /* FilterDesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39AD011357B6570075D8D9 /* FilterDesignViewController.m */; };
 		AA39AD061357C2FD0075D8D9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA39AD051357C2FC0075D8D9 /* icon.png */; };
@@ -333,6 +335,9 @@
 		AA24E49413660C5500A66BBD /* PageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageModel.m; sourceTree = "<group>"; };
 		AA24E4BB1367322100A66BBD /* CDPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPage.h; sourceTree = "<group>"; };
 		AA24E4BC1367322100A66BBD /* CDPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPage.m; sourceTree = "<group>"; };
+		AA2FCFA1136FBA7C00E54485 /* ChapterIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterIndexViewController.h; sourceTree = "<group>"; };
+		AA2FCFA2136FBA7C00E54485 /* ChapterIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterIndexViewController.m; sourceTree = "<group>"; };
+		AA2FCFA3136FBA7C00E54485 /* ChapterIndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterIndexViewController.xib; sourceTree = "<group>"; };
 		AA39ACFD1357B54C0075D8D9 /* FilterDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesign.h; sourceTree = "<group>"; };
 		AA39ACFE1357B54D0075D8D9 /* FilterDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDesign.m; sourceTree = "<group>"; };
 		AA39AD001357B6570075D8D9 /* FilterDesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDesignViewController.h; sourceTree = "<group>"; };
@@ -788,6 +793,16 @@
 				AA913E06135CB0FD006DE2CB /* DataFetcherDelegate.h */,
 			);
 			name = Fetchers;
+			sourceTree = "<group>";
+		};
+		AA2FCF9F136FBA4300E54485 /* Chapters */ = {
+			isa = PBXGroup;
+			children = (
+				AA2FCFA1136FBA7C00E54485 /* ChapterIndexViewController.h */,
+				AA2FCFA2136FBA7C00E54485 /* ChapterIndexViewController.m */,
+				AA2FCFA3136FBA7C00E54485 /* ChapterIndexViewController.xib */,
+			);
+			name = Chapters;
 			sourceTree = "<group>";
 		};
 		AA39ACDD13579B440075D8D9 /* Math/Plot */ = {
@@ -1356,6 +1371,7 @@
 		AACA45A31367254A0082F5AF /* Internet */ = {
 			isa = PBXGroup;
 			children = (
+				AA2FCF9F136FBA4300E54485 /* Chapters */,
 				AA4849D41365DA2B00E23E03 /* PageIndexViewController.h */,
 				AA4849D51365DA2B00E23E03 /* PageIndexViewController.m */,
 				AA4849D61365DA2D00E23E03 /* PageIndexViewController.xib */,
@@ -1769,6 +1785,7 @@
 				AA4849D81365DA3000E23E03 /* PageIndexViewController.xib in Resources */,
 				AACA45A91367257F0082F5AF /* CDPageIndexViewController.xib in Resources */,
 				AA58656F136AA104007A7A68 /* CDBookMappingViewController.xib in Resources */,
+				AA2FCFA5136FBA7C00E54485 /* ChapterIndexViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1880,6 +1897,7 @@
 				AA586563136A9CF5007A7A68 /* CDBook.m in Sources */,
 				AA58656E136AA104007A7A68 /* CDBookMappingViewController.m in Sources */,
 				AA1D9255136CFEEC004E4964 /* DelTableCell.m in Sources */,
+				AA2FCFA4136FBA7C00E54485 /* ChapterIndexViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

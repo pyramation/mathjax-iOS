@@ -12,6 +12,15 @@
 @implementation BookModel
 @synthesize pages, desc, title;
 
+- (id) init {
+    
+    if ((self = [super init])) {
+        self.pages = [[NSMutableArray alloc] init];
+        self.title = [[NSString alloc] init]; 
+        self.desc = [[NSString alloc] init]; 
+    }
+    return self;
+}
 
 - (void)dealloc {
     [title release];

@@ -78,8 +78,8 @@ static CDHelper *sharedSingleton;
 - (void) saveBook: (BookModel*) book {
     CDBook* model = [NSEntityDescription insertNewObjectForEntityForName:@"CDBook" inManagedObjectContext:[self managedObjectContext]];
     model.pages = book.pages;
-    model.title = book.title;
-    model.desc = book.desc;
+   // model.title = book.title;
+   // model.desc = book.desc;
     [self saveContext];
 }
 
@@ -89,8 +89,8 @@ static CDHelper *sharedSingleton;
     for (CDBook* book in fetchedObjects ) {
         BookModel * b = [[[BookModel alloc] init] autorelease];
         b.pages = book.pages;
-        b.title = book.title;
-        b.desc = book.desc;
+     //   b.title = book.title;
+     //   b.desc = book.desc;
         [bookArray addObject:b];
     }
     return [NSArray arrayWithArray:bookArray];

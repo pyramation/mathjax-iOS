@@ -13,6 +13,8 @@
 @interface CDBook : NSManagedObject {
 @private
 }
+
+
 @property (nonatomic, retain) id pages;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * desc;

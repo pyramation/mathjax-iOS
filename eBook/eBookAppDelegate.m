@@ -18,6 +18,7 @@
 #import "equationEditorViewController.h"
 #import "ConvolveDeltasViewController.h"
 #import "PageIndexViewController.h"
+#import "ChapterIndexViewController.h"
 #import "CDPageIndexViewController.h"
 #import "CDBookMappingViewController.h"
 #import "BookshelfViewController.h"
@@ -43,8 +44,9 @@ nav.navigationBar.barStyle = UIBarStyleBlackTranslucent; \
 
     /* set-up tabs */
     NSMutableArray * controllers = [[NSMutableArray alloc] init];
-//    addMe(bViewC, bNav, @"Current Book", @"96-book.png", BookshelfViewController);
+    addMe(bViewC, bNav, @"Current Book", @"96-book.png", BookshelfViewController);
 //    addMe(webViewC, webNav, @"Web View", @"96-book.png", UIViewController);
+    addMe(cViewc, cNav, @"Network Library", @"40-inbox.png", ChapterIndexViewController);
     addMe(aViewc, aNav, @"Network Library", @"40-inbox.png", PageIndexViewController);
     addMe(cdViewc, cdNav, @"Pages", @"96-book.png", CDPageIndexViewController);
     addMe(bdViewc, bdNav, @"Books", @"33-cabinet.png", CDBookMappingViewController);
